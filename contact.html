@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us — HomeServiceMarketer.com</title>
+  <meta name="description" content="Have a question or need support? Contact the HomeServiceMarketer team and we'll get back to you within 24 hours." />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🏠</div>
+        HomeService<span>Marketer</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+        <li><a href="products.html" class="btn btn-primary btn-sm nav-cta">Shop Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="products.html" class="btn btn-primary" style="margin-top:.5rem;text-align:center;">Shop Now</a>
+  </div>
+</nav>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label" style="background:rgba(251,191,36,.2);color:#fbbf24;">Get in Touch</span>
+    <h1>We're Here to Help</h1>
+    <p>Questions about a product, need support, or want to explore a custom solution? Reach out — we respond within 24 hours.</p>
+  </div>
+</section>
+
+<!-- ===== CONTACT SECTION ===== -->
+<section class="section">
+  <div class="container">
+    <div class="contact-grid">
+
+      <!-- Left: Contact Info -->
+      <div class="contact-info">
+        <h3>How Can We Help You?</h3>
+        <p>Whether you're a first-time buyer with questions, a current customer who needs support, or a contractor looking for custom marketing help — our team is ready to assist.</p>
+        <div class="contact-methods">
+          <div class="contact-method">
+            <span class="contact-method-icon">📧</span>
+            <div>
+              <strong>Email Support</strong>
+              <span>support@homeservicemarketer.com<br>Response within 24 hours (often much faster)</span>
+            </div>
+          </div>
+          <div class="contact-method">
+            <span class="contact-method-icon">💬</span>
+            <div>
+              <strong>Live Chat</strong>
+              <span>Available Mon–Fri, 9am–5pm CST<br>Look for the chat icon in the corner</span>
+            </div>
+          </div>
+          <div class="contact-method">
+            <span class="contact-method-icon">🛡️</span>
+            <div>
+              <strong>Refund Requests</strong>
+              <span>30-day guarantee — just email us and we'll process your refund immediately, no questions asked.</span>
+            </div>
+          </div>
+          <div class="contact-method">
+            <span class="contact-method-icon">🤝</span>
+            <div>
+              <strong>Partnership Inquiries</strong>
+              <span>Interested in bulk licensing, affiliate programs, or custom bundles? Let's talk.</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="margin-top:2rem;padding:1.5rem;background:var(--gray-50);border:1px solid var(--gray-200);border-radius:var(--radius-lg);">
+          <h4 style="margin-bottom:.5rem;font-size:1rem;">Before You Write…</h4>
+          <p style="font-size:.9rem;margin-bottom:.75rem;">These common questions are answered in our FAQ on the <a href="products.html" style="color:var(--blue);font-weight:600;">Products page</a>:</p>
+          <ul style="display:flex;flex-direction:column;gap:.4rem;">
+            <li style="font-size:.85rem;color:var(--gray-600);display:flex;gap:.5rem;align-items:flex-start;"><span style="color:var(--blue);">→</span> How do I download my purchase?</li>
+            <li style="font-size:.85rem;color:var(--gray-600);display:flex;gap:.5rem;align-items:flex-start;"><span style="color:var(--blue);">→</span> What file formats are included?</li>
+            <li style="font-size:.85rem;color:var(--gray-600);display:flex;gap:.5rem;align-items:flex-start;"><span style="color:var(--blue);">→</span> How long until I see results?</li>
+            <li style="font-size:.85rem;color:var(--gray-600);display:flex;gap:.5rem;align-items:flex-start;"><span style="color:var(--blue);">→</span> Can I use this for multiple locations?</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Right: Contact Form -->
+      <div>
+        <form class="contact-form" id="contactForm" novalidate>
+          <h3 style="margin-bottom:1.5rem;font-size:1.3rem;">Send Us a Message</h3>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="cfFirstName">First Name *</label>
+              <input type="text" id="cfFirstName" name="firstName" placeholder="John" required />
+            </div>
+            <div class="form-group">
+              <label for="cfLastName">Last Name *</label>
+              <input type="text" id="cfLastName" name="lastName" placeholder="Smith" required />
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="cfEmail">Email Address *</label>
+            <input type="email" id="cfEmail" name="email" placeholder="john@yourcompany.com" required />
+          </div>
+          <div class="form-group">
+            <label for="cfTrade">Your Trade</label>
+            <select id="cfTrade" name="trade">
+              <option value="" disabled selected>Select your trade…</option>
+              <option>HVAC</option>
+              <option>Roofing</option>
+              <option>Plumbing</option>
+              <option>Electrical</option>
+              <option>Pest Control</option>
+              <option>Landscaping / Lawn Care</option>
+              <option>Other Home Service</option>
+              <option>Not a contractor</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cfSubject">Subject *</label>
+            <select id="cfSubject" name="subject" required>
+              <option value="" disabled selected>What can we help with?</option>
+              <option>Pre-purchase question</option>
+              <option>Product support / how-to help</option>
+              <option>Download / access issue</option>
+              <option>Refund request</option>
+              <option>Partnership / affiliate inquiry</option>
+              <option>Custom bundle / bulk licensing</option>
+              <option>General feedback</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="cfMessage">Message *</label>
+            <textarea id="cfMessage" name="message" rows="5" placeholder="Tell us what you need — the more detail, the better we can help." required style="resize:vertical;"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-lg" style="width:100%;">Send Message →</button>
+          <p style="font-size:.82rem;color:var(--gray-400);margin-top:.75rem;text-align:center;">We respond within 24 hours Mon–Fri. Weekend responses may take a bit longer.</p>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ===== QUICK LINKS ===== -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label blue">Quick Links</span>
+      <h2 class="section-title">Looking for Something Specific?</h2>
+    </div>
+    <div class="features-grid" style="margin-top:2.5rem;">
+      <div class="feature-card" style="text-align:center;">
+        <div class="feature-icon icon-blue" style="margin:0 auto 1rem;">📦</div>
+        <h3>Browse Products</h3>
+        <p>Explore all three of our marketing toolkits and find the right one for your trade and goals.</p>
+        <a href="products.html" class="btn btn-secondary btn-sm mt-2">View All Products</a>
+      </div>
+      <div class="feature-card" style="text-align:center;">
+        <div class="feature-icon icon-orange" style="margin:0 auto 1rem;">🎁</div>
+        <h3>Free Checklist</h3>
+        <p>Get our free 25-point Local Marketing Checklist — no purchase required, just enter your email.</p>
+        <a href="index.html#free-guide" class="btn btn-secondary btn-sm mt-2">Grab the Free Guide</a>
+      </div>
+      <div class="feature-card" style="text-align:center;">
+        <div class="feature-icon icon-green" style="margin:0 auto 1rem;">🏢</div>
+        <h3>About Our Team</h3>
+        <p>Learn who we are, how we got started, and why we're so focused on the home service trades.</p>
+        <a href="about.html" class="btn btn-secondary btn-sm mt-2">Read Our Story</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA ===== -->
+<section class="cta-banner">
+  <div class="container">
+    <h2>Ready to Start Growing?</h2>
+    <p>Join 2,400+ contractors using our toolkits to market smarter and book more jobs.</p>
+    <a href="products.html" class="btn btn-primary btn-lg">Shop All Toolkits →</a>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="color:white;">
+          <div class="logo-icon">🏠</div>
+          HomeService<span>Marketer</span>
+        </a>
+        <p style="margin-top:1rem;">DIY marketing toolkits built for HVAC, plumbing, electrical, and roofing contractors who want more leads without agency fees.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="products.html#hvac">HVAC Marketing Kit</a></li>
+          <li><a href="products.html#roofing">Roofing Lead Machine</a></li>
+          <li><a href="products.html#audit">Ad Audit Checklist</a></li>
+          <li><a href="products.html">View All</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html#free-guide">Free Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact.html">Help Center</a></li>
+          <li><a href="contact.html">Refund Policy</a></li>
+          <li><a href="contact.html">Privacy Policy</a></li>
+          <li><a href="contact.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 HomeServiceMarketer.com. All rights reserved.</span>
+      <span>Built for contractors who want to grow 🔧</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

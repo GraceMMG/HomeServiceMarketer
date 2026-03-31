@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Products — HomeServiceMarketer.com</title>
+  <meta name="description" content="Browse our marketing toolkits for HVAC, roofing, plumbing, and electrical contractors. Starting at just $27." />
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Products page extras */
+    .product-detail {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+      padding: 4.5rem 0;
+      border-bottom: 1px solid var(--gray-200);
+    }
+    .product-detail:last-child { border-bottom: none; }
+    .product-detail.reverse { direction: rtl; }
+    .product-detail.reverse > * { direction: ltr; }
+    .product-detail-visual {
+      border-radius: var(--radius-lg);
+      padding: 3rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      gap: 1rem;
+      min-height: 320px;
+      position: relative;
+    }
+    .product-detail-visual .big-icon { font-size: 5rem; }
+    .product-detail-visual .kit-name {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--blue-dark);
+    }
+    .product-detail-visual .kit-files {
+      display: flex;
+      flex-direction: column;
+      gap: .4rem;
+      width: 100%;
+      max-width: 260px;
+    }
+    .kit-file {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      background: white;
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      padding: .6rem .85rem;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--gray-800);
+      box-shadow: var(--shadow-sm);
+    }
+    .product-detail-info h2 { margin-bottom: .75rem; font-size: 1.75rem; }
+    .product-detail-info .price-block {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.25rem;
+      flex-wrap: wrap;
+    }
+    .product-detail-info .price { font-size: 2.4rem; color: var(--blue-dark); }
+    .product-detail-info .price-orig { font-size: 1rem; color: var(--gray-400); text-decoration: line-through; }
+    .product-detail-info .savings-badge {
+      background: rgba(22,163,74,.1);
+      color: #15803d;
+      font-size: .8rem;
+      font-weight: 700;
+      padding: .3rem .75rem;
+      border-radius: 50px;
+    }
+    .includes-title {
+      font-weight: 700;
+      font-size: .9rem;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+      color: var(--gray-800);
+      margin-bottom: .75rem;
+      margin-top: 1.25rem;
+    }
+    .detail-includes { display: flex; flex-direction: column; gap: .5rem; margin-bottom: 1.5rem; }
+    .detail-includes li {
+      display: flex;
+      align-items: flex-start;
+      gap: .6rem;
+      font-size: .92rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+    .detail-includes li .check { color: #16a34a; font-weight: 700; flex-shrink: 0; margin-top: .05rem; }
+    .product-cta-row { display: flex; gap: 1rem; align-items: center; flex-wrap: wrap; }
+    .product-cta-row .guarantee-micro {
+      font-size: .8rem;
+      color: var(--gray-600);
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+    }
+    .trade-tags { display: flex; gap: .5rem; flex-wrap: wrap; margin-bottom: 1rem; }
+    .trade-tag {
+      background: rgba(37,99,235,.08);
+      color: var(--blue);
+      font-size: .78rem;
+      font-weight: 700;
+      padding: .25rem .7rem;
+      border-radius: 50px;
+    }
+    .faq-list { display: flex; flex-direction: column; gap: 1rem; margin-top: 2.5rem; }
+    .faq-item {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%;
+      text-align: left;
+      background: var(--white);
+      border: none;
+      padding: 1.1rem 1.35rem;
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--gray-800);
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      font-family: inherit;
+      transition: background var(--transition);
+    }
+    .faq-q:hover { background: var(--gray-50); }
+    .faq-q .arrow { font-size: .75rem; transition: transform .25s; flex-shrink: 0; }
+    .faq-q.open .arrow { transform: rotate(180deg); }
+    .faq-a {
+      display: none;
+      padding: 0 1.35rem 1.1rem;
+      font-size: .92rem;
+      color: var(--gray-600);
+      line-height: 1.7;
+    }
+    .faq-a.open { display: block; }
+    @media (max-width: 768px) {
+      .product-detail { grid-template-columns: 1fr; }
+      .product-detail.reverse { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="container">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo">
+        <div class="logo-icon">🏠</div>
+        HomeService<span>Marketer</span>
+      </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="products.html" class="active">Products</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="products.html" class="btn btn-primary btn-sm nav-cta">Shop Now</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+    <a href="products.html" class="btn btn-primary" style="margin-top:.5rem;text-align:center;">Shop Now</a>
+  </div>
+</nav>
+
+<!-- ===== PAGE HERO ===== -->
+<section class="page-hero">
+  <div class="container">
+    <span class="section-label" style="background:rgba(251,191,36,.2);color:#fbbf24;">All Products</span>
+    <h1>Marketing Toolkits Built for Your Trade</h1>
+    <p>Plug-and-play marketing systems for HVAC, roofing, plumbing, and electrical contractors. No agency needed. Just download, customize, and grow.</p>
+  </div>
+</section>
+
+<!-- ===== TRUST BAR ===== -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="trust-bar-inner">
+      <div class="trust-item"><span class="trust-item-icon">🛡️</span> 30-Day Money-Back Guarantee</div>
+      <div class="trust-item"><span class="trust-item-icon">⚡</span> Instant Digital Download</div>
+      <div class="trust-item"><span class="trust-item-icon">⭐</span> 4.9/5 Star Rating</div>
+      <div class="trust-item"><span class="trust-item-icon">🔒</span> Secure Checkout</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== PRODUCT LISTINGS ===== -->
+<section class="section">
+  <div class="container">
+
+    <!-- Product 1: HVAC -->
+    <div class="product-detail" id="hvac">
+      <div class="product-detail-visual" style="background:linear-gradient(135deg,#dbeafe,#bfdbfe);">
+        <div class="big-icon">🌡️</div>
+        <div class="kit-name">HVAC Marketing Starter Kit</div>
+        <div class="kit-files">
+          <div class="kit-file">📄 Google Ads Templates.pdf</div>
+          <div class="kit-file">📧 Email Sequences (12).docx</div>
+          <div class="kit-file">📱 Social Post Pack (30).zip</div>
+          <div class="kit-file">📅 Promo Calendar.xlsx</div>
+          <div class="kit-file">⭐ Review System Guide.pdf</div>
+        </div>
+      </div>
+      <div class="product-detail-info">
+        <div class="trade-tags">
+          <span class="trade-tag">HVAC</span>
+          <span class="trade-tag">Air Conditioning</span>
+          <span class="trade-tag">Heating</span>
+          <span class="trade-tag">Duct Cleaning</span>
+        </div>
+        <h2>HVAC Marketing Starter Kit</h2>
+        <p>The all-in-one marketing system for HVAC contractors who want more service calls, more installs, and more recurring maintenance contracts — without spending thousands on an agency.</p>
+        <div class="price-block">
+          <span class="price">$47</span>
+          <span class="price-orig">$197</span>
+          <span class="savings-badge">Save $150</span>
+        </div>
+        <p style="font-size:.92rem;margin-bottom:.5rem;">Everything you need to run your own professional HVAC marketing campaigns across Google, Facebook, email, and more.</p>
+        <div class="includes-title">What's Included:</div>
+        <ul class="detail-includes">
+          <li><span class="check">✓</span> Google Ads campaign templates — search, display, and remarketing campaigns pre-built and ready to launch</li>
+          <li><span class="check">✓</span> 12 done-for-you email sequences — welcome series, seasonal tune-up reminders, re-engagement, and upsell campaigns</li>
+          <li><span class="check">✓</span> 30 social media post templates — branded graphics ideas, caption formulas, and posting schedule</li>
+          <li><span class="check">✓</span> Seasonal promotion calendar — exactly when and what to promote for maximum response (AC tune-ups, heat prep, emergencies)</li>
+          <li><span class="check">✓</span> Review generation system — scripts and automations to consistently collect 5-star reviews on Google</li>
+          <li><span class="check">✓</span> Service area landing page template — optimized to convert ad traffic into phone calls</li>
+          <li><span class="check">✓</span> BONUS: HVAC ad copywriting swipe file — 40+ proven headlines and CTAs you can use immediately</li>
+        </ul>
+        <div class="product-cta-row">
+          <a href="contact.html" class="btn btn-primary btn-lg" onclick="handleBuy(event, 'HVAC Marketing Starter Kit', '$47')">Buy Now — $47 →</a>
+          <span class="guarantee-micro">🛡️ 30-day money-back guarantee</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 2: Roofing -->
+    <div class="product-detail reverse" id="roofing">
+      <div class="product-detail-info">
+        <div class="trade-tags">
+          <span class="trade-tag">Roofing</span>
+          <span class="trade-tag">Storm Damage</span>
+          <span class="trade-tag">Residential</span>
+          <span class="trade-tag">Commercial</span>
+        </div>
+        <h2>Roofing Lead Machine Bundle</h2>
+        <p>The most complete lead generation system for roofing contractors. Whether it's storm season or slow season, this bundle gives you the tools to keep your crews busy year-round.</p>
+        <div class="price-block">
+          <span class="price">$67</span>
+          <span class="price-orig">$247</span>
+          <span class="savings-badge">Save $180</span>
+        </div>
+        <p style="font-size:.92rem;margin-bottom:.5rem;">Combines digital and offline marketing strategies for a complete lead generation machine that works even when you're not.</p>
+        <div class="includes-title">What's Included:</div>
+        <ul class="detail-includes">
+          <li><span class="check">✓</span> Direct mail postcard templates (5 designs) — print-ready designs for neighborhood campaigns, storm follow-ups, and seasonal offers</li>
+          <li><span class="check">✓</span> Facebook & Instagram ad creatives — 15 image ad templates with copy and targeting recommendations</li>
+          <li><span class="check">✓</span> Door-hanger canvassing toolkit — door-hanger designs, canvassing scripts, and route planning guide</li>
+          <li><span class="check">✓</span> Storm response rapid-launch kit — deploy immediately after a hail or wind event to capture surging demand</li>
+          <li><span class="check">✓</span> Lead tracking spreadsheet — manage your pipeline from first contact to signed contract</li>
+          <li><span class="check">✓</span> Follow-up text & email sequences — nurture leads who didn't close immediately</li>
+          <li><span class="check">✓</span> BONUS: Neighborhood saturation strategy guide — how to dominate one ZIP code at a time</li>
+        </ul>
+        <div class="product-cta-row">
+          <a href="contact.html" class="btn btn-primary btn-lg" onclick="handleBuy(event, 'Roofing Lead Machine Bundle', '$67')">Buy Now — $67 →</a>
+          <span class="guarantee-micro">🛡️ 30-day money-back guarantee</span>
+        </div>
+      </div>
+      <div class="product-detail-visual" style="background:linear-gradient(135deg,#ffedd5,#fed7aa);">
+        <div class="big-icon">🏠</div>
+        <div class="kit-name">Roofing Lead Machine Bundle</div>
+        <div class="kit-files">
+          <div class="kit-file">📮 Postcard Templates (5).zip</div>
+          <div class="kit-file">📱 FB & IG Ad Creatives.zip</div>
+          <div class="kit-file">🚪 Door Hanger Pack.pdf</div>
+          <div class="kit-file">⛈️ Storm Response Kit.pdf</div>
+          <div class="kit-file">📊 Lead Tracker.xlsx</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Product 3: Audit -->
+    <div class="product-detail" id="audit">
+      <div class="product-detail-visual" style="background:linear-gradient(135deg,#dcfce7,#bbf7d0);">
+        <div class="big-icon">📋</div>
+        <div class="kit-name">Home Services Ad Audit Checklist</div>
+        <div class="kit-files">
+          <div class="kit-file">✅ Google Ads Audit (47-pt).pdf</div>
+          <div class="kit-file">✅ Facebook Diagnostic.pdf</div>
+          <div class="kit-file">🖥️ Landing Page Checklist.pdf</div>
+          <div class="kit-file">💰 Budget Calculator.xlsx</div>
+          <div class="kit-file">📋 Action Plan Template.docx</div>
+        </div>
+      </div>
+      <div class="product-detail-info">
+        <div class="trade-tags">
+          <span class="trade-tag">HVAC</span>
+          <span class="trade-tag">Roofing</span>
+          <span class="trade-tag">Plumbing</span>
+          <span class="trade-tag">Electrical</span>
+        </div>
+        <h2>Home Services Ad Audit Checklist</h2>
+        <p>If you're already running ads but not getting the results you expected, this is your fix. Our 47-point audit systematically finds where your ad budget is leaking — and gives you a step-by-step plan to fix it.</p>
+        <div class="price-block">
+          <span class="price">$27</span>
+          <span class="price-orig">$97</span>
+          <span class="savings-badge">Save $70</span>
+        </div>
+        <p style="font-size:.92rem;margin-bottom:.5rem;">Stop burning money on ads that don't convert. Contractors who complete this audit find an average of $400–$900/month in recoverable ad spend.</p>
+        <div class="includes-title">What's Included:</div>
+        <ul class="detail-includes">
+          <li><span class="check">✓</span> 47-point Google Ads audit checklist — covers keywords, match types, ad copy, quality scores, conversion tracking, and more</li>
+          <li><span class="check">✓</span> Facebook Ads diagnostic worksheet — identifies audience, creative, and targeting issues killing your results</li>
+          <li><span class="check">✓</span> Landing page conversion checklist — 22 elements your page must have to turn clicks into calls</li>
+          <li><span class="check">✓</span> Budget optimization calculator — find the right spend level and allocation across channels</li>
+          <li><span class="check">✓</span> Quick-fix action plan template — prioritized 90-day improvement roadmap for your campaigns</li>
+          <li><span class="check">✓</span> Competitor analysis worksheet — uncover what your top competitors are doing in their ads</li>
+          <li><span class="check">✓</span> BONUS: "Rescue Your Ads" video walkthrough — 45-minute step-by-step implementation guide</li>
+        </ul>
+        <div class="product-cta-row">
+          <a href="contact.html" class="btn btn-primary btn-lg" onclick="handleBuy(event, 'Home Services Ad Audit Checklist', '$27')">Buy Now — $27 →</a>
+          <span class="guarantee-micro">🛡️ 30-day money-back guarantee</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== TESTIMONIALS ===== -->
+<section class="section section-alt">
+  <div class="container">
+    <div class="text-center">
+      <span class="section-label">Customer Reviews</span>
+      <h2 class="section-title">Contractors Are Getting Results</h2>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"I've been doing HVAC for 18 years and always struggled with marketing. This kit made it so simple. The email sequences alone brought back 3 old customers who hadn't called in years. Definitely worth 10x the price."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#1a4da0;">DP</div>
+          <div class="author-info">
+            <strong>Dave P.</strong>
+            <span>HVAC Owner — Nashville, TN</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The storm response kit in the Roofing Bundle is worth the purchase price alone. We had a large hail event, launched the kit in 3 hours, and booked 22 inspections that week. Nothing short of incredible."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#ea6c08;">BM</div>
+          <div class="author-info">
+            <strong>Brian M.</strong>
+            <span>Roofing Company Owner — Oklahoma City, OK</span>
+          </div>
+        </div>
+      </div>
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <p class="testimonial-text">"The Ad Audit found that I was running ads to the wrong zip codes — I had no idea. Fixed it in an afternoon. My cost-per-lead dropped by 60% the next month. This $27 checklist saved me thousands."</p>
+        <div class="testimonial-author">
+          <div class="author-avatar" style="background:#7c3aed;">TL</div>
+          <div class="author-info">
+            <strong>Tony L.</strong>
+            <span>Plumbing Contractor — Tampa, FL</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="section">
+  <div class="container" style="max-width:740px;">
+    <div class="text-center">
+      <span class="section-label blue">FAQ</span>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-q">How do I receive the toolkit after purchasing? <span class="arrow">▼</span></button>
+        <div class="faq-a">After completing your purchase, you'll receive an email with a download link within minutes. All files are delivered digitally — no physical products are shipped. You can download and access them immediately.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do I need marketing experience to use these? <span class="arrow">▼</span></button>
+        <div class="faq-a">No marketing experience needed. Every toolkit includes step-by-step instructions written in plain language for contractors, not marketers. If you can follow a recipe, you can follow our guides.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Do these work for my specific trade? <span class="arrow">▼</span></button>
+        <div class="faq-a">The HVAC and Roofing kits are specifically built for those trades. The Ad Audit Checklist works for any home service trade — HVAC, plumbing, electrical, roofing, pest control, landscaping, and more.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">How long until I start seeing results? <span class="arrow">▼</span></button>
+        <div class="faq-a">Most contractors get their first campaigns live within 24–48 hours of downloading. We've seen contractors book new jobs within their first week. Typical results compound over 30–90 days as your campaigns optimize.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">What if it doesn't work for me? <span class="arrow">▼</span></button>
+        <div class="faq-a">We offer a 30-day, no-questions-asked money-back guarantee. If you implement the strategies and don't see improvement in your marketing results, email us at support@homeservicemarketer.com for a full refund.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q">Can I use these for multiple locations or employees? <span class="arrow">▼</span></button>
+        <div class="faq-a">Yes! Your purchase grants you a license to use the toolkit for one business entity. You can use it across multiple locations under the same company and share it with your team members.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GUARANTEE ===== -->
+<section class="guarantee-section section-alt">
+  <div class="container">
+    <div class="guarantee-inner">
+      <div class="guarantee-badge">
+        <strong>30-Day<br>Money<br>Back</strong>
+        <span>Guarantee</span>
+      </div>
+      <div class="guarantee-text">
+        <h3>Zero Risk. 100% Guaranteed.</h3>
+        <p>Every toolkit comes with our iron-clad 30-day money-back guarantee. If you download it, put in the work, and don't see measurable improvement in your marketing results, we'll refund you completely — no forms, no hoops, no hard feelings.</p>
+        <a href="#hvac" class="btn btn-primary mt-2">Get Started Risk-Free →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EMAIL CAPTURE ===== -->
+<section class="email-capture">
+  <div class="container">
+    <div class="email-capture-inner">
+      <div>
+        <span class="section-label" style="background:rgba(251,191,36,.2);color:#fbbf24;">Free Resource</span>
+        <h2>Not Ready to Buy? <span>Grab This Free First.</span></h2>
+        <p>Get our free 25-point Local Marketing Checklist and see exactly what's missing from your marketing — before you spend a dime.</p>
+        <ul class="email-perks">
+          <li>25 steps to dominate your local area</li>
+          <li>Find the exact gaps in your current marketing</li>
+          <li>Actionable and contractor-specific</li>
+          <li>Takes 20 minutes to complete</li>
+        </ul>
+      </div>
+      <form class="email-form" id="emailCaptureForm" novalidate>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="John" required />
+          </div>
+          <div class="form-group">
+            <label for="trade">Your Trade</label>
+            <input type="text" id="trade" name="trade" placeholder="e.g. HVAC, Roofing" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="emailCapture">Email Address</label>
+          <input type="email" id="emailCapture" name="email" placeholder="john@yourcompany.com" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Send Me the Free Checklist →</button>
+        <p class="form-note">🔒 Free. No spam. Unsubscribe anytime.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <a href="index.html" class="logo" style="color:white;">
+          <div class="logo-icon">🏠</div>
+          HomeService<span>Marketer</span>
+        </a>
+        <p style="margin-top:1rem;">DIY marketing toolkits built for HVAC, plumbing, electrical, and roofing contractors who want more leads without agency fees.</p>
+      </div>
+      <div>
+        <h4>Products</h4>
+        <ul>
+          <li><a href="#hvac">HVAC Marketing Kit</a></li>
+          <li><a href="#roofing">Roofing Lead Machine</a></li>
+          <li><a href="#audit">Ad Audit Checklist</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="index.html#free-guide">Free Resources</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Support</h4>
+        <ul>
+          <li><a href="contact.html">Help Center</a></li>
+          <li><a href="contact.html">Refund Policy</a></li>
+          <li><a href="contact.html">Privacy Policy</a></li>
+          <li><a href="contact.html">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2024 HomeServiceMarketer.com. All rights reserved.</span>
+      <span>Built for contractors who want to grow 🔧</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const answer = btn.nextElementSibling;
+      const isOpen = answer.classList.contains('open');
+      // Close all
+      document.querySelectorAll('.faq-a.open').forEach(a => a.classList.remove('open'));
+      document.querySelectorAll('.faq-q.open').forEach(q => q.classList.remove('open'));
+      if (!isOpen) {
+        answer.classList.add('open');
+        btn.classList.add('open');
+      }
+    });
+  });
+
+  // Buy now handler (placeholder — connect to your payment processor)
+  function handleBuy(e, productName, price) {
+    e.preventDefault();
+    showToast(`Redirecting to checkout for ${productName} (${price})…`);
+    // Replace with your actual checkout URL, e.g. Stripe, Gumroad, ThriveCart
+    // window.location.href = 'https://checkout.yourpaymentprocessor.com/...'
+  }
+
+  function showToast(message) {
+    let toast = document.getElementById('toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.id = 'toast';
+      toast.className = 'toast';
+      document.body.appendChild(toast);
+    }
+    toast.textContent = message;
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4000);
+  }
+</script>
+</body>
+</html>
