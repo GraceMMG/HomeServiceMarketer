@@ -1,0 +1,2616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HVAC Marketing Starter Kit — HomeProMarketer.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   VARIABLES & RESET
+============================================================ */
+:root {
+  --navy:        #1a2e4a;
+  --navy-mid:    #243d61;
+  --navy-light:  #2d5087;
+  --orange:      #f97316;
+  --orange-dark: #ea6b0a;
+  --orange-light:#fff7ed;
+  --gray-bg:     #f8f9fa;
+  --gray-100:    #f1f3f5;
+  --gray-200:    #e9ecef;
+  --gray-300:    #dee2e6;
+  --gray-400:    #adb5bd;
+  --gray-600:    #6c757d;
+  --gray-700:    #495057;
+  --gray-800:    #343a40;
+  --white:       #ffffff;
+  --text:        #1e2a3a;
+  --page-width:  8.5in;
+  --page-height: 11in;
+  --margin-h:    0.75in;
+  --margin-v:    0.7in;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 11pt; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--text);
+  background: #d0d5dc;
+  line-height: 1.65;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ============================================================
+   PAGE SHELL
+============================================================ */
+.page {
+  width: var(--page-width);
+  min-height: 0;
+  background: var(--white);
+  margin: 0.4in auto;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15), 0 1px 4px rgba(0,0,0,0.1);
+}
+
+.page-content {
+  padding: var(--margin-v) var(--margin-h);
+  padding-bottom: 0.9in; /* room for footer */
+  min-height: 0;
+}
+
+/* ============================================================
+   RUNNING FOOTER (all non-cover pages)
+============================================================ */
+.page-footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 0.55in;
+  padding: 0 var(--margin-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 2px solid var(--navy);
+}
+
+.footer-brand {
+  font-size: 8pt;
+  font-weight: 700;
+  color: var(--navy);
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.footer-center {
+  font-size: 8pt;
+  color: var(--gray-400);
+  font-style: italic;
+}
+
+.footer-page {
+  font-size: 8pt;
+  font-weight: 600;
+  color: var(--orange);
+}
+
+/* ============================================================
+   COVER PAGE
+============================================================ */
+.cover {
+  background: var(--navy);
+  min-height: var(--page-height);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.cover-top-bar {
+  height: 8px;
+  background: linear-gradient(90deg, var(--orange) 0%, #fbbf24 100%);
+  flex-shrink: 0;
+}
+
+.cover-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0.6in 0.8in 0.5in;
+  position: relative;
+  z-index: 2;
+}
+
+/* decorative circles */
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  z-index: 1;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 350px; height: 350px;
+  border-radius: 50%;
+  background: rgba(249,115,22,0.07);
+  z-index: 1;
+}
+
+.cover-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.7in;
+}
+
+.cover-logo-mark {
+  width: 40px; height: 40px;
+  background: var(--orange);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.cover-logo-mark svg {
+  width: 22px; height: 22px;
+  fill: white;
+}
+
+.cover-logo-name {
+  font-size: 14pt;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.01em;
+}
+
+.cover-logo-name span { color: var(--orange); }
+
+.cover-eyebrow {
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.cover-title {
+  font-size: 48pt;
+  font-weight: 900;
+  color: white;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.cover-title em {
+  color: var(--orange);
+  font-style: normal;
+}
+
+.cover-subtitle {
+  font-size: 13pt;
+  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 5.5in;
+  margin-bottom: 0.45in;
+}
+
+.cover-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--orange);
+  border-radius: 2px;
+  margin-bottom: 0.4in;
+}
+
+.cover-includes-label {
+  font-size: 8pt;
+  font-weight: 800;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.cover-includes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: auto;
+}
+
+.cover-include-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.85);
+  font-size: 10pt;
+  font-weight: 500;
+}
+
+.cover-include-num {
+  width: 24px; height: 24px;
+  min-width: 24px;
+  background: var(--orange);
+  color: white;
+  border-radius: 50%;
+  font-size: 8pt;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.cover-bottom {
+  margin-top: 0.5in;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cover-bottom-text {
+  font-size: 8.5pt;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.5;
+}
+
+.cover-value-badge {
+  background: var(--orange);
+  color: white;
+  font-size: 12pt;
+  font-weight: 900;
+  padding: 10px 22px;
+  border-radius: 6px;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   TABLE OF CONTENTS
+============================================================ */
+.toc-title {
+  font-size: 28pt;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.toc-subtitle {
+  font-size: 10pt;
+  color: var(--gray-600);
+  margin-bottom: 32px;
+}
+
+.toc-intro {
+  background: var(--gray-bg);
+  border-left: 4px solid var(--orange);
+  padding: 14px 18px;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 28px;
+  font-size: 10pt;
+  color: var(--gray-700);
+  line-height: 1.6;
+}
+
+.toc-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: white;
+  gap: 16px;
+}
+
+.toc-num {
+  width: 36px; height: 36px;
+  min-width: 36px;
+  background: var(--navy);
+  color: white;
+  border-radius: 50%;
+  font-size: 11pt;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.toc-info { flex: 1; }
+
+.toc-item-title {
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.toc-item-desc {
+  font-size: 8.5pt;
+  color: var(--gray-600);
+}
+
+.toc-dots {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--gray-300) 0, var(--gray-300) 4px, transparent 4px, transparent 8px);
+  margin: 0 12px;
+  min-width: 20px;
+}
+
+.toc-pg {
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--orange);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   SECTION HEADER (used at top of each section page)
+============================================================ */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange-light);
+  border: 1px solid #fed7aa;
+  color: var(--orange-dark);
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-size: 24pt;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  padding-left: 16px;
+  border-left: 5px solid var(--orange);
+  margin-bottom: 6px;
+}
+
+.section-heading-sub {
+  font-size: 10pt;
+  color: var(--gray-600);
+  padding-left: 21px;
+  margin-bottom: 24px;
+}
+
+.section-divider {
+  height: 1px;
+  background: var(--gray-200);
+  margin: 20px 0;
+}
+
+/* ============================================================
+   CONTENT HEADINGS
+============================================================ */
+h2.content-h2 {
+  font-size: 14pt;
+  font-weight: 800;
+  color: var(--navy);
+  margin-top: 26px;
+  margin-bottom: 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--orange);
+  line-height: 1.25;
+}
+
+h3.content-h3 {
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--navy-mid);
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+p.body-text {
+  font-size: 10.5pt;
+  line-height: 1.7;
+  color: var(--gray-800);
+  margin-bottom: 10px;
+}
+
+.italic-note {
+  font-size: 9.5pt;
+  color: var(--gray-600);
+  font-style: italic;
+  background: var(--gray-bg);
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+/* ============================================================
+   AD TEMPLATE BOX
+============================================================ */
+.ad-template {
+  border: 2px solid var(--orange);
+  border-radius: 8px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.ad-template-header {
+  background: var(--navy);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ad-template-num {
+  width: 26px; height: 26px;
+  background: var(--orange);
+  color: white;
+  border-radius: 50%;
+  font-size: 9pt;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.ad-template-title {
+  font-size: 11pt;
+  font-weight: 700;
+  color: white;
+  flex: 1;
+}
+
+.ad-template-url {
+  font-size: 8pt;
+  background: rgba(249,115,22,0.2);
+  color: #fb923c;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+}
+
+.ad-template-body {
+  padding: 14px 16px;
+}
+
+.ad-best-for {
+  font-size: 8.5pt;
+  color: var(--gray-600);
+  font-style: italic;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  background: var(--gray-bg);
+  border-radius: 4px;
+}
+
+.ad-field-label {
+  font-size: 7.5pt;
+  font-weight: 800;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+
+.headline-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-bottom: 4px;
+}
+
+.headline-pill {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  color: #1e40af;
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-size: 8pt;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+}
+
+.desc-box {
+  background: var(--gray-bg);
+  border: 1px solid var(--gray-200);
+  border-radius: 5px;
+  padding: 8px 12px;
+  font-size: 9pt;
+  color: var(--gray-800);
+  font-style: italic;
+  line-height: 1.55;
+  margin-bottom: 6px;
+}
+
+/* ============================================================
+   INFO / CALLOUT BOXES
+============================================================ */
+.info-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 14px 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.info-box-title {
+  font-size: 9pt;
+  font-weight: 800;
+  color: #1e40af;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.orange-box {
+  background: var(--orange-light);
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 14px 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.orange-box-title {
+  font-size: 9pt;
+  font-weight: 800;
+  color: var(--orange-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.green-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.green-box-title {
+  font-size: 9pt;
+  font-weight: 800;
+  color: #166534;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+/* ============================================================
+   SOCIAL CALENDAR ENTRIES
+============================================================ */
+.week-label {
+  background: var(--navy);
+  color: white;
+  font-size: 9pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 8px 16px;
+  border-radius: 6px 6px 0 0;
+  margin-top: 18px;
+}
+
+.day-entry {
+  border: 1px solid var(--gray-200);
+  border-top: none;
+  padding: 11px 16px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.day-entry:last-of-type, .day-entry.last {
+  border-radius: 0 0 6px 6px;
+}
+
+.day-entry-alt {
+  background: var(--gray-bg);
+}
+
+.day-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.day-circle {
+  width: 28px; height: 28px; min-width: 28px;
+  background: var(--navy-light);
+  color: white;
+  border-radius: 50%;
+  font-size: 9pt;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.day-circle.orange { background: var(--orange); }
+.day-circle.muted  { background: var(--gray-400); }
+
+.day-title-text {
+  font-size: 10pt;
+  font-weight: 700;
+  color: var(--navy);
+  flex: 1;
+}
+
+.day-platform {
+  font-size: 7pt;
+  font-weight: 600;
+  background: #eff6ff;
+  color: #1e40af;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.day-hook {
+  font-style: italic;
+  font-size: 9.5pt;
+  color: var(--orange-dark);
+  padding: 5px 10px;
+  border-left: 3px solid var(--orange);
+  background: var(--orange-light);
+  border-radius: 0 4px 4px 0;
+  margin-bottom: 6px;
+}
+
+.day-meta {
+  font-size: 8.5pt;
+  color: var(--gray-600);
+  line-height: 1.5;
+}
+
+.day-meta strong { color: var(--gray-800); }
+
+/* ============================================================
+   HASHTAG PILLS
+============================================================ */
+.hashtag-section-label {
+  font-size: 8pt;
+  font-weight: 700;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin: 10px 0 5px;
+}
+
+.hashtag-pill {
+  display: inline-block;
+  background: var(--gray-100);
+  border: 1px solid var(--gray-300);
+  color: var(--navy-light);
+  padding: 3px 9px;
+  border-radius: 12px;
+  font-size: 8pt;
+  font-weight: 600;
+  font-family: 'Courier New', monospace;
+  margin: 2px 2px 2px 0;
+}
+
+/* ============================================================
+   PLATFORM COMPARISON TABLE
+============================================================ */
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9.5pt;
+  margin: 14px 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.compare-table thead tr {
+  background: var(--navy);
+  color: white;
+}
+
+.compare-table th {
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 9pt;
+}
+
+.compare-table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--gray-800);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.compare-table tr:nth-child(even) td {
+  background: var(--gray-bg);
+}
+
+.compare-table td:first-child {
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   FACEBOOK POST TEMPLATE BOX
+============================================================ */
+.post-template {
+  border: 2px solid var(--orange);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 14px 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.post-template-header {
+  background: var(--orange);
+  color: white;
+  padding: 8px 16px;
+  font-size: 9pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.post-template-body {
+  padding: 14px 16px;
+  font-family: 'Courier New', monospace;
+  font-size: 9pt;
+  line-height: 2;
+  color: var(--gray-700);
+  background: var(--gray-bg);
+}
+
+.post-template-row {
+  padding: 3px 0;
+  border-bottom: 1px dashed var(--gray-300);
+}
+
+.post-template-row:last-child { border-bottom: none; }
+
+.post-template-label {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* ============================================================
+   EMAIL TEMPLATE CARDS
+============================================================ */
+.email-card {
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.email-card-header {
+  background: var(--navy);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.email-num {
+  width: 32px; height: 32px;
+  background: var(--orange);
+  color: white;
+  border-radius: 50%;
+  font-size: 10pt;
+  font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.email-card-title {
+  font-size: 11pt;
+  font-weight: 700;
+  color: white;
+  flex: 1;
+}
+
+.email-timing {
+  font-size: 8pt;
+  font-weight: 600;
+  background: rgba(249,115,22,0.25);
+  color: #fb923c;
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.email-meta {
+  background: var(--gray-bg);
+  padding: 8px 18px;
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 8.5pt;
+}
+
+.email-meta-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.email-meta-label {
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.email-meta-val {
+  color: var(--gray-700);
+}
+
+.email-body {
+  padding: 14px 18px;
+  font-size: 9.5pt;
+  line-height: 1.65;
+  color: var(--gray-800);
+}
+
+.email-body p { margin-bottom: 8px; }
+.email-body ul, .email-body ol { padding-left: 18px; margin-bottom: 8px; }
+.email-body li { margin-bottom: 3px; font-size: 9.5pt; }
+.email-body strong { color: var(--navy); font-weight: 700; }
+
+.email-blockquote {
+  border-left: 3px solid var(--orange);
+  padding: 8px 14px;
+  background: var(--orange-light);
+  border-radius: 0 5px 5px 0;
+  font-style: italic;
+  font-size: 9.5pt;
+  color: var(--gray-700);
+  margin: 8px 0;
+}
+
+.email-ps {
+  font-size: 8.5pt;
+  color: var(--gray-600);
+  font-style: italic;
+  margin-top: 6px;
+}
+
+/* ============================================================
+   BENCHMARK TABLE
+============================================================ */
+.benchmark-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9.5pt;
+  margin: 14px 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.benchmark-table thead tr {
+  background: var(--navy);
+  color: white;
+}
+
+.benchmark-table th {
+  padding: 10px 14px;
+  font-size: 9pt;
+  font-weight: 700;
+  text-align: left;
+}
+
+.benchmark-table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.benchmark-table tr:nth-child(even) td { background: var(--gray-bg); }
+
+.rate-high { font-weight: 700; color: #166534; }
+.rate-med  { font-weight: 700; color: #854d0e; }
+
+/* ============================================================
+   CHECKLIST ITEMS
+============================================================ */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 12px;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 10pt;
+  line-height: 1.55;
+  color: var(--gray-800);
+}
+
+.checklist li:last-child { border-bottom: none; }
+
+.check {
+  width: 16px; height: 16px;
+  min-width: 16px;
+  border: 2px solid var(--gray-400);
+  border-radius: 3px;
+  display: block;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.checklist-sub {
+  list-style: none;
+  padding-left: 26px;
+  margin: 4px 0 8px;
+}
+
+.checklist-sub li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  padding: 3px 0;
+  font-size: 9.5pt;
+  color: var(--gray-700);
+  border-bottom: none;
+}
+
+.check-sm {
+  width: 14px; height: 14px;
+  min-width: 14px;
+  border: 1.5px solid var(--gray-300);
+  border-radius: 3px;
+  display: block;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Checklist section grouping */
+.checklist-group {
+  background: var(--gray-bg);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.checklist-group-title {
+  font-size: 10pt;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--orange);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checklist-group-title::before {
+  content: '';
+  width: 10px; height: 10px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   TWO-COLUMN LAYOUT
+============================================================ */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 12px 0;
+}
+
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.col-box {
+  background: var(--gray-bg);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.col-box-title {
+  font-size: 10pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--orange);
+}
+
+/* ============================================================
+   TOOLS TABLE
+============================================================ */
+.tools-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9.5pt;
+  margin: 10px 0;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+.tools-table th {
+  background: var(--navy);
+  color: white;
+  padding: 8px 14px;
+  text-align: left;
+  font-size: 9pt;
+  font-weight: 700;
+}
+
+.tools-table td {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--gray-200);
+  vertical-align: top;
+}
+
+.tools-table tr:nth-child(even) td { background: var(--gray-bg); }
+
+/* ============================================================
+   SEASONAL CALENDAR TABLE
+============================================================ */
+.seasonal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9pt;
+  margin: 12px 0;
+}
+
+.seasonal-table th {
+  background: var(--navy);
+  color: white;
+  padding: 8px 12px;
+  text-align: left;
+  font-weight: 700;
+}
+
+.seasonal-table td {
+  padding: 7px 12px;
+  border-bottom: 1px solid var(--gray-200);
+  vertical-align: top;
+}
+
+.seasonal-table tr:nth-child(even) td { background: var(--gray-bg); }
+
+.seasonal-table td:first-child {
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   PAGE BREAK UTILITIES
+============================================================ */
+.page-break { page-break-before: always; break-before: always; }
+
+ul.standard-list {
+  padding-left: 20px;
+  margin: 8px 0 12px;
+}
+
+ul.standard-list li {
+  font-size: 10pt;
+  line-height: 1.6;
+  margin-bottom: 4px;
+  color: var(--gray-800);
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  font-size: 9pt;
+  background: var(--gray-100);
+  color: var(--navy);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--gray-200);
+}
+
+strong { font-weight: 700; color: var(--navy); }
+em { font-style: italic; }
+
+/* ============================================================
+   PRINT STYLES
+============================================================ */
+@media print {
+
+  @page {
+    size: 8.5in 11in;
+    margin: 0;
+  }
+
+  html {
+    font-size: 9.5pt;
+  }
+
+  body {
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .doc-wrapper {
+    padding: 0.45in 0.55in;
+  }
+
+  /* Major section breaks */
+  .section-break {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* Remove screen-only page shell */
+  .page, .page-content {
+    min-height: 0 !important;
+    margin: 0;
+    box-shadow: none;
+    overflow: visible;
+  }
+
+  /* ── Headings never orphaned from content below ── */
+  h2.content-h2,
+  h3.content-h3,
+  .section-heading,
+  .section-badge,
+  .week-label,
+  .checklist-group-title,
+  .col-box-title,
+  .ad-field-label,
+  .toc-title {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* ── Prevent breaks inside every content block ── */
+  .ad-template,
+  .day-entry,
+  .email-card,
+  .col-box,
+  .checklist-group,
+  .info-box,
+  .orange-box,
+  .green-box,
+  .post-template,
+  .compare-table,
+  .benchmark-table,
+  .tools-table,
+  .seasonal-table,
+  .toc-item,
+  .toc-intro,
+  .two-col,
+  .three-col,
+  .italic-note,
+  .email-blockquote,
+  .desc-box {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  tr { break-inside: avoid; page-break-inside: avoid; }
+  li { break-inside: avoid; page-break-inside: avoid; }
+  p  { orphans: 3; widows: 3; }
+
+  /* ── Compress ad templates ── */
+  .ad-template           { margin-bottom: 12px; }
+  .ad-template-header    { padding: 7px 12px; }
+  .ad-template-body      { padding: 10px 12px; }
+  .ad-best-for           { font-size: 7.5pt; padding: 4px 8px; margin-bottom: 7px; }
+  .ad-field-label        { margin-top: 7px; margin-bottom: 4px; font-size: 7pt; }
+  .headline-pill         { font-size: 7pt; padding: 2px 7px; }
+  .desc-box              { font-size: 8pt; padding: 5px 9px; margin-bottom: 4px; line-height: 1.45; }
+
+  /* ── Compress social calendar ── */
+  .week-label            { padding: 6px 12px; font-size: 8pt; margin-top: 12px; }
+  .day-entry             { padding: 7px 12px; }
+  .day-hook              { font-size: 8pt; padding: 4px 8px; margin-bottom: 4px; line-height: 1.4; }
+  .day-meta              { font-size: 7.5pt; line-height: 1.4; }
+  .day-circle            { width: 22px; height: 22px; min-width: 22px; font-size: 7.5pt; }
+
+  /* ── Compress email cards ── */
+  .email-card            { margin-bottom: 12px; }
+  .email-card-header     { padding: 8px 14px; }
+  .email-body            { padding: 10px 14px; font-size: 8.5pt; line-height: 1.55; }
+  .email-body p          { margin-bottom: 5px; }
+  .email-meta            { padding: 6px 14px; font-size: 7.5pt; }
+  .email-blockquote      { padding: 5px 10px; font-size: 8pt; margin: 6px 0; }
+  .email-ps              { font-size: 7.5pt; }
+
+  /* ── Compress checklist ── */
+  .checklist-group       { padding: 10px 14px; margin-bottom: 10px; }
+  .checklist li          { font-size: 8.5pt; padding: 3px 0; line-height: 1.45; }
+  .checklist-sub li      { font-size: 8pt; }
+
+  /* ── Compress info/callout boxes ── */
+  .info-box,
+  .orange-box,
+  .green-box             { padding: 10px 14px; margin: 10px 0; }
+  .info-box-title,
+  .orange-box-title,
+  .green-box-title       { font-size: 8pt; margin-bottom: 6px; }
+
+  /* ── Compress tables ── */
+  .compare-table td, .compare-table th,
+  .benchmark-table td, .benchmark-table th,
+  .tools-table td, .tools-table th { padding: 6px 10px; font-size: 8pt; }
+  .seasonal-table td, .seasonal-table th { padding: 5px 9px; font-size: 7.5pt; }
+
+  /* ── Compress TOC ── */
+  .toc-title             { font-size: 22pt; margin-bottom: 4px; }
+  .toc-subtitle          { font-size: 8.5pt; margin-bottom: 18px; }
+  .toc-intro             { padding: 10px 14px; margin-bottom: 18px; font-size: 9pt; }
+  .toc-item              { padding: 11px 16px; margin-bottom: 7px; }
+  .toc-item-title        { font-size: 10pt; }
+  .toc-item-desc         { font-size: 8pt; }
+
+  /* ── Column layouts ── */
+  .two-col               { gap: 12px; margin: 8px 0; }
+  .three-col             { gap: 10px; margin: 8px 0; }
+  .col-box               { padding: 10px 12px; }
+  .col-box-title         { font-size: 9pt; margin-bottom: 6px; }
+
+  /* ── Section headings ── */
+  .section-heading       { font-size: 18pt; margin-bottom: 4px; }
+  .section-heading-sub   { font-size: 8.5pt; margin-bottom: 14px; }
+  .section-badge         { margin-bottom: 8px; font-size: 7.5pt; }
+  .section-divider       { margin: 14px 0; }
+
+  h2.content-h2          { font-size: 11pt; margin-top: 16px; margin-bottom: 6px; }
+  h3.content-h3          { font-size: 9.5pt; margin-top: 11px; margin-bottom: 5px; }
+  p.body-text            { font-size: 9pt; line-height: 1.55; margin-bottom: 7px; }
+
+  /* ── Cover ── */
+  .cover-title           { font-size: 36pt; }
+  .cover-subtitle        { font-size: 10pt; }
+  .cover-logo            { margin-bottom: 0.4in; }
+
+  /* ── Post templates ── */
+  .post-template-body    { font-size: 8.5pt; line-height: 1.7; }
+  .post-template-header  { padding: 6px 14px; font-size: 8pt; }
+
+  /* ── Explicit page-break utility ── */
+  .page-break { page-break-before: always; break-before: page; }
+
+}
+
+</style>
+</head>
+<body>
+<div class="doc-wrapper">
+
+
+<!-- ============================================================
+     PAGE 1: COVER
+============================================================ -->
+  <div class="cover">
+    <div class="cover-top-bar"></div>
+    <div class="cover-body">
+
+      <div class="cover-logo">
+        <div class="cover-logo-mark">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M3 12a9 9 0 1018 0 9 9 0 00-18 0zm10-5v4.586l2.707 2.707-1.414 1.414L11 13.414V7h2z"/>
+          </svg>
+        </div>
+        <div class="cover-logo-name">HomeProMarketer<span>.com</span></div>
+      </div>
+
+      <div class="cover-eyebrow">Done-For-You Marketing Resource</div>
+
+      <div class="cover-title">
+        HVAC<br>Marketing<br><em>Starter Kit</em>
+      </div>
+
+      <div class="cover-subtitle">
+        Five ready-to-deploy marketing assets built specifically for HVAC business owners. No marketing experience required — just copy, customize, and launch.
+      </div>
+
+      <div class="cover-divider"></div>
+
+      <div class="cover-includes-label">What's included in this kit</div>
+
+      <div class="cover-includes-grid">
+        <div class="cover-include-item">
+          <div class="cover-include-num">1</div>
+          Google Ads Copy Templates
+        </div>
+        <div class="cover-include-item">
+          <div class="cover-include-num">2</div>
+          30-Day Social Media Calendar
+        </div>
+        <div class="cover-include-item">
+          <div class="cover-include-num">3</div>
+          Facebook &amp; Instagram Guide
+        </div>
+        <div class="cover-include-item">
+          <div class="cover-include-num">4</div>
+          5-Email Follow-Up Sequence
+        </div>
+        <div class="cover-include-item">
+          <div class="cover-include-num">5</div>
+          Local SEO Checklist
+        </div>
+        <div class="cover-include-item">
+          <div class="cover-include-num">+</div>
+          Appendix: Tools &amp; Seasonal Calendar
+        </div>
+      </div>
+
+      <div class="cover-bottom">
+        <div class="cover-bottom-text">
+          Prepared by HomeProMarketer.com<br>
+          Your All-in-One Home Service Marketing Platform
+        </div>
+        <div class="cover-value-badge">$47 Value</div>
+      </div>
+
+    </div>
+  </div>
+
+
+<!-- ============================================================
+     PAGE 2: TABLE OF CONTENTS
+============================================================ -->
+
+    <div class="toc-title section-break">Table of Contents</div>
+    <div class="toc-subtitle">Everything in this kit is self-contained — implement in any order based on your most pressing needs.</div>
+
+    <div class="toc-intro">
+      This starter kit contains five ready-to-deploy marketing assets. No marketing experience required. Every template, post idea, and checklist item includes specific instructions so you can take action today.
+    </div>
+
+    <div class="toc-item">
+      <div class="toc-num">1</div>
+      <div class="toc-info">
+        <div class="toc-item-title">Google Ads Copy Templates</div>
+        <div class="toc-item-desc">5 complete ad sets with headlines, descriptions &amp; pro targeting tips</div>
+      </div>
+      <div class="toc-dots"></div>
+      <div class="toc-pg">Section 1</div>
+    </div>
+
+    <div class="toc-item">
+      <div class="toc-num">2</div>
+      <div class="toc-info">
+        <div class="toc-item-title">30-Day Social Media Content Calendar</div>
+        <div class="toc-item-desc">Daily posts with hooks, content guides, CTAs &amp; full hashtag bank</div>
+      </div>
+      <div class="toc-dots"></div>
+      <div class="toc-pg">Section 2</div>
+    </div>
+
+    <div class="toc-item">
+      <div class="toc-num">3</div>
+      <div class="toc-info">
+        <div class="toc-item-title">What to Post — Facebook &amp; Instagram Guide</div>
+        <div class="toc-item-desc">Content mix, post anatomy template, Reel ideas, Story strategy &amp; bio formula</div>
+      </div>
+      <div class="toc-dots"></div>
+      <div class="toc-pg">Section 3</div>
+    </div>
+
+    <div class="toc-item">
+      <div class="toc-num">4</div>
+      <div class="toc-info">
+        <div class="toc-item-title">5-Email Follow-Up Sequence for New Leads</div>
+        <div class="toc-item-desc">Complete copy-paste email series: subject lines, preview text &amp; full body</div>
+      </div>
+      <div class="toc-dots"></div>
+      <div class="toc-pg">Section 4</div>
+    </div>
+
+    <div class="toc-item">
+      <div class="toc-num">5</div>
+      <div class="toc-info">
+        <div class="toc-item-title">Local SEO Checklist for HVAC Companies</div>
+        <div class="toc-item-desc">Google Business Profile, on-page SEO, citations, link building &amp; maintenance</div>
+      </div>
+      <div class="toc-dots"></div>
+      <div class="toc-pg">Section 5</div>
+    </div>
+
+    <div class="toc-item" style="border-color: var(--gray-100); background: var(--gray-bg);">
+      <div class="toc-num" style="background: var(--gray-400);">+</div>
+      <div class="toc-info">
+        <div class="toc-item-title">Appendix: Tools, Resources &amp; Seasonal Calendar</div>
+        <div class="toc-item-desc">Recommended tools by category and a 12-month HVAC marketing calendar</div>
+      </div>
+      <div class="toc-dots"></div>
+      <div class="toc-pg" style="color: var(--gray-400);">Appendix</div>
+    </div>
+
+    <div class="three-col" style="margin-top: 28px;">
+      <div class="col-box">
+        <div class="col-box-title">How to Use This Kit</div>
+        <p style="font-size: 9pt; color: var(--gray-700);">Each section is self-contained. Start wherever your business needs the most help right now.</p>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">Customize Everything</div>
+        <p style="font-size: 9pt; color: var(--gray-700);">Replace all <code>[bracketed text]</code> with your specific company details before using.</p>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">Need More Help?</div>
+        <p style="font-size: 9pt; color: var(--gray-700);">Visit <strong>HomeProMarketer.com</strong> for done-for-you campaigns, automation &amp; expert support.</p>
+      </div>
+    </div>
+
+
+
+
+<!-- ============================================================
+     PAGE 3+: SECTION 1 — GOOGLE ADS
+============================================================ -->
+
+    <div class="section-badge section-break">Section 1 of 5</div>
+    <div class="section-heading">Google Ads Copy Templates</div>
+    <div class="section-heading-sub">5 complete ad sets ready to load into your Google Ads account — no copywriting required.</div>
+
+    <div class="orange-box">
+      <div class="orange-box-title">How to Use These Templates</div>
+      <p style="font-size: 10pt; color: var(--gray-800);">Copy the headlines and descriptions directly into your Google Ads account. Each ad set works as a Responsive Search Ad (RSA). Rotate multiple ad sets within the same ad group for A/B testing. Replace <code>[bracketed text]</code> with your specific details.</p>
+    </div>
+
+    <!-- Ad 1 -->
+    <div class="ad-template">
+      <div class="ad-template-header">
+        <div class="ad-template-num">1</div>
+        <div class="ad-template-title">Emergency / Urgent Service</div>
+        <div class="ad-template-url">YourDomain.com/Emergency-HVAC</div>
+      </div>
+      <div class="ad-template-body">
+        <div class="ad-best-for"><strong>Best for:</strong> Targeting "emergency AC repair" and "furnace not working" search terms</div>
+        <div class="ad-field-label">Headlines (pick up to 15 — shown 3 at a time)</div>
+        <div class="headline-pills">
+          <span class="headline-pill">AC Broke Down? We're Open 24/7</span>
+          <span class="headline-pill">Emergency HVAC Repair — Same Day</span>
+          <span class="headline-pill">[City] Heating &amp; Cooling Experts</span>
+          <span class="headline-pill">No Heat? No AC? Call Us Now</span>
+          <span class="headline-pill">Licensed Techs Ready in 60 Min</span>
+          <span class="headline-pill">We Fix It Right the First Time</span>
+        </div>
+        <div class="ad-field-label">Descriptions (pick up to 4 — shown 2 at a time)</div>
+        <div class="desc-box">"Don't sweat it — our certified HVAC technicians are available 24/7 for emergency repairs. Fast response, upfront pricing, no surprises. Call now or book online."</div>
+        <div class="desc-box">"AC or furnace emergency in [City]? We dispatch same-day, every day of the year. Trusted by [X]+ local homeowners. Financing available. Get a free diagnostic today."</div>
+      </div>
+    </div>
+
+    <!-- Ad 2 -->
+    <div class="ad-template">
+      <div class="ad-template-header">
+        <div class="ad-template-num">2</div>
+        <div class="ad-template-title">AC Installation / New System</div>
+        <div class="ad-template-url">YourDomain.com/AC-Installation</div>
+      </div>
+      <div class="ad-template-body">
+        <div class="ad-best-for"><strong>Best for:</strong> Targeting "new AC unit cost," "HVAC installation," "replace air conditioner"</div>
+        <div class="ad-field-label">Headlines</div>
+        <div class="headline-pills">
+          <span class="headline-pill">New AC System Installed Today</span>
+          <span class="headline-pill">Save Up to 30% on Energy Bills</span>
+          <span class="headline-pill">Free In-Home AC Estimate — [City]</span>
+          <span class="headline-pill">Top HVAC Brands at Low Prices</span>
+          <span class="headline-pill">0% Financing on New AC Units</span>
+          <span class="headline-pill">Energy-Efficient Systems in Stock</span>
+        </div>
+        <div class="ad-field-label">Descriptions</div>
+        <div class="desc-box">"Ready for a new, energy-efficient AC system? Our [City] HVAC experts install top brands like Carrier, Trane &amp; Lennox. Get your free estimate today — no pressure, no obligation."</div>
+        <div class="desc-box">"Stop paying to cool a broken system. Upgrade to a high-efficiency unit and cut your energy bills. We handle everything: removal, install, permits &amp; cleanup. Financing available."</div>
+      </div>
+    </div>
+
+    <!-- Ad 3 -->
+    <div class="ad-template">
+      <div class="ad-template-header">
+        <div class="ad-template-num">3</div>
+        <div class="ad-template-title">Seasonal Tune-Up / Maintenance</div>
+        <div class="ad-template-url">YourDomain.com/HVAC-Tune-Up</div>
+      </div>
+      <div class="ad-template-body">
+        <div class="ad-best-for"><strong>Best for:</strong> "AC tune-up," "furnace inspection," "HVAC maintenance" — great for spring and fall campaigns</div>
+        <div class="ad-field-label">Headlines</div>
+        <div class="headline-pills">
+          <span class="headline-pill">$79 AC Tune-Up — Book This Week</span>
+          <span class="headline-pill">Spring HVAC Checkup Special</span>
+          <span class="headline-pill">Prevent Costly Breakdowns</span>
+          <span class="headline-pill">Annual Maintenance Plans Available</span>
+          <span class="headline-pill">Certified HVAC Tech at Your Door</span>
+          <span class="headline-pill">Keep Your System Running Right</span>
+        </div>
+        <div class="ad-field-label">Descriptions</div>
+        <div class="desc-box">"Don't wait for your AC to fail on the hottest day of the year. Schedule your spring tune-up for just $79. We inspect, clean &amp; test every component. Spots are limited — book today."</div>
+        <div class="desc-box">"A $79 tune-up today can prevent a $2,000+ repair tomorrow. Our [City] HVAC technicians will tune, clean, and inspect your system. Satisfaction guaranteed or it's free."</div>
+      </div>
+    </div>
+
+
+
+
+    <!-- Ad 4 -->
+    <div class="ad-template">
+      <div class="ad-template-header">
+        <div class="ad-template-num">4</div>
+        <div class="ad-template-title">Indoor Air Quality / Air Filtration</div>
+        <div class="ad-template-url">YourDomain.com/Air-Quality</div>
+      </div>
+      <div class="ad-template-body">
+        <div class="ad-best-for"><strong>Best for:</strong> "indoor air quality," "air purifier installation," "whole house air filter"</div>
+        <div class="ad-field-label">Headlines</div>
+        <div class="headline-pills">
+          <span class="headline-pill">Breathe Cleaner Air at Home</span>
+          <span class="headline-pill">Whole-Home Air Purifiers Installed</span>
+          <span class="headline-pill">Remove Allergens, Dust &amp; Mold</span>
+          <span class="headline-pill">IAQ Solutions for [City] Families</span>
+          <span class="headline-pill">UV Air Purifiers — Ask About Deals</span>
+          <span class="headline-pill">Improve Your Home's Air Today</span>
+        </div>
+        <div class="ad-field-label">Descriptions</div>
+        <div class="desc-box">"Is your family breathing clean air? Our whole-home air quality solutions remove allergens, dust, pet dander, and even viruses. Schedule a free air quality assessment today."</div>
+        <div class="desc-box">"From HEPA filters to UV air purifiers and humidity control — we install complete indoor air quality systems. Ask about our bundle pricing. Serving [City] and surrounding areas."</div>
+      </div>
+    </div>
+
+    <!-- Ad 5 -->
+    <div class="ad-template">
+      <div class="ad-template-header">
+        <div class="ad-template-num">5</div>
+        <div class="ad-template-title">HVAC Maintenance Plans / Service Agreements</div>
+        <div class="ad-template-url">YourDomain.com/Maintenance-Plan</div>
+      </div>
+      <div class="ad-template-body">
+        <div class="ad-best-for"><strong>Best for:</strong> Targeting homeowners looking for ongoing service relationships; great for customer retention campaigns</div>
+        <div class="ad-field-label">Headlines</div>
+        <div class="headline-pills">
+          <span class="headline-pill">HVAC Maintenance Plan — $[X]/Mo</span>
+          <span class="headline-pill">Priority Service, Year-Round</span>
+          <span class="headline-pill">Join [X]+ Homeowners Who Trust Us</span>
+          <span class="headline-pill">Skip the Emergency Repair Bills</span>
+          <span class="headline-pill">Annual HVAC Plans Starting at $[X]</span>
+          <span class="headline-pill">Members Get 15% Off All Repairs</span>
+        </div>
+        <div class="ad-field-label">Descriptions</div>
+        <div class="desc-box">"Our HVAC maintenance plan gives you two tune-ups per year, priority scheduling, and 15% off all repairs. Starting at just $[X]/month. Cancel anytime. Enroll in 2 minutes online."</div>
+        <div class="desc-box">"Stop reacting to breakdowns and start preventing them. Our service agreement members get twice-yearly inspections, priority emergency dispatch, and exclusive repair discounts. Sign up today."</div>
+      </div>
+    </div>
+
+    <h2 class="content-h2">Google Ads Pro Tips</h2>
+
+    <div class="two-col">
+      <div class="info-box">
+        <div class="info-box-title">Targeting Recommendations</div>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>Set a <strong>25–40 mile radius</strong> around your service area</li>
+          <li>Use <strong>Phrase match</strong> and <strong>Exact match</strong> — avoid broad match until you have conversion data</li>
+          <li>Add negative keywords: "DIY," "YouTube," "how to," "used," "free," "careers," "jobs"</li>
+          <li>Schedule ads during business hours <strong>plus 2 hours before and after</strong></li>
+          <li>Bid adjustments: <strong>+20% mobile</strong>, +15% for 7–9 AM and 5–8 PM</li>
+        </ul>
+      </div>
+      <div class="orange-box">
+        <div class="orange-box-title">Top Keywords to Target</div>
+        <div style="margin-top: 6px;">
+          <span class="headline-pill" style="background: var(--orange-light); border-color: #fed7aa; color: var(--orange-dark);">[city] HVAC repair</span>
+          <span class="headline-pill" style="background: var(--orange-light); border-color: #fed7aa; color: var(--orange-dark);">AC not cooling</span>
+          <span class="headline-pill" style="background: var(--orange-light); border-color: #fed7aa; color: var(--orange-dark);">furnace repair near me</span>
+          <span class="headline-pill" style="background: var(--orange-light); border-color: #fed7aa; color: var(--orange-dark);">air conditioner installation [city]</span>
+          <span class="headline-pill" style="background: var(--orange-light); border-color: #fed7aa; color: var(--orange-dark);">HVAC tune up</span>
+          <span class="headline-pill" style="background: var(--orange-light); border-color: #fed7aa; color: var(--orange-dark);">emergency AC repair</span>
+          <span class="headline-pill" style="background: var(--orange-light); border-color: #fed7aa; color: var(--orange-dark);">new heating system cost</span>
+          <span class="headline-pill" style="background: var(--orange-light); border-color: #fed7aa; color: var(--orange-dark);">heat pump installation</span>
+          <span class="headline-pill" style="background: var(--orange-light); border-color: #fed7aa; color: var(--orange-dark);">central air installation</span>
+        </div>
+      </div>
+    </div>
+
+
+
+
+<!-- ============================================================
+     SECTION 2 — SOCIAL MEDIA CALENDAR
+============================================================ -->
+
+    <div class="section-badge section-break">Section 2 of 5</div>
+    <div class="section-heading">30-Day Social Media Content Calendar</div>
+    <div class="section-heading-sub">A full month of daily post ideas with proven hooks, content guides, and CTAs.</div>
+
+    <div class="orange-box">
+      <div class="orange-box-title">How to Use This Calendar</div>
+      <p style="font-size: 10pt;">Post times are recommendations based on HVAC audience engagement data. For each post, use the provided hook verbatim — it's written to stop the scroll. Add 3–5 relevant hashtags from the bank at the end of this section.</p>
+    </div>
+
+    <!-- WEEK 1 -->
+    <div class="week-label">Week 1 — Brand Introduction &amp; Trust Building</div>
+
+    <div class="day-entry">
+      <div class="day-header">
+        <div class="day-circle">1</div>
+        <div class="day-title-text">Monday — Introduce Your Business</div>
+        <div class="day-platform">Facebook + Instagram · 9:00 AM · Photo</div>
+      </div>
+      <div class="day-hook">"Meet the team keeping [City] cool (and warm). Here's a little about us..."</div>
+      <div class="day-meta"><strong>Content:</strong> Share your founding story, years in business, customers served, and what makes you different. End: "How long have you been a customer? Drop your year below!" <strong>CTA:</strong> Tag a neighbor who needs HVAC help.</div>
+    </div>
+
+    <div class="day-entry day-entry-alt">
+      <div class="day-header">
+        <div class="day-circle">2</div>
+        <div class="day-title-text">Tuesday — Educational</div>
+        <div class="day-platform">Facebook · 12:00 PM · Text graphic or photo</div>
+      </div>
+      <div class="day-hook">"Your AC filter is probably dirty right now. Here's how to check it in 60 seconds."</div>
+      <div class="day-meta"><strong>Content:</strong> Step-by-step filter check and change instructions. Include change schedule (every 1–3 months). Photo of dirty vs. clean filter is a bonus. <strong>CTA:</strong> "Drop a comment if you just went and checked yours!"</div>
+    </div>
+
+    <div class="day-entry">
+      <div class="day-header">
+        <div class="day-circle orange">3</div>
+        <div class="day-title-text">Wednesday — Promo/Offer</div>
+        <div class="day-platform">Facebook + Instagram · 10:00 AM · Branded graphic</div>
+      </div>
+      <div class="day-hook">"Wednesday special — because your home deserves to breathe easy."</div>
+      <div class="day-meta"><strong>Content:</strong> Promote your tune-up, maintenance plan, or seasonal offer. Include price, what's included, and an expiration date to create urgency. <strong>CTA:</strong> "DM us 'TUNE UP' to get started, or call [phone number]"</div>
+    </div>
+
+    <div class="day-entry day-entry-alt">
+      <div class="day-header">
+        <div class="day-circle">4</div>
+        <div class="day-title-text">Thursday — Social Proof</div>
+        <div class="day-platform">Facebook · 5:00 PM · Screenshot or review graphic</div>
+      </div>
+      <div class="day-hook">"This made our day. Thank you, [Customer First Name]!"</div>
+      <div class="day-meta"><strong>Content:</strong> Share a 5-star review verbatim. Add context: "We replaced [Customer's] entire HVAC system in one day." <strong>CTA:</strong> "Had a great experience? Leave us a review: [Google Review Link]"</div>
+    </div>
+
+    <div class="day-entry">
+      <div class="day-header">
+        <div class="day-circle">5</div>
+        <div class="day-title-text">Friday — Behind the Scenes</div>
+        <div class="day-platform">Instagram + Facebook · 11:00 AM · Photo or short video</div>
+      </div>
+      <div class="day-hook">"Friday field report — this is what we were up to this week."</div>
+      <div class="day-meta"><strong>Content:</strong> Show a job in progress (with permission), a before/after repair, or techs loading up for the day. Humanize your team. <strong>CTA:</strong> "What would you like to see from us next week?"</div>
+    </div>
+
+    <div class="day-entry day-entry-alt">
+      <div class="day-header">
+        <div class="day-circle">6</div>
+        <div class="day-title-text">Saturday — Community</div>
+        <div class="day-platform">Facebook · 10:00 AM · Community post or original</div>
+      </div>
+      <div class="day-hook">"[City], this weekend's forecast is [X°F] — is your AC ready?"</div>
+      <div class="day-meta"><strong>Content:</strong> Reference local weather. Tie it to a timely offer or remind followers to check their system before peak season. <strong>CTA:</strong> "Call us now to get on the schedule before we fill up!"</div>
+    </div>
+
+    <div class="day-entry last" style="background: var(--gray-bg);">
+      <div class="day-header">
+        <div class="day-circle muted">7</div>
+        <div class="day-title-text">Sunday — Rest Day</div>
+        <div class="day-platform" style="background: var(--gray-100); color: var(--gray-600);">No post required</div>
+      </div>
+      <div class="day-meta" style="color: var(--gray-600);">Use this day to respond to all comments and DMs from the week.</div>
+    </div>
+
+
+
+
+    <!-- WEEK 2 -->
+    <div class="week-label" style="margin-top: 0;">Week 2 — Education &amp; Problem-Solving</div>
+
+    <div class="day-entry">
+      <div class="day-header"><div class="day-circle">8</div><div class="day-title-text">Monday — FAQ</div><div class="day-platform">Facebook + Instagram · 9:00 AM</div></div>
+      <div class="day-hook">"The #1 question we get asked every single summer: 'Why is my AC running but not cooling?'"</div>
+      <div class="day-meta"><strong>Content:</strong> Cover: dirty filter, low refrigerant, blocked condenser, thermostat issues. End: "If you've checked all of these, that's when you call us." <strong>CTA:</strong> Link to your service page or booking form.</div>
+    </div>
+
+    <div class="day-entry day-entry-alt">
+      <div class="day-header"><div class="day-circle">9</div><div class="day-title-text">Tuesday — Video or Reel</div><div class="day-platform">Instagram Reels + Facebook · 7:00 AM · 30–60 sec video</div></div>
+      <div class="day-hook">"Watch this before you call for AC repair — it might save you a service call fee."</div>
+      <div class="day-meta"><strong>Content:</strong> 3 things to check first: thermostat setting, circuit breaker, air filter. Fast and friendly. <strong>CTA:</strong> "Follow us for more home tips every week!"</div>
+    </div>
+
+    <div class="day-entry">
+      <div class="day-header"><div class="day-circle orange">10</div><div class="day-title-text">Wednesday — Promo</div><div class="day-platform">Facebook · 12:00 PM · Graphic</div></div>
+      <div class="day-hook">"Heads up — we have [X] tune-up slots left this month."</div>
+      <div class="day-meta"><strong>Content:</strong> Create scarcity. Show how many slots remain. List what's included. Add a testimonial quote if available. <strong>CTA:</strong> "Reply 'BOOK' to reserve your spot"</div>
+    </div>
+
+    <div class="day-entry day-entry-alt">
+      <div class="day-header"><div class="day-circle">11</div><div class="day-title-text">Thursday — Educational Carousel</div><div class="day-platform">Instagram + Facebook · 9:00 AM · Carousel (3–5 slides)</div></div>
+      <div class="day-hook">"5 signs your air conditioner is about to fail (don't ignore #3)"</div>
+      <div class="day-meta"><strong>Content:</strong> 1) Warm air blowing 2) Unusual noises 3) Frequent cycling 4) High humidity indoors 5) Skyrocketing energy bills. Explain each briefly. <strong>CTA:</strong> "Which of these have you noticed? Comment below."</div>
+    </div>
+
+    <div class="day-entry">
+      <div class="day-header"><div class="day-circle">12</div><div class="day-title-text">Friday — Team Spotlight</div><div class="day-platform">Facebook + Instagram · 11:00 AM · Photo</div></div>
+      <div class="day-hook">"Friday Tech Spotlight — Meet [Technician Name]!"</div>
+      <div class="day-meta"><strong>Content:</strong> Name, years of experience, certifications, and a fun personal fact. Build trust by showing real humans. <strong>CTA:</strong> "Next time [Name] is at your home, say hi!"</div>
+    </div>
+
+    <div class="day-entry day-entry-alt">
+      <div class="day-header"><div class="day-circle">13</div><div class="day-title-text">Saturday — Seasonal</div><div class="day-platform">Facebook · 10:00 AM · Graphic or photo</div></div>
+      <div class="day-hook">"[Season] is here — here's your official home comfort checklist."</div>
+      <div class="day-meta"><strong>Content:</strong> Short seasonal prep checklist. Summer: replace filter, clear debris around outdoor unit, check thermostat batteries, schedule tune-up. <strong>CTA:</strong> "Save this post so you don't forget!"</div>
+    </div>
+
+    <!-- WEEK 3 -->
+    <div class="week-label">Week 3 — Authority &amp; Differentiation</div>
+
+    <div class="day-entry">
+      <div class="day-header"><div class="day-circle">15</div><div class="day-title-text">Monday — Why Choose Us</div><div class="day-platform">Facebook + Instagram · 9:00 AM</div></div>
+      <div class="day-hook">"There are [X] HVAC companies in [City]. Here's why our customers keep choosing us."</div>
+      <div class="day-meta"><strong>Content:</strong> List differentiators: response time, warranty, certifications, financing, guarantee, years in business. Use numbers. <strong>CTA:</strong> "What matters most to you when hiring an HVAC company?"</div>
+    </div>
+
+    <div class="day-entry day-entry-alt">
+      <div class="day-header"><div class="day-circle">16</div><div class="day-title-text">Tuesday — Before &amp; After</div><div class="day-platform">Facebook + Instagram · 8:00 AM · Before/after photos</div></div>
+      <div class="day-hook">"This family's AC unit was 22 years old. Here's what we found — and what we replaced it with."</div>
+      <div class="day-meta"><strong>Content:</strong> Tell the story of a real job (get permission). Problem, discovery, recommendation, outcome. Real photos of old and new system. <strong>CTA:</strong> "How old is your system? Drop the year below!"</div>
+    </div>
+
+    <div class="day-entry">
+      <div class="day-header"><div class="day-circle orange">17</div><div class="day-title-text">Wednesday — Transparent Pricing</div><div class="day-platform">Facebook · 12:00 PM · Branded graphic</div></div>
+      <div class="day-hook">"We don't do hidden fees. Here's exactly what you pay for a standard AC tune-up with us."</div>
+      <div class="day-meta"><strong>Content:</strong> Break down pricing transparently. List every step included. Builds trust and disqualifies price-shoppers. <strong>CTA:</strong> "Book online at [website] or call [phone]"</div>
+    </div>
+
+    <div class="day-entry day-entry-alt">
+      <div class="day-header"><div class="day-circle">18</div><div class="day-title-text">Thursday — SEER Ratings Explained</div><div class="day-platform">Instagram + Facebook · 9:00 AM · Infographic or list</div></div>
+      <div class="day-hook">"SEER ratings explained — what the number on your AC unit actually means for your wallet."</div>
+      <div class="day-meta"><strong>Content:</strong> Explain SEER2 ratings in plain English. Compare a 14 SEER vs. 18 SEER unit in estimated annual savings. Naturally leads to upgrade conversations. <strong>CTA:</strong> "Want to know your current unit's rating? Call for a free efficiency check."</div>
+    </div>
+
+    <div class="day-entry">
+      <div class="day-header"><div class="day-circle orange">19</div><div class="day-title-text">Friday — Giveaway Launch</div><div class="day-platform">Facebook + Instagram · 10:00 AM · Contest graphic</div></div>
+      <div class="day-hook">"FREE AC tune-up giveaway — tag a friend to enter!"</div>
+      <div class="day-meta"><strong>Content:</strong> Rules: 1) Like this post 2) Follow our page 3) Tag a friend. Winner announced next Friday. One entry per person. <strong>CTA:</strong> "Winner announced next Friday — good luck!"</div>
+    </div>
+
+    <div class="day-entry last day-entry-alt">
+      <div class="day-header"><div class="day-circle">20</div><div class="day-title-text">Saturday — Community Involvement</div><div class="day-platform">Facebook · 9:00 AM · Photo</div></div>
+      <div class="day-hook">"We're proud to be part of the [City] community — and we show it."</div>
+      <div class="day-meta"><strong>Content:</strong> Share a community story — sponsoring a local team, donating a tune-up to a veteran, participating in a local event. Authenticity matters. <strong>CTA:</strong> "Know someone in need of HVAC help? Send them our way."</div>
+    </div>
+
+
+
+
+    <!-- WEEK 4 -->
+    <div class="week-label" style="margin-top: 0;">Week 4 — Conversion &amp; Urgency</div>
+
+    <div class="day-entry">
+      <div class="day-header"><div class="day-circle">22</div><div class="day-title-text">Monday — Booking Urgency</div><div class="day-platform">Facebook + Instagram · 9:00 AM · Graphic</div></div>
+      <div class="day-hook">"We're booking out [X] weeks — here's how to get on our schedule before it's too late."</div>
+      <div class="day-meta"><strong>Content:</strong> Explain lead time honestly. Offer priority booking for maintenance plan members. Real FOMO without manipulation. <strong>CTA:</strong> "Call now or book at [website] — first come, first served."</div>
+    </div>
+
+    <div class="day-entry day-entry-alt">
+      <div class="day-header"><div class="day-circle">23</div><div class="day-title-text">Tuesday — Refrigerant Education</div><div class="day-platform">Facebook · 12:00 PM · Text post</div></div>
+      <div class="day-hook">"What most HVAC companies won't tell you about AC refrigerant."</div>
+      <div class="day-meta"><strong>Content:</strong> Explain the R-22 phase-out, what refrigerant your customers likely have, repair costs vs. replacement implications. Honest, educational — not salesy. <strong>CTA:</strong> "Drop your AC's age — we'll tell you what refrigerant you likely have."</div>
+    </div>
+
+    <div class="day-entry">
+      <div class="day-header"><div class="day-circle orange">24</div><div class="day-title-text">Wednesday — Review Drive</div><div class="day-platform">Facebook · 11:00 AM · Graphic</div></div>
+      <div class="day-hook">"Our goal this month: 10 new Google reviews. Can you help us get there?"</div>
+      <div class="day-meta"><strong>Content:</strong> Show your current review count. Ask satisfied customers to leave a review. Include the direct Google review link. <strong>CTA:</strong> "It takes 60 seconds and means the world to our small business."</div>
+    </div>
+
+    <div class="day-entry day-entry-alt">
+      <div class="day-header"><div class="day-circle">25</div><div class="day-title-text">Thursday — Repair or Replace?</div><div class="day-platform">Instagram + Facebook · 9:00 AM · Carousel or graphic</div></div>
+      <div class="day-hook">"Repair or replace? Here's the honest answer for each scenario."</div>
+      <div class="day-meta"><strong>Content:</strong> Walk through the decision framework: age of unit, repair cost vs. 50% replacement cost (the "5,000 rule"), efficiency rating, frequency of repairs. <strong>CTA:</strong> "Not sure? We'll give you an honest, no-pressure recommendation."</div>
+    </div>
+
+    <div class="day-entry">
+      <div class="day-header"><div class="day-circle orange">26</div><div class="day-title-text">Friday — Giveaway Announcement</div><div class="day-platform">Facebook + Instagram · 12:00 PM</div></div>
+      <div class="day-hook">"And the winner of our FREE AC tune-up is..."</div>
+      <div class="day-meta"><strong>Content:</strong> Announce the winner from Day 19. Tag them. Thank everyone. Remind followers to check back next month for another giveaway. <strong>CTA:</strong> "Didn't win? Book your tune-up at our special rate: [link]"</div>
+    </div>
+
+    <div class="day-entry day-entry-alt">
+      <div class="day-header"><div class="day-circle">27</div><div class="day-title-text">Saturday — Weekend Offer</div><div class="day-platform">Facebook · 10:00 AM · Graphic</div></div>
+      <div class="day-hook">"This weekend only — $20 off any service call when you mention this post."</div>
+      <div class="day-meta"><strong>Content:</strong> Weekend discount to drive appointments. Terms: valid this weekend only, must mention post when calling, not valid with other offers. <strong>CTA:</strong> "Call [phone] or DM us to book your weekend slot."</div>
+    </div>
+
+    <div class="week-label">Days 29–30: Reflection &amp; Month 2 Planning</div>
+
+    <div class="day-entry">
+      <div class="day-header"><div class="day-circle">29</div><div class="day-title-text">Monday — Month Recap</div><div class="day-platform">Facebook · 9:00 AM</div></div>
+      <div class="day-hook">"One month of [Your Company Name] on social media — here's what we've been up to."</div>
+      <div class="day-meta"><strong>Content:</strong> Recap jobs completed, areas served, specials that went well. Personal and authentic. <strong>CTA:</strong> "What topics would you like us to cover next month?"</div>
+    </div>
+
+    <div class="day-entry last day-entry-alt">
+      <div class="day-header"><div class="day-circle">30</div><div class="day-title-text">Tuesday — Looking Ahead</div><div class="day-platform">Facebook + Instagram · 12:00 PM</div></div>
+      <div class="day-hook">"[Next month] is around the corner — and your HVAC system needs these [X] things checked."</div>
+      <div class="day-meta"><strong>Content:</strong> Transition into next month's seasonal focus. Preview upcoming promotions or content themes. <strong>CTA:</strong> "Follow us so you don't miss next month's deals and tips!"</div>
+    </div>
+
+    <h2 class="content-h2" style="margin-top: 20px;">Hashtag Bank for HVAC Posts</h2>
+
+    <div class="two-col">
+      <div>
+        <div class="hashtag-section-label">Brand / Local</div>
+        <span class="hashtag-pill">#[CityName]HVAC</span>
+        <span class="hashtag-pill">#[CityName]AirConditioning</span>
+        <span class="hashtag-pill">#[CityName]Heating</span>
+        <span class="hashtag-pill">#[CityName]HomeServices</span>
+        <span class="hashtag-pill">#[YourCompanyName]</span>
+
+        <div class="hashtag-section-label">Service-Specific</div>
+        <span class="hashtag-pill">#HVACRepair</span>
+        <span class="hashtag-pill">#ACRepair</span>
+        <span class="hashtag-pill">#FurnaceRepair</span>
+        <span class="hashtag-pill">#HVACInstallation</span>
+        <span class="hashtag-pill">#AirConditioningRepair</span>
+        <span class="hashtag-pill">#HeatingAndCooling</span>
+        <span class="hashtag-pill">#HeatPump</span>
+        <span class="hashtag-pill">#IndoorAirQuality</span>
+      </div>
+      <div>
+        <div class="hashtag-section-label">Seasonal</div>
+        <span class="hashtag-pill">#SummerCooling</span>
+        <span class="hashtag-pill">#StayCool</span>
+        <span class="hashtag-pill">#WinterReady</span>
+        <span class="hashtag-pill">#SpringTuneUp</span>
+        <span class="hashtag-pill">#FallMaintenance</span>
+
+        <div class="hashtag-section-label">Audience / Lifestyle</div>
+        <span class="hashtag-pill">#HomeImprovement</span>
+        <span class="hashtag-pill">#HomeOwnerLife</span>
+        <span class="hashtag-pill">#HVACTips</span>
+        <span class="hashtag-pill">#EnergyEfficiency</span>
+
+        <div class="hashtag-section-label">Engagement Boosters</div>
+        <span class="hashtag-pill">#LocalBusiness</span>
+        <span class="hashtag-pill">#SmallBusiness</span>
+        <span class="hashtag-pill">#SupportLocal</span>
+        <span class="hashtag-pill">#TrustedContractor</span>
+      </div>
+    </div>
+
+
+
+
+<!-- ============================================================
+     SECTION 3 — FACEBOOK & INSTAGRAM GUIDE
+============================================================ -->
+
+    <div class="section-badge section-break">Section 3 of 5</div>
+    <div class="section-heading">What to Post — Facebook &amp; Instagram Guide</div>
+    <div class="section-heading-sub">Platform strategy, content mix ratios, post templates, Reel ideas, and Instagram bio formula.</div>
+
+    <h2 class="content-h2">Platform Overview</h2>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th></th>
+          <th>Facebook</th>
+          <th>Instagram</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Primary Goal</td><td>Lead generation, community trust</td><td>Brand awareness, visual storytelling</td></tr>
+        <tr><td>Best Content</td><td>Long-form tips, reviews, promotions, links</td><td>Reels, before/after photos, team culture</td></tr>
+        <tr><td>Ideal Post Length</td><td>100–300 words</td><td>50–150 words</td></tr>
+        <tr><td>Best Frequency</td><td>4–5x per week</td><td>3–4x per week</td></tr>
+        <tr><td>Best Times</td><td>8–10 AM, 12–1 PM, 5–7 PM</td><td>6–9 AM, 12 PM, 7–9 PM</td></tr>
+        <tr><td>Hashtags</td><td>3–5 max</td><td>10–20 for reach</td></tr>
+      </tbody>
+    </table>
+
+    <h2 class="content-h2">What to Post on Facebook</h2>
+
+    <div class="two-col">
+      <div class="col-box">
+        <div class="col-box-title">1. Educational Posts — 35%</div>
+        <p style="font-size: 9.5pt; color: var(--gray-700); margin-bottom: 6px;">Answer common questions before customers ask them:</p>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>"Why does my AC smell musty?"</li>
+          <li>"Heat pump vs. traditional furnace"</li>
+          <li>"How to read thermostat error codes"</li>
+          <li>"What MERV rating filter should you use?"</li>
+          <li>Seasonal prep guides (spring startup, winter shutdown)</li>
+        </ul>
+        <p class="italic-note">Use numbered lists or short paragraphs. Include one relevant image.</p>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">2. Customer Reviews — 20%</div>
+        <p style="font-size: 9.5pt; color: var(--gray-700); margin-bottom: 6px;">Screenshot 5-star Google or Facebook reviews and post them as images. Always tag the customer if possible and thank them by name.</p>
+        <p class="italic-note">Ask for permission before using a photo. Offer a small incentive for customers who let you feature their review.</p>
+        <div class="col-box-title" style="margin-top: 10px; border-top: none; padding-top: 0;">3. Promotions &amp; Offers — 20%</div>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>Monthly tune-up specials with countdown</li>
+          <li>Referral bonuses ("Refer a friend, both get $25 off")</li>
+          <li>Holiday promotions</li>
+          <li>Maintenance plan enrollment drives</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="two-col">
+      <div class="col-box">
+        <div class="col-box-title">4. Behind-the-Scenes — 15%</div>
+        <p style="font-size: 9.5pt; color: var(--gray-700); margin-bottom: 6px;">People hire people, not companies. Show your team in action.</p>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>"Day in the life" posts</li>
+          <li>New employee introductions</li>
+          <li>Certifications and training milestones</li>
+          <li>Company anniversary posts</li>
+          <li>"We just hit [X] 5-star reviews!" celebrations</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">5. Community &amp; Local — 10%</div>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>Sponsor a local little league team? Post about it.</li>
+          <li>Participating in a neighborhood event? Document it.</li>
+          <li>Weather alerts relevant to home comfort</li>
+        </ul>
+        <p class="italic-note">Ask local questions. "What's your go-to spot to cool off in [City]?" generates comments and signals to the algorithm that your page is active.</p>
+      </div>
+    </div>
+
+    <h2 class="content-h2">Facebook Post Anatomy Template</h2>
+
+    <div class="post-template">
+      <div class="post-template-header">Copy this structure for every Facebook post</div>
+      <div class="post-template-body">
+        <div class="post-template-row"><span class="post-template-label">[HOOK]</span> — Bold opening line that creates curiosity or states a benefit</div>
+        <div class="post-template-row"><span class="post-template-label">[BODY]</span> — 2–4 short paragraphs or a bulleted list. Educate, inform, or offer.</div>
+        <div class="post-template-row"><span class="post-template-label">[SOCIAL PROOF]</span> — Optional: "Our customers love this because..." or a brief quote</div>
+        <div class="post-template-row"><span class="post-template-label">[CTA]</span> — One clear action: Call, book, comment, tag someone, click the link</div>
+        <div class="post-template-row"><span class="post-template-label">[LINK]</span> — Add your booking or service page link in the post body, not just the comments</div>
+      </div>
+    </div>
+
+
+
+
+    <h2 class="content-h2" style="margin-top: 0;">What to Post on Instagram</h2>
+
+    <div class="two-col">
+      <div class="col-box">
+        <div class="col-box-title">1. Reels — 40% (Highest Reach)</div>
+        <p style="font-size: 9.5pt; margin-bottom: 6px;">Instagram prioritizes video. Even 15–30 second clips dramatically outperform static images.</p>
+        <p style="font-size: 9pt; font-weight: 700; color: var(--navy); margin-bottom: 4px;">Reel ideas for HVAC:</p>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>"3 things to check before you call for AC repair" (talking head + B-roll)</li>
+          <li>"HVAC job in [X] seconds — time lapse of a full system install"</li>
+          <li>"Before vs. after: 20-year-old system replacement"</li>
+          <li>"Meet our team — 30-second version"</li>
+          <li>"We found THIS inside a homeowner's ducts..."</li>
+          <li>"Signs your AC won't make it through summer"</li>
+        </ul>
+        <p class="italic-note">No professional video needed. Phone + tripod + CapCut (free). Raw footage performs well.</p>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">2. Before &amp; After Photos — 25%</div>
+        <p style="font-size: 9.5pt; margin-bottom: 6px;">Highest-performing post type for home services. Show:</p>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>Old dirty equipment → new clean install</li>
+          <li>Cluttered/damaged ductwork → professional repair</li>
+          <li>Grimy coils → spotless after cleaning</li>
+        </ul>
+        <p class="italic-note">Caption: "This [equipment] was [X] years old and [describe problem]. We replaced it with [new system] in [X] hours."</p>
+        <div class="col-box-title" style="margin-top: 10px;">3. Carousels — 20%</div>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>"5 signs your HVAC system needs replacing" (one sign per slide)</li>
+          <li>"How a tune-up works — step by step"</li>
+          <li>"Comparing HVAC brands: Carrier vs. Trane vs. Lennox"</li>
+        </ul>
+        <p class="italic-note">Use Canva (free). Keep each slide to 1 headline + 1–2 sentences max.</p>
+      </div>
+    </div>
+
+    <h2 class="content-h2">Instagram Story Ideas (3–5 per week)</h2>
+
+    <div class="orange-box">
+      <div class="orange-box-title">Stories disappear after 24 hours — use them for timely, casual content</div>
+      <ul class="standard-list" style="font-size: 10pt;">
+        <li>Morning: "We're heading out to [neighborhood] today! Anyone need service?"</li>
+        <li>Poll: "How often do you change your air filter?" (Every month / Every 3 months / Honestly... never)</li>
+        <li>Quiz: "True or false: Running your AC constantly uses more energy than setting it to 78°F"</li>
+        <li>Behind the scenes: Techs loading the truck, driving to a job, finishing an install</li>
+        <li>Limited-time offer: "24-hour flash deal — DM us for $30 off"</li>
+        <li>Customer shoutout: "Thank you [customer] for the kind words!"</li>
+      </ul>
+      <p class="italic-note" style="margin-top: 8px; background: transparent; padding: 0;">Pro tip: Add the "Book Now" or link sticker to every story that includes a promotion.</p>
+    </div>
+
+    <h2 class="content-h2">Instagram Bio Optimization</h2>
+
+    <div class="post-template">
+      <div class="post-template-header">Your bio has 150 characters — use this formula</div>
+      <div class="post-template-body" style="font-size: 10.5pt; line-height: 2.2;">
+        <div class="post-template-row">[City]'s Trusted HVAC Experts 🏠</div>
+        <div class="post-template-row">⭐ [X]+ 5-Star Reviews</div>
+        <div class="post-template-row">🔧 AC, Heat &amp; Indoor Air Quality</div>
+        <div class="post-template-row">📞 [Phone Number] | Fast Response</div>
+        <div class="post-template-row">🔗 [Link to booking page or linktree]</div>
+      </div>
+    </div>
+
+    <div class="col-box" style="margin-top: 16px;">
+      <div class="col-box-title">Team &amp; Culture Posts — 15% of Instagram Content</div>
+      <p style="font-size: 10pt;">Instagram audiences respond strongly to authentic team content. Use <strong>Stories</strong> for casual behind-the-scenes. Use the <strong>Feed</strong> for more polished team highlights like technician certifications, milestones, and company culture moments.</p>
+    </div>
+
+
+
+
+<!-- ============================================================
+     SECTION 4 — EMAIL SEQUENCE
+============================================================ -->
+
+    <div class="section-badge section-break">Section 4 of 5</div>
+    <div class="section-heading">5-Email Follow-Up Sequence for New Leads</div>
+    <div class="section-heading-sub">Complete copy-paste email series. Load into your CRM and trigger automatically on new leads.</div>
+
+    <div class="orange-box">
+      <div class="orange-box-title">How to Use This Sequence</div>
+      <p style="font-size: 10pt;">Load these emails into your CRM or email tool (ServiceTitan, Housecall Pro, Jobber, Mailchimp, etc.) as an automated sequence. Trigger it the moment a new lead submits a form, calls your tracking number, or requests a quote. Research shows it takes <strong>5–7 touchpoints</strong> to convert a service customer.</p>
+    </div>
+
+    <!-- Email 1 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-num">1</div>
+        <div class="email-card-title">Immediate Confirmation</div>
+        <div class="email-timing">Send: Immediately</div>
+      </div>
+      <div class="email-meta">
+        <div class="email-meta-row"><span class="email-meta-label">Subject:</span><span class="email-meta-val">We got your request — here's what happens next</span></div>
+        <div class="email-meta-row"><span class="email-meta-label">Preview:</span><span class="email-meta-val">Our team will call within [X] hours. A few things to know first.</span></div>
+      </div>
+      <div class="email-body">
+        <p>Hi [First Name],</p>
+        <p>Thank you for reaching out to [Company Name]! We've received your request and a member of our team will be in touch within [X] hours (usually much faster during business hours).</p>
+        <p><strong>Here's what to expect:</strong></p>
+        <ol>
+          <li>We'll call you at [phone number on file] to confirm the details of your request</li>
+          <li>We'll find a time that works for your schedule — we offer morning, afternoon, and evening appointments</li>
+          <li>Our certified technician will arrive on time, in a marked vehicle, with a full background check on record</li>
+        </ol>
+        <p><strong>In the meantime, a few things that might help:</strong></p>
+        <ul>
+          <li>If this is an emergency, please call us directly at <strong>[Phone Number]</strong> — we have priority emergency lines available</li>
+          <li>If your AC isn't cooling, try: check thermostat is set to "Cool," check circuit breaker, check/replace air filter</li>
+          <li>We'll send a photo and bio of your technician before they arrive</li>
+        </ul>
+        <p>We're looking forward to earning your trust.<br>— The [Company Name] Team | [Phone] | [Website]</p>
+        <p class="email-ps">P.S. We're rated [X] stars on Google by [X]+ [City] homeowners. [Link to reviews]</p>
+      </div>
+    </div>
+
+    <!-- Email 2 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-num">2</div>
+        <div class="email-card-title">Value + Social Proof</div>
+        <div class="email-timing">Send: 24 hours later (if no appt booked)</div>
+      </div>
+      <div class="email-meta">
+        <div class="email-meta-row"><span class="email-meta-label">Subject:</span><span class="email-meta-val">What [City] homeowners say about us</span></div>
+        <div class="email-meta-row"><span class="email-meta-label">Preview:</span><span class="email-meta-val">[X]+ five-star reviews — and the story behind them.</span></div>
+      </div>
+      <div class="email-body">
+        <p>Hi [First Name],</p>
+        <p>Still thinking it over? That's completely fine — we know inviting someone into your home is a decision that deserves thought. Here's what a few of our recent customers shared:</p>
+        <div class="email-blockquote">"Fast, professional, and honest. They told me my AC just needed a cleaning — not a new unit. Saved me thousands." — Sarah T., [City]</div>
+        <div class="email-blockquote">"Our heat went out on a Sunday night. They were at our house within 2 hours. I can't say enough good things." — Marcus R., [City]</div>
+        <div class="email-blockquote">"The technician explained everything in plain English. No pressure, no upsell. Just great service." — Linda K., [City]</div>
+        <p><strong>A few things that set us apart:</strong></p>
+        <ul>
+          <li>Licensed and insured in [State] — License #[XXXXX]</li>
+          <li>Background-checked technicians</li>
+          <li>Upfront pricing — you approve the cost before any work begins</li>
+          <li>[X]-year labor warranty on all installations</li>
+          <li>Financing available — 0% for [X] months on qualifying systems</li>
+        </ul>
+        <p>— [Your Name], [Title] | [Company Name] | [Phone] | [Website]</p>
+      </div>
+    </div>
+
+
+
+
+    <!-- Email 3 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-num">3</div>
+        <div class="email-card-title">Educational / Problem-Solving</div>
+        <div class="email-timing">Send: 48 hours later (if no appt booked)</div>
+      </div>
+      <div class="email-meta">
+        <div class="email-meta-row"><span class="email-meta-label">Subject:</span><span class="email-meta-val">Is your HVAC system trying to tell you something?</span></div>
+        <div class="email-meta-row"><span class="email-meta-label">Preview:</span><span class="email-meta-val">The 5 warning signs most homeowners miss until it's too late.</span></div>
+      </div>
+      <div class="email-body">
+        <p>Hi [First Name],</p>
+        <p>Whether or not you end up choosing us, we want this email to be genuinely useful. Here are the <strong>5 early warning signs</strong> that your HVAC system needs attention:</p>
+        <p><strong>1. Your energy bills are creeping up.</strong> A system losing efficiency works harder to maintain temperature. A tune-up can often restore 15–20% efficiency.</p>
+        <p><strong>2. Rooms are inconsistently heated or cooled.</strong> Hot spots and cold spots usually point to duct leaks, airflow restrictions, or a failing blower motor.</p>
+        <p><strong>3. It's making new noises.</strong> Banging, grinding, squealing, or rattling noises usually precede a component failure.</p>
+        <p><strong>4. Humidity feels "off."</strong> If your home feels sticky in summer or dry in winter, your system may not be performing correctly.</p>
+        <p><strong>5. The system is over 10 years old.</strong> Not a reason to replace it — but a reason to have it inspected. Systems over 10–12 years old have significantly higher failure risk heading into peak season.</p>
+        <p><strong>Sound familiar?</strong> We can diagnose all of these during a single visit and give you an honest recommendation with no pressure.</p>
+        <p>[Schedule Your Appointment → [Link]]</p>
+        <p>— The [Company Name] Team | [Phone] | [Website]</p>
+      </div>
+    </div>
+
+    <!-- Email 4 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-num">4</div>
+        <div class="email-card-title">Urgency / Limited Availability</div>
+        <div class="email-timing">Send: 4 days later (if no appt booked)</div>
+      </div>
+      <div class="email-meta">
+        <div class="email-meta-row"><span class="email-meta-label">Subject:</span><span class="email-meta-val">Quick heads up — our schedule is filling up</span></div>
+        <div class="email-meta-row"><span class="email-meta-label">Preview:</span><span class="email-meta-val">We have [X] slots left this week. Here's how to claim one.</span></div>
+      </div>
+      <div class="email-body">
+        <p>Hi [First Name],</p>
+        <p>I wanted to give you a quick heads up: our schedule for [current/upcoming month] is filling up quickly, and I'd hate for you to wait too long and end up in a bind during [hot/cold] weather.</p>
+        <p><strong>Here's what we still have available:</strong></p>
+        <ul>
+          <li>[Day, Date]: Morning (8AM–12PM) or Afternoon (12PM–5PM)</li>
+          <li>[Day, Date]: Morning slots only</li>
+          <li>[Day, Date]: Evening available (5PM–8PM)</li>
+        </ul>
+        <p>To claim your spot: Call [Phone Number] · Reply to this email · Book at [Website/Booking Link]</p>
+        <p>We'll confirm within 15 minutes.</p>
+        <p>— [Your Name] | [Company Name] | [Phone]</p>
+        <p class="email-ps">Mention this email when you call and we'll take $[15–25] off your first service.</p>
+      </div>
+    </div>
+
+    <!-- Email 5 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-num">5</div>
+        <div class="email-card-title">Final Follow-Up / Soft Close</div>
+        <div class="email-timing">Send: 7 days later (if no appt booked)</div>
+      </div>
+      <div class="email-meta">
+        <div class="email-meta-row"><span class="email-meta-label">Subject:</span><span class="email-meta-val">Last note from us — [First Name]</span></div>
+        <div class="email-meta-row"><span class="email-meta-label">Preview:</span><span class="email-meta-val">We'll stop emailing after this one. But we'll still be here when you need us.</span></div>
+      </div>
+      <div class="email-body">
+        <p>Hi [First Name],</p>
+        <p>This is the last follow-up we'll send — we don't believe in pestering people. But before I go, I want to leave you with three things:</p>
+        <p><strong>1. Our number is always [Phone Number].</strong> Day or night. Even if it's been months. We're here when your AC fails at 10 PM or your heat goes out on a cold morning.</p>
+        <p><strong>2. We offer a free second opinion.</strong> If another company gave you a quote that seemed high, or told you something that didn't feel right — call us. We'll give you an honest assessment at no charge.</p>
+        <p><strong>3. We'd love to earn your business someday.</strong> Even if now isn't the right time, we hope you'll think of [Company Name] when the time comes. Follow us on Facebook [link] for seasonal tips, deals, and updates.</p>
+        <p>Thank you for considering us, [First Name]. Take care,<br>— [Your Name], Owner | [Company Name] | [Phone] | [Email] | [Website]</p>
+        <p class="email-ps">Referred by a friend or neighbor? We offer a $[25–50] referral credit — just mention their name.</p>
+      </div>
+    </div>
+
+    <h2 class="content-h2">Email Sequence Performance Benchmarks</h2>
+
+    <table class="benchmark-table">
+      <thead>
+        <tr>
+          <th>Email</th>
+          <th>When Sent</th>
+          <th>Expected Open Rate</th>
+          <th>Expected Click Rate</th>
+          <th>Goal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>Email 1</strong> — Confirmation</td><td>Immediately</td><td class="rate-high">70–85%</td><td class="rate-high">20–30%</td><td>Confirm &amp; reassure</td></tr>
+        <tr><td><strong>Email 2</strong> — Social Proof</td><td>24 hours</td><td class="rate-med">30–45%</td><td class="rate-med">8–15%</td><td>Build trust</td></tr>
+        <tr><td><strong>Email 3</strong> — Educational</td><td>48 hours</td><td class="rate-med">25–40%</td><td class="rate-med">10–18%</td><td>Demonstrate expertise</td></tr>
+        <tr><td><strong>Email 4</strong> — Urgency</td><td>4 days</td><td class="rate-med">30–40%</td><td class="rate-med">12–20%</td><td>Drive booking</td></tr>
+        <tr><td><strong>Email 5</strong> — Final</td><td>7 days</td><td class="rate-med">35–50%</td><td>5–10%</td><td>Preserve relationship</td></tr>
+      </tbody>
+    </table>
+    <p class="italic-note">Open rates above 25% are strong for cold/warm leads. Track these in your CRM and A/B test subject lines after 100+ sends.</p>
+
+
+
+
+<!-- ============================================================
+     SECTION 5 — LOCAL SEO CHECKLIST
+============================================================ -->
+
+    <div class="section-badge section-break">Section 5 of 5</div>
+    <div class="section-heading">Local SEO Checklist for HVAC Companies</div>
+    <div class="section-heading-sub">Everything you need to rank in Google's Local Pack and organic results — covering all three core ranking factors.</div>
+
+    <div class="info-box">
+      <div class="info-box-title">Why Local SEO Matters</div>
+      <p style="font-size: 10pt;">When someone searches "AC repair near me," Google decides which businesses to show based on three core factors: <strong>Relevance</strong>, <strong>Distance</strong>, and <strong>Prominence</strong>. This checklist covers all three.</p>
+    </div>
+
+    <h2 class="content-h2">Part A: Google Business Profile (GBP)</h2>
+    <p class="body-text" style="margin-bottom: 14px;">This is the single most important local SEO asset you have. Treat it like a second website.</p>
+
+    <div class="two-col">
+      <div>
+        <div class="checklist-group">
+          <div class="checklist-group-title">Setup &amp; Verification</div>
+          <ul class="checklist">
+            <li><span class="check"></span>Claim and verify your Google Business Profile at <code>business.google.com</code></li>
+            <li><span class="check"></span>Set your primary category to <strong>"HVAC Contractor"</strong></li>
+            <li><span class="check"></span>Add secondary categories: "Air Conditioning Contractor," "Heating Contractor," "Air Duct Cleaning Service"</li>
+            <li><span class="check"></span>Set your service area — every city, town, and zip code you serve</li>
+            <li><span class="check"></span>Add your verified business address</li>
+          </ul>
+        </div>
+
+        <div class="checklist-group">
+          <div class="checklist-group-title">Business Information</div>
+          <ul class="checklist">
+            <li><span class="check"></span>Business name matches exactly what's on your license and website</li>
+            <li><span class="check"></span>Phone number is a local area code (not toll-free)</li>
+            <li><span class="check"></span>Website URL is correct</li>
+            <li><span class="check"></span>Business hours are accurate — including holiday hours</li>
+            <li><span class="check"></span>Business description: 750 characters, includes primary keywords naturally</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="checklist-group">
+          <div class="checklist-group-title">Services to Add in GBP</div>
+          <ul class="checklist">
+            <li><span class="check"></span>AC Repair</li>
+            <li><span class="check"></span>AC Installation</li>
+            <li><span class="check"></span>Furnace Repair</li>
+            <li><span class="check"></span>Furnace Installation</li>
+            <li><span class="check"></span>Heat Pump Installation</li>
+            <li><span class="check"></span>HVAC Maintenance / Tune-Up</li>
+            <li><span class="check"></span>Indoor Air Quality</li>
+            <li><span class="check"></span>Duct Cleaning</li>
+            <li><span class="check"></span>Thermostat Installation</li>
+            <li><span class="check"></span>Emergency HVAC Service</li>
+            <li><span class="check"></span>Add pricing ranges where possible</li>
+            <li><span class="check"></span>Add service descriptions (2–3 sentences each)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Photos &amp; Videos</div>
+      <div class="two-col" style="margin: 0;">
+        <ul class="checklist">
+          <li><span class="check"></span>Upload at least 10 photos <em>(profiles with 10+ photos get 35% more click-throughs)</em></li>
+          <li><span class="check"></span>Exterior of building or branded vehicles</li>
+          <li><span class="check"></span>Technicians at work (with customer permission)</li>
+          <li><span class="check"></span>Before/after installation and repair photos</li>
+        </ul>
+        <ul class="checklist">
+          <li><span class="check"></span>Team photo</li>
+          <li><span class="check"></span>Logo (square format, 250×250 minimum)</li>
+          <li><span class="check"></span>Cover photo (1024×575 recommended)</li>
+          <li><span class="check"></span>At least one video (30–60 seconds)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Reviews</div>
+      <ul class="checklist">
+        <li><span class="check"></span>You have a direct Google Review link to share with customers</li>
+        <li><span class="check"></span>You ask every customer for a review via text or email after service</li>
+        <li><span class="check"></span>You respond to every review — positive and negative — within 48 hours</li>
+        <li><span class="check"></span>Target: <strong>50+ reviews</strong> with an average of <strong>4.5+ stars</strong> to be competitive in most markets</li>
+      </ul>
+    </div>
+
+    <div class="two-col">
+      <div class="orange-box" style="margin: 0;">
+        <div class="orange-box-title">Positive Review Response</div>
+        <p style="font-size: 9.5pt; font-style: italic;">"Thank you so much, [Name]! It was a pleasure working with you — we're so glad your [AC/furnace] is running like new. We hope to be your go-to HVAC team for years to come!"</p>
+      </div>
+      <div class="info-box" style="margin: 0;">
+        <div class="info-box-title">Negative Review Response</div>
+        <p style="font-size: 9.5pt; font-style: italic;">"Hi [Name], thank you for your honest feedback. We take every concern seriously and would love the opportunity to make this right. Please call us at [Phone] so we can resolve this directly."</p>
+      </div>
+    </div>
+
+
+
+
+    <h2 class="content-h2" style="margin-top: 0;">Part B: Website Local SEO</h2>
+
+    <div class="two-col">
+      <div>
+        <div class="checklist-group">
+          <div class="checklist-group-title">On-Page Optimization</div>
+          <ul class="checklist">
+            <li><span class="check"></span>Homepage title tag includes primary keyword + city: <code>HVAC Repair &amp; Installation in [City, State] | [Company]</code></li>
+            <li><span class="check"></span>Meta description includes city, service, and CTA (150–160 characters)</li>
+            <li><span class="check"></span>H1 heading on homepage includes city + service</li>
+            <li><span class="check"></span>NAP (Name, Address, Phone) in footer on every page — matches GBP exactly</li>
+            <li><span class="check"></span>Phone number is click-to-call</li>
+            <li><span class="check"></span>Service area clearly described on homepage and service pages</li>
+            <li><span class="check"></span>Dedicated page for each major service</li>
+            <li><span class="check"></span>Each service page has 300+ words of unique content</li>
+            <li><span class="check"></span>Dedicated page for each major city/area you serve</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="checklist-group">
+          <div class="checklist-group-title">Technical SEO</div>
+          <ul class="checklist">
+            <li><span class="check"></span>Site loads in under 3 seconds (test at <code>PageSpeed.web.dev</code>)</li>
+            <li><span class="check"></span>Site is mobile-friendly</li>
+            <li><span class="check"></span>Site has an SSL certificate (<code>https://</code>)</li>
+            <li><span class="check"></span>XML sitemap submitted to Google Search Console</li>
+            <li><span class="check"></span>Google Search Console set up and verified</li>
+            <li><span class="check"></span>Google Analytics (GA4) installed and tracking</li>
+          </ul>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-group-title">Schema Markup</div>
+          <ul class="checklist">
+            <li><span class="check"></span><code>LocalBusiness</code> schema installed</li>
+            <li><span class="check"></span>Schema includes: name, address, phone, hours, service area, geo coordinates, review aggregate</li>
+            <li><span class="check"></span>Verified with Google's Structured Data Testing Tool</li>
+            <li><span class="check"></span><code>FAQPage</code> schema added to FAQ sections</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="content-h2">Part C: Citations &amp; Directory Listings</h2>
+
+    <p class="body-text" style="margin-bottom: 12px;">Citations are online mentions of your business Name, Address, and Phone number (NAP). Consistent citations strengthen your local ranking signals.</p>
+
+    <div class="two-col">
+      <div class="checklist-group">
+        <div class="checklist-group-title">Priority Directories (Complete These First)</div>
+        <ul class="checklist">
+          <li><span class="check"></span><strong>Yelp</strong> — biz.yelp.com</li>
+          <li><span class="check"></span><strong>Bing Places</strong> — bingplaces.com</li>
+          <li><span class="check"></span><strong>Apple Maps</strong> — mapsconnect.apple.com</li>
+          <li><span class="check"></span><strong>Facebook Business Page</strong> — complete all sections</li>
+          <li><span class="check"></span><strong>Angi</strong> — pro.angi.com</li>
+          <li><span class="check"></span><strong>HomeAdvisor</strong> — pro.homeadvisor.com</li>
+          <li><span class="check"></span><strong>Thumbtack</strong> — thumbtack.com</li>
+          <li><span class="check"></span><strong>Nextdoor</strong> — nextdoor.com/business</li>
+          <li><span class="check"></span><strong>BBB</strong> — bbb.org</li>
+          <li><span class="check"></span><strong>Houzz</strong> — houzz.com/pro</li>
+        </ul>
+      </div>
+      <div>
+        <div class="checklist-group">
+          <div class="checklist-group-title">Industry-Specific Directories</div>
+          <ul class="checklist">
+            <li><span class="check"></span>ACCA — acca.org</li>
+            <li><span class="check"></span>NATE — natex.org</li>
+            <li><span class="check"></span>AHRI Directory — ahridirectory.org</li>
+          </ul>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-group-title">General Business Directories</div>
+          <ul class="checklist">
+            <li><span class="check"></span>YellowPages.com</li>
+            <li><span class="check"></span>Manta.com</li>
+            <li><span class="check"></span>Foursquare</li>
+            <li><span class="check"></span>Local Chamber of Commerce website</li>
+            <li><span class="check"></span>State contractor licensing database</li>
+          </ul>
+        </div>
+        <div class="orange-box" style="margin-top: 0;">
+          <div class="orange-box-title">Citation Consistency Rules</div>
+          <ul class="standard-list" style="font-size: 9.5pt;">
+            <li>Business name <strong>identical</strong> across all directories</li>
+            <li>Address format <strong>identical</strong> (Street vs. St.)</li>
+            <li>Phone format <strong>identical</strong>: (555) 555-5555</li>
+            <li>Website URL <strong>identical</strong> (www or no www — pick one)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <h2 class="content-h2" style="margin-top: 0;">Part D: Link Building for HVAC</h2>
+    <p class="body-text">Links from other websites remain a powerful local ranking signal. Focus on quality over quantity.</p>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Link Building Opportunities</div>
+      <ul class="checklist">
+        <li><span class="check"></span><strong>Manufacturer Partner Pages</strong> — Carrier, Trane, Lennox, and other brands have dealer locators. If you're a certified dealer, get listed on their website with a link back to yours.</li>
+        <li><span class="check"></span><strong>Local Chamber of Commerce</strong> — Most chambers offer member directory listings with links.</li>
+        <li><span class="check"></span><strong>Local Newspaper / News Sites</strong> — Pitch a seasonal tips story. HVAC tips for summer/winter are evergreen local interest content.</li>
+        <li><span class="check"></span><strong>Supplier Links</strong> — Ask your HVAC parts suppliers if they have contractor directories.</li>
+        <li><span class="check"></span><strong>Sponsor Local Organizations</strong> — Little leagues, school events, and charity organizations often list sponsors with links.</li>
+        <li><span class="check"></span><strong>Home Builder / Contractor Networks</strong> — Partner with local builders, plumbers, and electricians for reciprocal referrals and links.</li>
+        <li><span class="check"></span><strong>HVAC Blog Content</strong> — Publish one blog post per month answering a common customer question. Well-written content attracts natural links over time.</li>
+      </ul>
+    </div>
+
+    <h2 class="content-h2">Part E: Ongoing Local SEO Maintenance</h2>
+
+    <div class="three-col">
+      <div class="checklist-group">
+        <div class="checklist-group-title">Monthly</div>
+        <ul class="checklist">
+          <li><span class="check"></span>Publish at least 4 Google Posts (one per week)</li>
+          <li><span class="check"></span>Respond to all new Google reviews</li>
+          <li><span class="check"></span>Add 2–3 new photos to GBP</li>
+          <li><span class="check"></span>Check for and respond to new Yelp or directory reviews</li>
+          <li><span class="check"></span>Review Google Search Console for crawl errors</li>
+          <li><span class="check"></span>Check keyword rankings for 5–10 target terms</li>
+        </ul>
+      </div>
+      <div class="checklist-group">
+        <div class="checklist-group-title">Quarterly</div>
+        <ul class="checklist">
+          <li><span class="check"></span>Audit all directory listings for NAP consistency</li>
+          <li><span class="check"></span>Update GBP with new services, hours, or offers</li>
+          <li><span class="check"></span>Add new before/after photos from recent jobs</li>
+          <li><span class="check"></span>Publish 1–2 new service or location pages</li>
+          <li><span class="check"></span>Review competitor GBP profiles</li>
+        </ul>
+      </div>
+      <div class="checklist-group">
+        <div class="checklist-group-title">Annually</div>
+        <ul class="checklist">
+          <li><span class="check"></span>Comprehensive SEO audit (SEMrush, Ahrefs, or HVAC SEO specialist)</li>
+          <li><span class="check"></span>Update all website content with current year and fresh customer quotes</li>
+          <li><span class="check"></span>Refresh your GBP description</li>
+          <li><span class="check"></span>Set goals for review count and ranking positions</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="content-h2">Local SEO Quick Wins (Do These This Week)</h2>
+
+    <div class="green-box">
+      <div class="green-box-title">5 actions · under 2 hours total · results in 30–90 days</div>
+      <ol style="padding-left: 20px; margin-top: 8px;">
+        <li style="font-size: 10.5pt; margin-bottom: 6px; line-height: 1.55;"><strong>Verify and complete your Google Business Profile</strong> — 45 minutes</li>
+        <li style="font-size: 10.5pt; margin-bottom: 6px; line-height: 1.55;"><strong>Upload 10 photos to your GBP</strong> — 15 minutes</li>
+        <li style="font-size: 10.5pt; margin-bottom: 6px; line-height: 1.55;"><strong>Send your Google Review link to your 10 best customers</strong> — 30 minutes</li>
+        <li style="font-size: 10.5pt; margin-bottom: 6px; line-height: 1.55;"><strong>Make sure your Name, Address, and Phone match on your website and GBP</strong> — 15 minutes</li>
+        <li style="font-size: 10.5pt; margin-bottom: 0; line-height: 1.55;"><strong>Publish your first Google Post with a seasonal offer</strong> — 15 minutes</li>
+      </ol>
+    </div>
+
+
+
+
+<!-- ============================================================
+     APPENDIX
+============================================================ -->
+
+    <div class="section-badge section-break" style="background: var(--gray-100); border-color: var(--gray-300); color: var(--gray-700);">Appendix</div>
+    <div class="section-heading">Resources &amp; Tools</div>
+    <div class="section-heading-sub">Recommended tools by category and a 12-month HVAC marketing calendar.</div>
+
+    <h2 class="content-h2">Recommended Tools by Category</h2>
+
+    <div class="two-col">
+      <div>
+        <div class="checklist-group">
+          <div class="checklist-group-title">Google Ads Management</div>
+          <ul class="standard-list" style="font-size: 10pt;">
+            <li><strong>Google Ads Editor</strong> (free) — Bulk edit and manage campaigns offline</li>
+            <li><strong>Google Keyword Planner</strong> (free) — Research search volume and CPCs</li>
+            <li><strong>CallRail</strong> — Call tracking to measure which ads drive phone calls</li>
+          </ul>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-group-title">Social Media</div>
+          <ul class="standard-list" style="font-size: 10pt;">
+            <li><strong>Canva</strong> (free/paid) — Design social media graphics</li>
+            <li><strong>CapCut</strong> (free) — Edit Reels and short-form video</li>
+            <li><strong>Buffer or Hootsuite</strong> — Schedule posts in advance</li>
+            <li><strong>Meta Business Suite</strong> (free) — Manage Facebook + Instagram in one place</li>
+          </ul>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-group-title">Email Marketing</div>
+          <ul class="standard-list" style="font-size: 10pt;">
+            <li><strong>Mailchimp</strong> (free up to 500 contacts) — Email automation</li>
+            <li><strong>ActiveCampaign</strong> — More powerful CRM + email automation</li>
+            <li><strong>ServiceTitan / Housecall Pro / Jobber</strong> — HVAC-specific CRMs with built-in email sequences</li>
+          </ul>
+        </div>
+      </div>
+      <div>
+        <div class="checklist-group">
+          <div class="checklist-group-title">Local SEO</div>
+          <ul class="standard-list" style="font-size: 10pt;">
+            <li><strong>Google Business Profile Dashboard</strong> (free) — Manage your GBP</li>
+            <li><strong>BrightLocal</strong> ($29/mo) — Citation audit, rank tracking, review management</li>
+            <li><strong>Whitespark</strong> — Citation building and local rank tracking</li>
+            <li><strong>Google Search Console</strong> (free) — Monitor website search performance</li>
+            <li><strong>PageSpeed Insights</strong> (free) — Test website loading speed</li>
+          </ul>
+        </div>
+        <div class="checklist-group">
+          <div class="checklist-group-title">Review Management</div>
+          <ul class="standard-list" style="font-size: 10pt;">
+            <li><strong>NiceJob</strong> — Automate review requests via text and email</li>
+            <li><strong>Podium</strong> — Review management + webchat + payments</li>
+            <li><strong>Google Review Direct Link</strong> — Get this from your GBP dashboard and use it everywhere</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <h2 class="content-h2">Seasonal Marketing Calendar</h2>
+
+    <table class="seasonal-table">
+      <thead>
+        <tr>
+          <th>Month</th>
+          <th>Focus</th>
+          <th>Key Campaigns</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>January</td><td>Winter service &amp; emergencies</td><td>Furnace repair, emergency heat, maintenance plans</td></tr>
+        <tr><td>February</td><td>Late winter / pre-spring</td><td>Last furnace tune-ups, system replacement deals</td></tr>
+        <tr><td>March</td><td>Spring kickoff</td><td>AC tune-up booking drive, IAQ awareness</td></tr>
+        <tr><td>April</td><td>Peak booking season</td><td>AC tune-ups, new system installs, urgency campaigns</td></tr>
+        <tr><td>May</td><td>Pre-summer push</td><td>Fill your summer schedule, maintenance plan enrollments</td></tr>
+        <tr><td>June</td><td>Summer launch</td><td>Emergency AC, energy savings, air quality</td></tr>
+        <tr><td>July</td><td>Peak summer</td><td>Emergency response, lead gen at highest CPC — use budget wisely</td></tr>
+        <tr><td>August</td><td>Late summer</td><td>Referral drives, review campaigns, early fall offers</td></tr>
+        <tr><td>September</td><td>Fall preparation</td><td>Furnace tune-up drive, heating system inspections</td></tr>
+        <tr><td>October</td><td>Heating season launch</td><td>Furnace repair, new system installs before winter</td></tr>
+        <tr><td>November</td><td>Pre-winter urgency</td><td>Emergency heating, maintenance plans, holiday gift cards</td></tr>
+        <tr><td>December</td><td>Year-end / holiday</td><td>Gift card promos, thank customer referrals, plan for Q1</td></tr>
+      </tbody>
+    </table>
+
+    <!-- Closing footer line -->
+    <div style="margin-top: 32px; padding-top: 16px; border-top: 2px solid var(--navy); text-align: center;">
+      <span style="font-size: 10pt; font-weight: 700; color: var(--navy); letter-spacing: 0.01em;">HomeProMarketer.com</span><span style="font-size: 10pt; font-weight: 400; color: var(--gray-600);"> | Your All-in-One Home Service Marketing Platform</span>
+    </div>
+
+
+
+
+</div>
+</body>
+</html>

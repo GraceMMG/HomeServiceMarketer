@@ -1,0 +1,2099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Roofing Lead Machine Bundle — HomeProMarketer.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   VARIABLES & RESET
+============================================================ */
+:root {
+  --navy:        #1a2e4a;
+  --navy-mid:    #243d61;
+  --navy-light:  #2d5087;
+  --orange:      #f97316;
+  --orange-dark: #ea6b0a;
+  --orange-light:#fff7ed;
+  --gray-bg:     #f8f9fa;
+  --gray-100:    #f1f3f5;
+  --gray-200:    #e9ecef;
+  --gray-300:    #dee2e6;
+  --gray-400:    #adb5bd;
+  --gray-600:    #6c757d;
+  --gray-700:    #495057;
+  --gray-800:    #343a40;
+  --white:       #ffffff;
+  --text:        #1e2a3a;
+  --page-width:  8.5in;
+  --page-height: 11in;
+  --margin-h:    0.75in;
+  --margin-v:    0.7in;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { font-size: 11pt; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--text);
+  background: #d0d5dc;
+  line-height: 1.65;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ============================================================
+   DOC WRAPPER (screen only — gives visual padding context)
+============================================================ */
+.doc-wrapper {
+  width: var(--page-width);
+  background: var(--white);
+  margin: 0.4in auto;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15), 0 1px 4px rgba(0,0,0,0.1);
+  padding: var(--margin-v) var(--margin-h);
+  padding-bottom: 0.5in;
+}
+
+/* ============================================================
+   COVER PAGE
+============================================================ */
+.cover {
+  background: var(--navy);
+  min-height: var(--page-height);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  margin: calc(-1 * var(--margin-v)) calc(-1 * var(--margin-h));
+  margin-bottom: 0;
+}
+
+.cover-top-bar {
+  height: 8px;
+  background: linear-gradient(90deg, var(--orange) 0%, #fbbf24 100%);
+  flex-shrink: 0;
+}
+
+.cover-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0.6in 0.8in 0.5in;
+  position: relative;
+  z-index: 2;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  z-index: 1;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 350px; height: 350px;
+  border-radius: 50%;
+  background: rgba(249,115,22,0.07);
+  z-index: 1;
+}
+
+.cover-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.6in;
+}
+
+.cover-logo-mark {
+  width: 40px; height: 40px;
+  background: var(--orange);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.cover-logo-mark svg {
+  width: 22px; height: 22px;
+  fill: white;
+}
+
+.cover-logo-name {
+  font-size: 14pt;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.01em;
+}
+
+.cover-logo-name span { color: var(--orange); }
+
+.cover-eyebrow {
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.cover-title {
+  font-size: 46pt;
+  font-weight: 900;
+  color: white;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.cover-title em {
+  color: var(--orange);
+  font-style: normal;
+}
+
+.cover-subtitle {
+  font-size: 13pt;
+  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+  line-height: 1.5;
+  max-width: 5.5in;
+  margin-bottom: 0.4in;
+}
+
+.cover-divider {
+  width: 60px;
+  height: 4px;
+  background: var(--orange);
+  border-radius: 2px;
+  margin-bottom: 0.35in;
+}
+
+.cover-includes-label {
+  font-size: 8pt;
+  font-weight: 800;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.cover-includes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: auto;
+}
+
+.cover-include-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.85);
+  font-size: 10pt;
+  font-weight: 500;
+}
+
+.cover-include-num {
+  width: 24px; height: 24px;
+  min-width: 24px;
+  background: var(--orange);
+  color: white;
+  border-radius: 50%;
+  font-size: 8pt;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.cover-bottom {
+  margin-top: 0.45in;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cover-bottom-text {
+  font-size: 8.5pt;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.5;
+}
+
+.cover-value-badge {
+  background: var(--orange);
+  color: white;
+  font-size: 12pt;
+  font-weight: 900;
+  padding: 10px 22px;
+  border-radius: 6px;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   TABLE OF CONTENTS
+============================================================ */
+.toc-title {
+  font-size: 28pt;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.toc-subtitle {
+  font-size: 10pt;
+  color: var(--gray-600);
+  margin-bottom: 32px;
+}
+
+.toc-intro {
+  background: var(--gray-bg);
+  border-left: 4px solid var(--orange);
+  padding: 14px 18px;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 28px;
+  font-size: 10pt;
+  color: var(--gray-700);
+  line-height: 1.6;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.toc-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  margin-bottom: 10px;
+  background: white;
+  gap: 16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.toc-num {
+  width: 36px; height: 36px;
+  min-width: 36px;
+  background: var(--navy);
+  color: white;
+  border-radius: 50%;
+  font-size: 11pt;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.toc-info { flex: 1; }
+
+.toc-item-title {
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.toc-item-desc {
+  font-size: 8.5pt;
+  color: var(--gray-600);
+}
+
+.toc-dots {
+  flex: 1;
+  height: 1px;
+  background: repeating-linear-gradient(90deg, var(--gray-300) 0, var(--gray-300) 4px, transparent 4px, transparent 8px);
+  margin: 0 12px;
+  min-width: 20px;
+}
+
+.toc-pg {
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--orange);
+  white-space: nowrap;
+}
+
+/* ============================================================
+   SECTION HEADER
+============================================================ */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange-light);
+  border: 1px solid #fed7aa;
+  color: var(--orange-dark);
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-size: 24pt;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  padding-left: 16px;
+  border-left: 5px solid var(--orange);
+  margin-bottom: 6px;
+}
+
+.section-heading-sub {
+  font-size: 10pt;
+  color: var(--gray-600);
+  padding-left: 21px;
+  margin-bottom: 24px;
+}
+
+.section-divider {
+  height: 1px;
+  background: var(--gray-200);
+  margin: 20px 0;
+}
+
+/* ============================================================
+   CONTENT HEADINGS
+============================================================ */
+h2.content-h2 {
+  font-size: 14pt;
+  font-weight: 800;
+  color: var(--navy);
+  margin-top: 26px;
+  margin-bottom: 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--orange);
+  line-height: 1.25;
+}
+
+h3.content-h3 {
+  font-size: 11pt;
+  font-weight: 700;
+  color: var(--navy-mid);
+  margin-top: 18px;
+  margin-bottom: 8px;
+}
+
+p.body-text {
+  font-size: 10.5pt;
+  line-height: 1.7;
+  color: var(--gray-800);
+  margin-bottom: 10px;
+}
+
+.italic-note {
+  font-size: 9.5pt;
+  color: var(--gray-600);
+  font-style: italic;
+  background: var(--gray-bg);
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+/* ============================================================
+   AD TEMPLATE BOX
+============================================================ */
+.ad-template {
+  border: 2px solid var(--orange);
+  border-radius: 8px;
+  margin-bottom: 18px;
+  overflow: hidden;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.ad-template-header {
+  background: var(--navy);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.ad-template-num {
+  width: 26px; height: 26px;
+  background: var(--orange);
+  color: white;
+  border-radius: 50%;
+  font-size: 9pt;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.ad-template-title {
+  font-size: 11pt;
+  font-weight: 700;
+  color: white;
+  flex: 1;
+}
+
+.ad-template-tag {
+  font-size: 7.5pt;
+  background: rgba(249,115,22,0.22);
+  color: #fb923c;
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.ad-template-body {
+  padding: 14px 16px;
+}
+
+.ad-best-for {
+  font-size: 8.5pt;
+  color: var(--gray-600);
+  font-style: italic;
+  margin-bottom: 10px;
+  padding: 6px 10px;
+  background: var(--gray-bg);
+  border-radius: 4px;
+}
+
+.ad-field-label {
+  font-size: 7.5pt;
+  font-weight: 800;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+  margin-top: 10px;
+}
+
+.ad-copy-box {
+  background: var(--gray-bg);
+  border: 1px solid var(--gray-200);
+  border-radius: 5px;
+  padding: 10px 14px;
+  font-size: 9.5pt;
+  color: var(--gray-800);
+  line-height: 1.6;
+  margin-bottom: 6px;
+  font-family: 'Courier New', monospace;
+}
+
+.ad-copy-box strong {
+  color: var(--navy);
+  font-family: 'Inter', sans-serif;
+}
+
+.targeting-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 5px;
+  font-size: 9pt;
+  align-items: flex-start;
+}
+
+.targeting-label {
+  font-weight: 700;
+  color: var(--navy);
+  min-width: 110px;
+  flex-shrink: 0;
+  font-size: 8pt;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding-top: 1px;
+}
+
+.targeting-val {
+  color: var(--gray-700);
+  font-size: 9pt;
+  line-height: 1.45;
+}
+
+.budget-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: #166534;
+  font-size: 8pt;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-top: 8px;
+}
+
+/* ============================================================
+   INFO / CALLOUT BOXES
+============================================================ */
+.info-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 14px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.info-box-title {
+  font-size: 9pt;
+  font-weight: 800;
+  color: #1e40af;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.orange-box {
+  background: var(--orange-light);
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 14px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.orange-box-title {
+  font-size: 9pt;
+  font-weight: 800;
+  color: var(--orange-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.green-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.green-box-title {
+  font-size: 9pt;
+  font-weight: 800;
+  color: #166534;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.red-box {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.red-box-title {
+  font-size: 9pt;
+  font-weight: 800;
+  color: #991b1b;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+/* ============================================================
+   STEP ENTRIES (for timeline / playbook steps)
+============================================================ */
+.step-entry {
+  display: flex;
+  gap: 14px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--gray-100);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.step-entry:last-child { border-bottom: none; }
+
+.step-num {
+  width: 30px; height: 30px;
+  min-width: 30px;
+  background: var(--navy);
+  color: white;
+  border-radius: 50%;
+  font-size: 9pt;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.step-num.orange { background: var(--orange); }
+.step-num.urgent { background: #dc2626; }
+
+.step-content { flex: 1; }
+
+.step-title {
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 4px;
+  line-height: 1.3;
+}
+
+.step-desc {
+  font-size: 9.5pt;
+  color: var(--gray-700);
+  line-height: 1.55;
+}
+
+.step-time {
+  font-size: 7.5pt;
+  font-weight: 700;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 4px;
+}
+
+/* ============================================================
+   EMAIL CARDS
+============================================================ */
+.email-card {
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 20px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.email-card-header {
+  background: var(--navy);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.email-num {
+  width: 32px; height: 32px;
+  background: var(--orange);
+  color: white;
+  border-radius: 50%;
+  font-size: 10pt;
+  font-weight: 900;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.email-card-title {
+  font-size: 11pt;
+  font-weight: 700;
+  color: white;
+  flex: 1;
+}
+
+.email-timing {
+  font-size: 8pt;
+  font-weight: 600;
+  background: rgba(249,115,22,0.25);
+  color: #fb923c;
+  padding: 3px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.email-meta {
+  background: var(--gray-bg);
+  padding: 8px 18px;
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 8.5pt;
+}
+
+.email-meta-row {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 2px;
+}
+
+.email-meta-label {
+  font-weight: 700;
+  color: var(--navy);
+  white-space: nowrap;
+}
+
+.email-meta-val { color: var(--gray-700); }
+
+.email-body {
+  padding: 14px 18px;
+  font-size: 9.5pt;
+  line-height: 1.65;
+  color: var(--gray-800);
+}
+
+.email-body p { margin-bottom: 8px; }
+.email-body ul, .email-body ol { padding-left: 18px; margin-bottom: 8px; }
+.email-body li { margin-bottom: 3px; font-size: 9.5pt; }
+.email-body strong { color: var(--navy); font-weight: 700; }
+
+.email-blockquote {
+  border-left: 3px solid var(--orange);
+  padding: 8px 14px;
+  background: var(--orange-light);
+  border-radius: 0 5px 5px 0;
+  font-style: italic;
+  font-size: 9.5pt;
+  color: var(--gray-700);
+  margin: 8px 0;
+}
+
+.email-ps {
+  font-size: 8.5pt;
+  color: var(--gray-600);
+  font-style: italic;
+  margin-top: 6px;
+}
+
+/* ============================================================
+   CHECKLIST / LISTS
+============================================================ */
+.checklist {
+  list-style: none;
+  padding: 0;
+  margin: 8px 0 12px;
+}
+
+.checklist li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  padding: 5px 0;
+  border-bottom: 1px solid var(--gray-100);
+  font-size: 10pt;
+  line-height: 1.55;
+  color: var(--gray-800);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.checklist li:last-child { border-bottom: none; }
+
+.check {
+  width: 16px; height: 16px;
+  min-width: 16px;
+  border: 2px solid var(--gray-400);
+  border-radius: 3px;
+  display: block;
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+.checklist-group {
+  background: var(--gray-bg);
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin-bottom: 14px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.checklist-group-title {
+  font-size: 10pt;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--orange);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checklist-group-title::before {
+  content: '';
+  width: 10px; height: 10px;
+  background: var(--orange);
+  border-radius: 50%;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   TWO / THREE COLUMN LAYOUTS
+============================================================ */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 12px 0;
+}
+
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.col-box {
+  background: var(--gray-bg);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 14px 16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.col-box-title {
+  font-size: 10pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--orange);
+}
+
+/* ============================================================
+   TABLES
+============================================================ */
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 9.5pt;
+  margin: 14px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.data-table thead tr {
+  background: var(--navy);
+  color: white;
+}
+
+.data-table th {
+  padding: 10px 14px;
+  text-align: left;
+  font-weight: 700;
+  font-size: 9pt;
+}
+
+.data-table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid var(--gray-200);
+  color: var(--gray-800);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.data-table tr:nth-child(even) td { background: var(--gray-bg); }
+.data-table td:first-child { font-weight: 600; color: var(--navy); }
+
+/* ============================================================
+   TIMELINE BLOCK
+============================================================ */
+.timeline-block {
+  border-left: 3px solid var(--orange);
+  padding: 0 0 0 18px;
+  margin: 12px 0;
+  position: relative;
+}
+
+.timeline-block::before {
+  content: '';
+  position: absolute;
+  left: -7px; top: 6px;
+  width: 11px; height: 11px;
+  background: var(--orange);
+  border-radius: 50%;
+  border: 2px solid white;
+  box-shadow: 0 0 0 2px var(--orange);
+}
+
+.timeline-title {
+  font-size: 10pt;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.timeline-window {
+  font-size: 8pt;
+  font-weight: 700;
+  color: var(--orange-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 6px;
+}
+
+.timeline-content {
+  font-size: 9.5pt;
+  color: var(--gray-700);
+  line-height: 1.55;
+  margin-bottom: 12px;
+}
+
+/* ============================================================
+   CAPTION / POST TEMPLATE
+============================================================ */
+.caption-template {
+  border: 2px solid var(--orange);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 14px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.caption-template-header {
+  background: var(--orange);
+  color: white;
+  padding: 8px 16px;
+  font-size: 9pt;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.caption-template-body {
+  padding: 14px 16px;
+  background: var(--gray-bg);
+  font-family: 'Courier New', monospace;
+  font-size: 9pt;
+  line-height: 1.75;
+  color: var(--gray-700);
+}
+
+.caption-label {
+  font-family: 'Inter', sans-serif;
+  font-size: 7.5pt;
+  font-weight: 800;
+  color: var(--navy);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 8px;
+  margin-bottom: 3px;
+}
+
+/* ============================================================
+   STANDARD LIST
+============================================================ */
+ul.standard-list {
+  padding-left: 20px;
+  margin: 8px 0 12px;
+}
+
+ul.standard-list li {
+  font-size: 10pt;
+  line-height: 1.6;
+  margin-bottom: 4px;
+  color: var(--gray-800);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+ol.standard-list {
+  padding-left: 20px;
+  margin: 8px 0 12px;
+}
+
+ol.standard-list li {
+  font-size: 10pt;
+  line-height: 1.6;
+  margin-bottom: 6px;
+  color: var(--gray-800);
+}
+
+code {
+  font-family: 'Courier New', monospace;
+  font-size: 9pt;
+  background: var(--gray-100);
+  color: var(--navy);
+  padding: 1px 5px;
+  border-radius: 3px;
+  border: 1px solid var(--gray-200);
+}
+
+strong { font-weight: 700; color: var(--navy); }
+em { font-style: italic; }
+
+/* ============================================================
+   PRINT STYLES
+============================================================ */
+@media print {
+
+  @page {
+    size: 8.5in 11in;
+    margin: 0;
+  }
+
+  html { font-size: 9.5pt; }
+
+  body {
+    background: white;
+    margin: 0;
+    padding: 0;
+  }
+
+  .doc-wrapper {
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+    padding: 0.5in 0.6in;
+  }
+
+  .cover {
+    margin: -0.5in -0.6in 0;
+    min-height: 11in;
+  }
+
+  /* Major section breaks */
+  .section-break {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* ── Headings never orphaned ── */
+  h2.content-h2, h3.content-h3,
+  .section-heading, .section-badge,
+  .checklist-group-title, .col-box-title,
+  .ad-field-label, .step-time, .toc-title,
+  .timeline-title {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* ── Break-inside: avoid on all content blocks ── */
+  .ad-template, .email-card, .col-box, .checklist-group,
+  .info-box, .orange-box, .green-box, .red-box,
+  .caption-template, .data-table, .toc-item, .toc-intro,
+  .two-col, .three-col, .italic-note, .email-blockquote,
+  .step-entry, .timeline-block, .budget-badge {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  tr { break-inside: avoid; page-break-inside: avoid; }
+  li { break-inside: avoid; page-break-inside: avoid; }
+  p  { orphans: 3; widows: 3; }
+
+  /* ── Compress elements for print ── */
+  .section-heading    { font-size: 18pt; }
+  .section-heading-sub { font-size: 8.5pt; margin-bottom: 14px; }
+  .section-badge      { font-size: 7.5pt; margin-bottom: 8px; }
+  h2.content-h2       { font-size: 11pt; margin-top: 16px; margin-bottom: 6px; }
+  h3.content-h3       { font-size: 9.5pt; margin-top: 11px; margin-bottom: 5px; }
+  p.body-text         { font-size: 9pt; line-height: 1.55; margin-bottom: 7px; }
+
+  .ad-template        { margin-bottom: 12px; }
+  .ad-template-header { padding: 7px 12px; }
+  .ad-template-body   { padding: 10px 12px; }
+  .ad-best-for        { font-size: 7.5pt; padding: 4px 8px; margin-bottom: 7px; }
+  .ad-field-label     { margin-top: 7px; margin-bottom: 4px; font-size: 7pt; }
+  .ad-copy-box        { font-size: 8.5pt; padding: 7px 10px; }
+  .targeting-label    { font-size: 7.5pt; min-width: 95px; }
+  .targeting-val      { font-size: 8.5pt; }
+
+  .email-card         { margin-bottom: 12px; }
+  .email-card-header  { padding: 8px 14px; }
+  .email-body         { padding: 10px 14px; font-size: 8.5pt; }
+  .email-body p       { margin-bottom: 5px; }
+  .email-meta         { padding: 6px 14px; font-size: 7.5pt; }
+  .email-blockquote   { padding: 5px 10px; font-size: 8pt; margin: 6px 0; }
+
+  .checklist-group    { padding: 10px 14px; margin-bottom: 10px; }
+  .checklist li       { font-size: 8.5pt; padding: 3px 0; }
+
+  .info-box, .orange-box, .green-box, .red-box { padding: 10px 14px; margin: 10px 0; }
+
+  .data-table td, .data-table th { padding: 6px 10px; font-size: 8pt; }
+
+  .two-col   { gap: 12px; margin: 8px 0; }
+  .three-col { gap: 10px; margin: 8px 0; }
+  .col-box   { padding: 10px 12px; }
+
+  .toc-title    { font-size: 22pt; margin-bottom: 4px; }
+  .toc-subtitle { font-size: 8.5pt; margin-bottom: 18px; }
+  .toc-intro    { padding: 10px 14px; margin-bottom: 18px; font-size: 9pt; }
+  .toc-item     { padding: 11px 16px; margin-bottom: 7px; }
+  .toc-item-title { font-size: 10pt; }
+  .toc-item-desc  { font-size: 8pt; }
+
+  .cover-title    { font-size: 36pt; }
+  .cover-subtitle { font-size: 10pt; }
+  .cover-logo     { margin-bottom: 0.4in; }
+
+  .section-divider { margin: 14px 0; }
+
+  .caption-template-body { font-size: 8.5pt; line-height: 1.65; }
+  .step-entry     { padding: 9px 0; }
+  .step-desc      { font-size: 8.5pt; }
+
+  .page-break { page-break-before: always; break-before: page; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="doc-wrapper">
+
+<!-- ============================================================
+     COVER PAGE
+============================================================ -->
+<div class="cover">
+  <div class="cover-top-bar"></div>
+  <div class="cover-body">
+
+    <div class="cover-logo">
+      <div class="cover-logo-mark">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M3 9.5L12 3l9 6.5V20a1 1 0 01-1 1H4a1 1 0 01-1-1V9.5z"/>
+        </svg>
+      </div>
+      <div class="cover-logo-name">HomeProMarketer<span>.com</span></div>
+    </div>
+
+    <div class="cover-eyebrow">Done-For-You Marketing Resource</div>
+
+    <div class="cover-title">
+      Roofing<br>Lead<br><em>Machine</em>
+    </div>
+
+    <div class="cover-subtitle">
+      Five battle-tested marketing systems built specifically for roofing contractors. Generate more leads, close more jobs, and dominate your local market — starting today.
+    </div>
+
+    <div class="cover-divider"></div>
+
+    <div class="cover-includes-label">What's inside this bundle</div>
+
+    <div class="cover-includes-grid">
+      <div class="cover-include-item">
+        <div class="cover-include-num">1</div>
+        Facebook &amp; Instagram Ad Copy + Targeting
+      </div>
+      <div class="cover-include-item">
+        <div class="cover-include-num">2</div>
+        Before/After Photo Strategy Guide
+      </div>
+      <div class="cover-include-item">
+        <div class="cover-include-num">3</div>
+        Google Business Profile Optimization
+      </div>
+      <div class="cover-include-item">
+        <div class="cover-include-num">4</div>
+        Storm Season Marketing Playbook
+      </div>
+      <div class="cover-include-item">
+        <div class="cover-include-num">5</div>
+        5-Email Roofing Lead Follow-Up Sequence
+      </div>
+      <div class="cover-include-item">
+        <div class="cover-include-num">+</div>
+        Bonus: Ad Budget &amp; Bidding Reference
+      </div>
+    </div>
+
+    <div class="cover-bottom">
+      <div class="cover-bottom-text">
+        Prepared by HomeProMarketer.com<br>
+        Your All-in-One Home Service Marketing Platform
+      </div>
+      <div class="cover-value-badge">$67 Value</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ============================================================
+     TABLE OF CONTENTS
+============================================================ -->
+
+    <div class="toc-title section-break">Table of Contents</div>
+    <div class="toc-subtitle">Each section is self-contained — start with whichever area will move the needle fastest for your business right now.</div>
+
+    <div class="toc-intro">
+      The Roofing Lead Machine Bundle gives you five complete marketing systems you can deploy immediately — no agency, no marketing degree, no wasted time. Every ad, email, and checklist is written specifically for roofing contractors competing in local markets.
+    </div>
+
+    <div class="toc-item">
+      <div class="toc-num">1</div>
+      <div class="toc-info">
+        <div class="toc-item-title">Facebook &amp; Instagram Ad Copy + Targeting Guide</div>
+        <div class="toc-item-desc">5 complete ad sets with primary text, headlines, targeting settings &amp; budget recommendations</div>
+      </div>
+      <div class="toc-dots"></div>
+      <div class="toc-pg">Section 1</div>
+    </div>
+
+    <div class="toc-item">
+      <div class="toc-num">2</div>
+      <div class="toc-info">
+        <div class="toc-item-title">Before/After Photo Strategy Guide</div>
+        <div class="toc-item-desc">Capture guide, editing tips, caption templates &amp; platform-specific posting strategy</div>
+      </div>
+      <div class="toc-dots"></div>
+      <div class="toc-pg">Section 2</div>
+    </div>
+
+    <div class="toc-item">
+      <div class="toc-num">3</div>
+      <div class="toc-info">
+        <div class="toc-item-title">Google Business Profile Optimization Guide</div>
+        <div class="toc-item-desc">Step-by-step GBP setup, photo strategy, review generation &amp; local SEO for roofers</div>
+      </div>
+      <div class="toc-dots"></div>
+      <div class="toc-pg">Section 3</div>
+    </div>
+
+    <div class="toc-item">
+      <div class="toc-num">4</div>
+      <div class="toc-info">
+        <div class="toc-item-title">Storm Season Marketing Playbook</div>
+        <div class="toc-item-desc">0–48 hour rapid-response system to capture emergency roofing leads after a storm event</div>
+      </div>
+      <div class="toc-dots"></div>
+      <div class="toc-pg">Section 4</div>
+    </div>
+
+    <div class="toc-item">
+      <div class="toc-num">5</div>
+      <div class="toc-info">
+        <div class="toc-item-title">5-Email Roofing Lead Follow-Up Sequence</div>
+        <div class="toc-item-desc">Complete copy-paste emails for inspection requests, estimates &amp; closing the job</div>
+      </div>
+      <div class="toc-dots"></div>
+      <div class="toc-pg">Section 5</div>
+    </div>
+
+    <div class="toc-item" style="border-color: var(--gray-100); background: var(--gray-bg);">
+      <div class="toc-num" style="background: var(--gray-400);">+</div>
+      <div class="toc-info">
+        <div class="toc-item-title">Bonus: Ad Budget &amp; Bidding Quick Reference</div>
+        <div class="toc-item-desc">Recommended daily budgets, bidding strategies, and what to expect by campaign type</div>
+      </div>
+      <div class="toc-dots"></div>
+      <div class="toc-pg" style="color: var(--gray-400);">Bonus</div>
+    </div>
+
+    <div class="three-col" style="margin-top: 28px;">
+      <div class="col-box">
+        <div class="col-box-title">How to Use This Bundle</div>
+        <p style="font-size: 9pt; color: var(--gray-700);">Each section stands alone. Start with Section 4 if there's a storm in your area. Start with Section 1 if you need leads fast. Start with Section 3 if you haven't claimed your GBP yet.</p>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">Customize the Brackets</div>
+        <p style="font-size: 9pt; color: var(--gray-700);">Every template uses <code>[bracketed text]</code> for anything you need to personalize — your city, phone number, business name, or offer. Replace these before using.</p>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">Results Take Consistency</div>
+        <p style="font-size: 9pt; color: var(--gray-700);">These systems work when used consistently. Run ads for at least 2 weeks before judging results. Send every email in the sequence. Collect reviews every single week.</p>
+      </div>
+    </div>
+
+
+<!-- ============================================================
+     SECTION 1 — FACEBOOK & INSTAGRAM AD COPY + TARGETING
+============================================================ -->
+
+    <div class="section-badge section-break">Section 1 of 5</div>
+    <div class="section-heading">Facebook &amp; Instagram Ad Copy + Targeting Guide</div>
+    <div class="section-heading-sub">5 complete ad sets ready to launch — copy the text, set the targeting, set the budget, and go.</div>
+
+    <div class="orange-box">
+      <div class="orange-box-title">How to Use These Ad Sets</div>
+      <p style="font-size: 10pt; color: var(--gray-800);">In Meta Ads Manager, create a new campaign with the "Leads" or "Traffic" objective. Use these as individual ad sets within the same campaign. Replace all <code>[bracketed text]</code> with your specifics. Use the Facebook Lead Form ad format to capture name, phone, and email without the prospect leaving Facebook.</p>
+    </div>
+
+    <!-- Ad 1 -->
+    <div class="ad-template">
+      <div class="ad-template-header">
+        <div class="ad-template-num">1</div>
+        <div class="ad-template-title">Storm Damage / Emergency Repair</div>
+        <div class="ad-template-tag">Highest Urgency</div>
+      </div>
+      <div class="ad-template-body">
+        <div class="ad-best-for"><strong>Best for:</strong> Deploy immediately after a hail storm, high winds, or major weather event in your service area. This is your fastest-converting ad type.</div>
+
+        <div class="ad-field-label">Primary Text (body copy)</div>
+        <div class="ad-copy-box">⚠️ [City] homeowners — if your roof took damage in last night's storm, don't wait.<br><br>Water damage starts within 24–48 hours of a leak. A small repair today is far less expensive than a full replacement next month.<br><br>We're dispatching crews across [City] and [Nearby City] this week. Free inspections, same-week appointments, and we work directly with all major insurance companies.<br><br>📞 Tap below to request your FREE storm damage inspection — no obligation, no pressure, no cost.</div>
+
+        <div class="ad-field-label">Headline Options (test these)</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 4px;">
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">Free Storm Damage Inspection — [City]</span>
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">Did Your Roof Survive the Storm?</span>
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">We Work With Your Insurance — No Out-of-Pocket</span>
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">Storm Crews Available This Week</span>
+        </div>
+
+        <div class="ad-field-label">Targeting Settings</div>
+        <div class="targeting-row"><span class="targeting-label">Location</span><span class="targeting-val">[Your city] + 15–25 mile radius. If storm was county-wide, expand to full county.</span></div>
+        <div class="targeting-row"><span class="targeting-label">Age</span><span class="targeting-val">28–65+ (homeowners — under 28 rarely own homes with substantial roofs)</span></div>
+        <div class="targeting-row"><span class="targeting-label">Interests</span><span class="targeting-val">Home improvement, homeownership, DIY home repair, Angi, HomeAdvisor</span></div>
+        <div class="targeting-row"><span class="targeting-label">Behaviors</span><span class="targeting-val">Likely to move, recently moved, homeowners (Facebook behavioral target)</span></div>
+        <div class="targeting-row"><span class="targeting-label">CTA Button</span><span class="targeting-val">"Get Quote" or "Learn More" pointing to lead form</span></div>
+        <div class="budget-badge">💰 Recommended Budget: $30–$75/day during active storm season · Pause when area recovers</div>
+      </div>
+    </div>
+
+    <!-- Ad 2 -->
+    <div class="ad-template">
+      <div class="ad-template-header">
+        <div class="ad-template-num">2</div>
+        <div class="ad-template-title">Free Roof Inspection Offer</div>
+        <div class="ad-template-tag">Top of Funnel</div>
+      </div>
+      <div class="ad-template-body">
+        <div class="ad-best-for"><strong>Best for:</strong> Year-round lead generation. Most homeowners don't know they need a new roof until a leak appears. This creates urgency without waiting for an emergency.</div>
+
+        <div class="ad-field-label">Primary Text (body copy)</div>
+        <div class="ad-copy-box">Most homeowners discover their roof needs replacing when it's too late — and too expensive.<br><br>The average roof in [State] lasts 20–25 years. If yours is 15+ years old, small issues are already forming that you can't see from the ground.<br><br>🏠 Our certified [City] roofing inspectors will:<br>✅ Inspect every inch of your roof — free<br>✅ Show you photos of any issues found<br>✅ Give you an honest, no-pressure assessment<br>✅ Provide a written estimate if repairs are needed<br><br>Takes 30 minutes. Zero obligation. We've done this for [X]+ [City] homeowners.<br><br>👇 Click below to schedule your FREE inspection this week.</div>
+
+        <div class="ad-field-label">Headline Options</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 4px;">
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">Free Roof Inspection — [City] Homeowners</span>
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">Is Your Roof Hiding a Costly Problem?</span>
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">Book Your Free Inspection Before Summer</span>
+        </div>
+
+        <div class="ad-field-label">Targeting Settings</div>
+        <div class="targeting-row"><span class="targeting-label">Location</span><span class="targeting-val">[City] + 20-mile radius</span></div>
+        <div class="targeting-row"><span class="targeting-label">Age</span><span class="targeting-val">32–65+ (focus on established homeowners)</span></div>
+        <div class="targeting-row"><span class="targeting-label">Interests</span><span class="targeting-val">Home improvement, house &amp; garden, real estate, roofing</span></div>
+        <div class="targeting-row"><span class="targeting-label">Exclude</span><span class="targeting-val">Renters (select "Does not own home" behavior if available)</span></div>
+        <div class="targeting-row"><span class="targeting-label">Placement</span><span class="targeting-val">Facebook Feed, Instagram Feed, Facebook Marketplace (high intent)</span></div>
+        <div class="budget-badge">💰 Recommended Budget: $20–$40/day year-round · Increase to $50/day in spring/fall</div>
+      </div>
+    </div>
+
+    <!-- Ad 3 -->
+    <div class="ad-template">
+      <div class="ad-template-header">
+        <div class="ad-template-num">3</div>
+        <div class="ad-template-title">Full Roof Replacement</div>
+        <div class="ad-template-tag">High Ticket</div>
+      </div>
+      <div class="ad-template-body">
+        <div class="ad-best-for"><strong>Best for:</strong> Targeting homeowners who are already researching roof replacement. Higher cost per lead but higher average job value ($8,000–$20,000+).</div>
+
+        <div class="ad-field-label">Primary Text (body copy)</div>
+        <div class="ad-copy-box">If you've been putting off replacing your roof, this is your sign to get it done before winter.<br><br>At [Company Name], we've replaced [X]+ roofs across [City] and the surrounding area. Here's what sets us apart:<br><br>🔨 Licensed &amp; insured — [State] Lic. #[Number]<br>⭐ [X]+ 5-star reviews on Google<br>📋 Written warranty on labor AND materials<br>💳 Flexible financing — payments as low as $[X]/month<br>🗓️ Most jobs completed in 1–2 days<br><br>We're not the cheapest quote you'll get. We're the best value — and we back every roof we install.<br><br>Request a free estimate and see why [City] homeowners choose us over the competition.</div>
+
+        <div class="ad-field-label">Headline Options</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 4px;">
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">New Roof Installed in 1–2 Days — [City]</span>
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">[X]+ Roofs Replaced — Free Estimate</span>
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">Finance Your New Roof — $0 Down Available</span>
+        </div>
+
+        <div class="ad-field-label">Targeting Settings</div>
+        <div class="targeting-row"><span class="targeting-label">Location</span><span class="targeting-val">[City] + 20-mile radius</span></div>
+        <div class="targeting-row"><span class="targeting-label">Age</span><span class="targeting-val">35–65+ (more likely to own older homes)</span></div>
+        <div class="targeting-row"><span class="targeting-label">Interests</span><span class="targeting-val">Home remodeling, roofing, homeowner associations, home equity</span></div>
+        <div class="targeting-row"><span class="targeting-label">Income</span><span class="targeting-val">Top 50% income brackets in your area (adjust in detailed targeting)</span></div>
+        <div class="budget-badge">💰 Recommended Budget: $25–$50/day · Worth higher CPL due to high job value</div>
+      </div>
+    </div>
+
+    <!-- Ad 4 -->
+    <div class="ad-template">
+      <div class="ad-template-header">
+        <div class="ad-template-num">4</div>
+        <div class="ad-template-title">Financing / Payment Plans</div>
+        <div class="ad-template-tag">Objection Buster</div>
+      </div>
+      <div class="ad-template-body">
+        <div class="ad-best-for"><strong>Best for:</strong> Reaching homeowners who want or need a new roof but are hesitating on cost. Financing ads consistently outperform on cost-per-lead when job values are high.</div>
+
+        <div class="ad-field-label">Primary Text (body copy)</div>
+        <div class="ad-copy-box">A new roof doesn't have to break the bank.<br><br>We offer flexible financing options so [City] homeowners can protect their home now — and pay over time at a rate that works for their budget.<br><br>💳 Options include:<br>• 0% interest for 12–18 months (qualified applicants)<br>• Low monthly payments — as little as $[X]/mo<br>• Quick approvals — get an answer in minutes<br>• No prepayment penalties<br><br>A roof replacement is an investment. With financing, it's also an affordable one.<br><br>👇 Request a free estimate today — we'll show you the monthly payment options at the appointment.</div>
+
+        <div class="ad-field-label">Headline Options</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 4px;">
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">New Roof, Flexible Payments — [City]</span>
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">0% Financing on Roof Replacement</span>
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">Don't Wait — Finance Your New Roof Today</span>
+        </div>
+
+        <div class="ad-field-label">Targeting Settings</div>
+        <div class="targeting-row"><span class="targeting-label">Location</span><span class="targeting-val">[City] + 20-mile radius</span></div>
+        <div class="targeting-row"><span class="targeting-label">Age</span><span class="targeting-val">28–55 (financing most relevant to this group)</span></div>
+        <div class="targeting-row"><span class="targeting-label">Interests</span><span class="targeting-val">Personal finance, home improvement loans, home improvement</span></div>
+        <div class="targeting-row"><span class="targeting-label">Custom Audience</span><span class="targeting-val">Retarget website visitors who did not convert (install Meta Pixel first)</span></div>
+        <div class="budget-badge">💰 Recommended Budget: $15–$30/day as a retargeting or supplemental campaign</div>
+      </div>
+    </div>
+
+    <!-- Ad 5 -->
+    <div class="ad-template">
+      <div class="ad-template-header">
+        <div class="ad-template-num">5</div>
+        <div class="ad-template-title">Social Proof / Reviews &amp; Trust</div>
+        <div class="ad-template-tag">Brand Trust</div>
+      </div>
+      <div class="ad-template-body">
+        <div class="ad-best-for"><strong>Best for:</strong> Running alongside direct-response ads to build credibility. Use a real customer photo or before/after image. The more specific the review, the better it performs.</div>
+
+        <div class="ad-field-label">Primary Text (body copy)</div>
+        <div class="ad-copy-box">"We had hail damage last April and didn't even know it until [Company Name] came out for a free inspection. They found damage on 40% of our shingles, worked directly with our insurance adjuster, and had a brand new roof installed in one day. I couldn't believe how smooth it was." — [Customer First Name], [City] Homeowner<br><br>⭐⭐⭐⭐⭐ — That's what [X]+ [City] homeowners have said about us on Google.<br><br>If you haven't had your roof inspected since the last major storm, now's the time. Our inspections are free, take 30 minutes, and come with no obligation to hire us.<br><br>📲 Book your free inspection below.</div>
+
+        <div class="ad-field-label">Headline Options</div>
+        <div style="display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: 4px;">
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">[X]+ 5-Star Reviews in [City]</span>
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">See What [City] Homeowners Are Saying</span>
+          <span style="background: #eff6ff; border: 1px solid #bfdbfe; color: #1e40af; padding: 3px 9px; border-radius: 12px; font-size: 8pt; font-weight: 600; font-family: 'Courier New', monospace;">Trusted by [City] Since [Year]</span>
+        </div>
+
+        <div class="ad-field-label">Creative Notes</div>
+        <div class="ad-best-for">Use a real before/after photo of a completed job if possible. A photo of the customer's house (with permission) outperforms stock imagery by 2–3x. Video testimonials (15–30 seconds) are even better — ask satisfied customers to record a quick clip on their phone.</div>
+
+        <div class="targeting-row"><span class="targeting-label">Location</span><span class="targeting-val">[City] + 20-mile radius</span></div>
+        <div class="targeting-row"><span class="targeting-label">Audience</span><span class="targeting-val">Broad homeowner audience OR retarget website visitors &amp; page engagers</span></div>
+        <div class="budget-badge">💰 Recommended Budget: $10–$20/day · Always-on brand trust campaign</div>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-box-title">Bonus: Ad Budget Quick Reference</div>
+      <div class="two-col" style="margin-top: 8px;">
+        <div>
+          <p style="font-size: 9pt; font-weight: 700; color: var(--navy); margin-bottom: 4px;">Monthly Budget: $600–$900</p>
+          <ul class="standard-list" style="font-size: 9pt;">
+            <li>$25/day Free Inspection</li>
+            <li>$5/day Trust/Reviews (always on)</li>
+            <li>Pause others until budget grows</li>
+          </ul>
+        </div>
+        <div>
+          <p style="font-size: 9pt; font-weight: 700; color: var(--navy); margin-bottom: 4px;">Monthly Budget: $1,500–$3,000</p>
+          <ul class="standard-list" style="font-size: 9pt;">
+            <li>$30/day Free Inspection</li>
+            <li>$25/day Replacement</li>
+            <li>$20/day Financing</li>
+            <li>$15/day Trust (always on)</li>
+          </ul>
+        </div>
+      </div>
+      <p class="italic-note" style="margin-top: 8px; margin-bottom: 0;">During active storm season, shift 70–80% of budget to Ad #1 (Storm Damage). Volume matters more than efficiency when leads are hot.</p>
+    </div>
+
+
+<!-- ============================================================
+     SECTION 2 — BEFORE/AFTER PHOTO STRATEGY GUIDE
+============================================================ -->
+
+    <div class="section-badge section-break">Section 2 of 5</div>
+    <div class="section-heading">Before/After Photo Strategy Guide</div>
+    <div class="section-heading-sub">Before/after photos are the highest-performing roofing content on every platform. Here's exactly how to capture, edit, and deploy them.</div>
+
+    <div class="orange-box">
+      <div class="orange-box-title">Why Before/After Photos Work for Roofing</div>
+      <p style="font-size: 10pt; color: var(--gray-800);">Roofing is a high-trust, high-cost purchase. Before/after photos do the selling for you — they prove your work, demonstrate the transformation, and trigger the thought "I need that for my roof too." A single great before/after photo can generate dozens of leads when boosted on Facebook or posted to Google Business Profile.</p>
+    </div>
+
+    <h2 class="content-h2">Equipment You Need (Budget: $0–$150)</h2>
+
+    <div class="two-col">
+      <div class="col-box">
+        <div class="col-box-title">Minimum Setup (Free)</div>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li><strong>Your phone camera</strong> — Any iPhone 12+ or modern Android is sufficient</li>
+          <li><strong>Natural lighting</strong> — Shoot in early morning or late afternoon (golden hour) for best results</li>
+          <li><strong>Clean lens</strong> — Wipe it before every shoot. Dust kills photo quality.</li>
+          <li><strong>Level shots</strong> — Keep the horizon straight. Crooked photos look unprofessional.</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">Upgraded Setup ($50–$150)</div>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li><strong>Phone tripod/mount</strong> (~$20) — Eliminates shake on ground-level shots</li>
+          <li><strong>DJI Mini drone</strong> (~$299, optional) — Aerial before/after shots are exceptional for social ads</li>
+          <li><strong>Wide-angle lens clip</strong> (~$15) — Shows more of the roof in each shot</li>
+          <li><strong>Canva Pro</strong> (~$13/mo) — Add your logo, brand colors, and overlays to every photo</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="content-h2">The 5-Shot System — What to Capture on Every Job</h2>
+
+    <p class="body-text">Train every crew to take these 5 photos on every job. It takes under 5 minutes and creates a library of marketing content automatically.</p>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Shot 1: The "Before" Wide Shot</div>
+      <ul class="standard-list" style="font-size: 9.5pt; margin-bottom: 0;">
+        <li>Stand at street level or across the yard — capture the entire roofline</li>
+        <li>Shoot from the same angle you'll use for the "after" shot</li>
+        <li>If there's visible damage (missing shingles, sagging), get close enough to show it clearly</li>
+        <li>Shoot in landscape (horizontal) orientation for ads, portrait for Instagram stories/Reels</li>
+      </ul>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Shot 2: The Damage Close-Up</div>
+      <ul class="standard-list" style="font-size: 9.5pt; margin-bottom: 0;">
+        <li>Get 2–3 feet from the damage — hail dents, cracked/missing shingles, lifted flashing, soft spots</li>
+        <li>This shot creates urgency and shows why the job needed to be done</li>
+        <li>If using drone footage, capture the full roof with visible damage from above</li>
+      </ul>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Shot 3: Mid-Job Progress</div>
+      <ul class="standard-list" style="font-size: 9.5pt; margin-bottom: 0;">
+        <li>Capture the crew working — action shots build trust and show professionalism</li>
+        <li>Include a wide shot showing the crew on the roof with ladders and materials visible</li>
+        <li>Short 15-second video clips work even better than still photos for Reels/Stories</li>
+      </ul>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Shot 4: The "After" Wide Shot</div>
+      <ul class="standard-list" style="font-size: 9.5pt; margin-bottom: 0;">
+        <li>Stand in the exact same spot as Shot 1 — same angle, same framing</li>
+        <li>Shoot from street level for maximum visual impact showing the whole house</li>
+        <li>Capture during the same time of day if possible for consistent lighting</li>
+        <li>Include the full house — gutters, siding, landscaping — to show how clean you left it</li>
+      </ul>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Shot 5: The Detail "After" Shot</div>
+      <ul class="standard-list" style="font-size: 9.5pt; margin-bottom: 0;">
+        <li>Close-up of the finished shingles, flashing, ridge cap, or ventilation</li>
+        <li>Shows craftsmanship — this is what separates you from cheap competitors</li>
+        <li>Get the crew's hands and tools in frame for authenticity</li>
+      </ul>
+    </div>
+
+    <h2 class="content-h2">Editing Your Photos (Free Tools)</h2>
+
+    <div class="two-col">
+      <div class="col-box">
+        <div class="col-box-title">Google Photos / Apple Photos (Free)</div>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>Brightness +15–20 to show detail on dark shingles</li>
+          <li>Contrast +10 to make colors pop</li>
+          <li>Shadows +20 to reveal detail in dark areas</li>
+          <li>Crop to remove distractions at edges</li>
+          <li>Straighten if the horizon is tilted</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">Canva (Free/Pro) — For Social Posts</div>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>Use the "Side by Side" template for before/after posts</li>
+          <li>Add your logo in the top corner (30–40px, semi-transparent)</li>
+          <li>Add a text overlay: "Before → After" in your brand colors</li>
+          <li>Export at highest quality for ads (use PNG for best quality)</li>
+          <li>Create a template you can reuse on every job</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="content-h2">Caption Templates — Copy &amp; Customize</h2>
+
+    <div class="caption-template">
+      <div class="caption-template-header">Caption Template 1 — Storm Damage Before/After</div>
+      <div class="caption-template-body">
+        <div class="caption-label">Post Text:</div>
+        This [City] home had [hail/wind] damage from last [month's] storm. The homeowner didn't even know — they thought the roof was fine.<br><br>We found [X] damaged shingles, compromised flashing around the chimney, and early signs of moisture intrusion in two spots.<br><br>New [shingle brand/type] roof installed in [X] hours. Works directly with [their insurance company] — no out-of-pocket cost to the homeowner.<br><br>If your home was in the path of that storm, don't assume you're fine. Free inspections available this week.<br><br>📞 [Phone Number] | 🔗 [Website Link]<br><br>#RoofingContractor #[City]Roofer #StormDamage #RoofReplacement #[City]HomeImprovement
+      </div>
+    </div>
+
+    <div class="caption-template">
+      <div class="caption-template-header">Caption Template 2 — Roof Replacement (No Storm)</div>
+      <div class="caption-template-body">
+        <div class="caption-label">Post Text:</div>
+        This roof was [X] years old and had been patched [X] times. The homeowner finally said enough — and we gave them a roof that'll outlast this one by 20 years.<br><br>✅ [Shingle type/brand] — [warranty] manufacturer warranty<br>✅ Full tear-off and replacement<br>✅ New underlayment, flashing, and ridge cap<br>✅ Completed in [X] days<br>✅ Job site left spotless — not a nail in the yard<br><br>This is what we do. Every single job, every single time.<br><br>Free estimates for [City] and surrounding area. Call or book online.<br><br>#[City]Roofer #NewRoof #RoofingCompany #HomeImprovement #[City][State]
+      </div>
+    </div>
+
+    <h2 class="content-h2">Posting Schedule &amp; Platform Strategy</h2>
+
+    <div class="data-table">
+      <thead>
+        <tr>
+          <th>Platform</th>
+          <th>Format</th>
+          <th>Frequency</th>
+          <th>Best Performing Content</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>Facebook Page</td><td>Single photo + caption</td><td>3–4x per week</td><td>Before/after with full story in caption</td></tr>
+        <tr><td>Instagram Feed</td><td>Side-by-side carousel</td><td>2–3x per week</td><td>Clean branded before/after, minimal text</td></tr>
+        <tr><td>Instagram Reels</td><td>15–30 sec video</td><td>1–2x per week</td><td>Time-lapse of job, crew working, reveal</td></tr>
+        <tr><td>Google Business</td><td>Photo + short caption</td><td>Every job</td><td>All 5 shots from the job system above</td></tr>
+        <tr><td>Facebook Ads</td><td>Boosted before/after</td><td>Ongoing</td><td>Best-performing organic posts boosted $5–10/day</td></tr>
+      </tbody>
+    </div>
+
+    <div class="green-box">
+      <div class="green-box-title">Pro Tip: Build Your Photo Library Fast</div>
+      <p style="font-size: 10pt;">Create a shared Google Photos or Dropbox folder that every crew member can add to. After 30 days of using the 5-Shot System, you'll have 20–30+ complete job photo sets — enough content to post daily for 6 months, run multiple ad campaigns, and dominate Google with fresh images.</p>
+    </div>
+
+
+<!-- ============================================================
+     SECTION 3 — GOOGLE BUSINESS PROFILE OPTIMIZATION
+============================================================ -->
+
+    <div class="section-badge section-break">Section 3 of 5</div>
+    <div class="section-heading">Google Business Profile Optimization Guide</div>
+    <div class="section-heading-sub">Your GBP is your single most powerful free marketing tool. Roofing contractors with fully optimized profiles get 3–5x more calls from local search.</div>
+
+    <div class="orange-box">
+      <div class="orange-box-title">Why GBP Matters More Than Your Website</div>
+      <p style="font-size: 10pt; color: var(--gray-800);">When someone searches "roofer near me" or "roof replacement [City]," Google shows the Local Pack — the map with 3 businesses. The contractor in that pack gets 60–80% of the clicks. Your GBP ranking determines whether you appear. This guide will get you into that pack and keep you there.</p>
+    </div>
+
+    <h2 class="content-h2">Step 1: Claim &amp; Verify Your Profile</h2>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Profile Setup Checklist</div>
+      <ul class="checklist">
+        <li><span class="check"></span>Go to business.google.com — claim your listing if you haven't already</li>
+        <li><span class="check"></span>Verify by postcard, phone, or video (video verification is now common — show your truck, tools, and worksite)</li>
+        <li><span class="check"></span>Business name: Use your exact legal/DBA name — no keyword stuffing (e.g., NOT "Best Roofer [City] LLC")</li>
+        <li><span class="check"></span>Primary category: <strong>Roofing Contractor</strong></li>
+        <li><span class="check"></span>Secondary categories: Add "Roofing Supply Store," "Gutter Cleaning Service," "Siding Contractor" if applicable</li>
+        <li><span class="check"></span>Service area: Add every city, town, and zip code you serve — up to 20 locations</li>
+        <li><span class="check"></span>Phone number: Use a local number (not toll-free). Trackable call numbers are fine.</li>
+        <li><span class="check"></span>Website: Link to your homepage or a dedicated roofing landing page</li>
+        <li><span class="check"></span>Hours: Set accurate hours. If you offer 24/7 emergency service, indicate that in your description.</li>
+      </ul>
+    </div>
+
+    <h2 class="content-h2">Step 2: Write a Description That Converts</h2>
+
+    <p class="body-text">Your GBP description is 750 characters. Most contractors waste it with generic filler. Here's a template that includes local keywords and trust signals:</p>
+
+    <div class="caption-template">
+      <div class="caption-template-header">GBP Description Template</div>
+      <div class="caption-template-body">[Company Name] is [City]'s trusted roofing contractor, serving [City], [City 2], and [City 3] since [Year]. We specialize in roof replacement, storm damage repair, hail damage inspections, and new roof installation for residential homeowners.<br><br>Licensed and insured in [State] (Lic. #[Number]). [X]+ 5-star Google reviews. We work directly with all major insurance companies and offer flexible financing options.<br><br>Call [Phone Number] for a free inspection or estimate. Same-week appointments available.</div>
+    </div>
+
+    <h2 class="content-h2">Step 3: Photos — The Ranking Factor Most Roofers Ignore</h2>
+
+    <p class="body-text">Google ranks GBP profiles with more photos higher — and customers click profiles with more photos more often. Most roofing contractors have 5–10 photos. Get to 50+ and you'll stand out dramatically.</p>
+
+    <div class="two-col">
+      <div class="col-box">
+        <div class="col-box-title">What to Upload (Priority Order)</div>
+        <ol class="standard-list" style="font-size: 9.5pt;">
+          <li>Before/after photos of completed jobs (use your 5-Shot System)</li>
+          <li>Your crew working on a roof</li>
+          <li>Your branded truck(s) at a job site</li>
+          <li>Close-ups of quality finished work (ridge caps, flashing, valleys)</li>
+          <li>Your team photo or crew headshots</li>
+          <li>Photos of your office or warehouse (if applicable)</li>
+          <li>Screenshots of 5-star Google reviews (yes, upload these)</li>
+        </ol>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">Photo Upload Rules</div>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>Upload at least 2 new photos every week — fresh photos signal an active business</li>
+          <li>Name your photo files before uploading: "roof-replacement-dallas-texas.jpg" not "IMG_3847.jpg"</li>
+          <li>Minimum resolution: 720×720px. Bigger is better.</li>
+          <li>Never use stock photos — Google can detect them and they don't build trust</li>
+          <li>Also encourage customers to upload their own photos after a job</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="content-h2">Step 4: Google Review Generation System</h2>
+
+    <div class="info-box">
+      <div class="info-box-title">The Review Multiplier Effect</div>
+      <p style="font-size: 9.5pt; color: var(--gray-800);">Google ranks businesses with more reviews and higher ratings higher in local search. Every new 5-star review also increases your click-through rate from the map pack. A contractor with 150 reviews gets roughly 3–4x more profile clicks than one with 25 reviews at the same rating.</p>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">The 3-Touch Review Request System</div>
+      <ul class="checklist">
+        <li><span class="check"></span><strong>Touch 1 — Verbal ask at job completion:</strong> "We really appreciate your business. If you're happy with the work, would you mind leaving us a quick Google review? It helps our family business a lot." Then immediately text them the link.</li>
+        <li><span class="check"></span><strong>Touch 2 — Text message (same day):</strong> "[Customer Name], thanks for trusting us with your roof! If you have 2 minutes, we'd love a Google review: [your Google review short link]. Thank you! — [Your Name], [Company]"</li>
+        <li><span class="check"></span><strong>Touch 3 — Follow-up text (3 days later):</strong> "Hi [Name], just following up — did everything look good after the crew left? If you have a minute to leave us a review it would mean a lot: [link]"</li>
+      </ul>
+    </div>
+
+    <h3 class="content-h3">How to Get Your Google Review Link</h3>
+    <p class="body-text">In your Google Business Profile dashboard, go to <strong>Home → Get more reviews → Share review form</strong>. Copy that short link and save it. This is the link you text every customer.</p>
+
+    <h2 class="content-h2">Step 5: GBP Posts — Post Weekly</h2>
+
+    <div class="two-col">
+      <div class="col-box">
+        <div class="col-box-title">What to Post Weekly</div>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>Before/after photo from a recent job</li>
+          <li>Seasonal tip (spring: pre-storm inspection; fall: pre-winter check)</li>
+          <li>Current offer or promotion</li>
+          <li>Completed job highlight with city name in caption</li>
+          <li>Copy of a 5-star review as a graphic</li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">GBP Post Best Practices</div>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>Include your city name in every post ("Just finished a roof in [Neighborhood], [City]")</li>
+          <li>Always include a photo — posts with photos get 3x more views</li>
+          <li>Add a CTA button: "Call Now" or "Book Online"</li>
+          <li>Posts expire after 7 days — set a weekly reminder to post</li>
+          <li>Use a scheduling tool (Buffer, Publer) if you want to batch-create posts</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="content-h2">Step 6: Services &amp; Q&amp;A Optimization</h2>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Services to Add to Your GBP</div>
+      <ul class="standard-list" style="font-size: 9.5pt; margin-bottom: 0;">
+        <li>Roof Replacement · Roof Repair · Storm Damage Repair · Hail Damage Inspection</li>
+        <li>Emergency Roof Repair · Free Roof Inspection · Insurance Claim Assistance</li>
+        <li>Shingle Installation · Metal Roofing · Flat Roof Repair · Gutter Installation</li>
+        <li>Add a short description to each service — include the word "[City]" naturally</li>
+      </ul>
+    </div>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Q&amp;A Section — Pre-Populate These Questions</div>
+      <ul class="standard-list" style="font-size: 9.5pt; margin-bottom: 0;">
+        <li><strong>Q: Do you offer free roof inspections?</strong> — A: Yes, free inspections are available for all [City] area homeowners. Call [phone] or book online.</li>
+        <li><strong>Q: Do you work with insurance companies?</strong> — A: Yes, we work directly with all major insurance carriers and can help with the claims process.</li>
+        <li><strong>Q: How long does a full roof replacement take?</strong> — A: Most residential roofs are completed in 1–2 days. We'll give you an exact timeline at the estimate.</li>
+        <li><strong>Q: Are you licensed and insured in [State]?</strong> — A: Yes. [State] Roofing License #[Number]. Fully insured with general liability and workers' compensation.</li>
+      </ul>
+    </div>
+
+    <div class="green-box">
+      <div class="green-box-title">GBP Ranking Checklist — Do All of These</div>
+      <div class="two-col" style="margin-top: 8px;">
+        <ul class="standard-list" style="font-size: 9pt;">
+          <li>Profile 100% complete</li>
+          <li>2+ new photos per week</li>
+          <li>1 new post per week</li>
+          <li>Respond to every review (even negatives)</li>
+        </ul>
+        <ul class="standard-list" style="font-size: 9pt;">
+          <li>Answer every Q&amp;A question</li>
+          <li>Request 2+ reviews per week</li>
+          <li>All services listed with descriptions</li>
+          <li>Business description includes city + services</li>
+        </ul>
+      </div>
+    </div>
+
+
+<!-- ============================================================
+     SECTION 4 — STORM SEASON MARKETING PLAYBOOK
+============================================================ -->
+
+    <div class="section-badge section-break">Section 4 of 5</div>
+    <div class="section-heading">Storm Season Marketing Playbook</div>
+    <div class="section-heading-sub">How to deploy marketing within 24–48 hours of a major storm event and capture emergency roofing leads before your competitors wake up.</div>
+
+    <div class="red-box">
+      <div class="red-box-title">Speed Is Everything After a Storm</div>
+      <p style="font-size: 10pt; color: var(--gray-800);">In storm response marketing, the first contractor to reach homeowners wins the lion's share of jobs. Within 24 hours of a major hail or wind event, homeowners are actively searching, scrolling, and calling. The window of maximum urgency lasts 48–72 hours. This playbook is designed to get your marketing live within hours, not days.</p>
+    </div>
+
+    <h2 class="content-h2">Before a Storm (Prepare in Advance)</h2>
+
+    <div class="checklist-group">
+      <div class="checklist-group-title">Pre-Storm Setup Checklist — Do These Today</div>
+      <ul class="checklist">
+        <li><span class="check"></span>Save Ad #1 (Storm Damage) from Section 1 in Meta Ads Manager as a draft — ready to activate with one click</li>
+        <li><span class="check"></span>Set up a "Storm Damage Inspection" landing page on your website with a simple form (name, phone, address, message)</li>
+        <li><span class="check"></span>Install the Meta Pixel on your website so you can retarget storm visitors</li>
+        <li><span class="check"></span>Create a text message template for storm outreach to your existing customer list</li>
+        <li><span class="check"></span>Set up a Google Local Services Ad account (takes 1–2 weeks to verify — do this now)</li>
+        <li><span class="check"></span>Prepare door hanger template (Canva) with storm damage messaging — can be printed in hours at local print shop</li>
+        <li><span class="check"></span>Sign up for storm alert services (StormAware, Hail Trace, or simply follow local weather on Twitter/X)</li>
+      </ul>
+    </div>
+
+    <h2 class="content-h2">The 48-Hour Storm Response Timeline</h2>
+
+    <div class="timeline-block">
+      <div class="timeline-window">0–4 Hours After Storm</div>
+      <div class="timeline-title">Activate Your Paid Ads Immediately</div>
+      <div class="timeline-content">
+        <ul class="standard-list" style="font-size: 9.5pt; margin-bottom: 0;">
+          <li>Enable your pre-saved Facebook/Instagram storm damage ad (Section 1, Ad #1)</li>
+          <li>Set budget to $50–$100/day for the next 72 hours</li>
+          <li>Post on your Facebook Business Page: "We're dispatching crews across [City] following last night's storm. Free inspections — call or DM us to get on the schedule."</li>
+          <li>Post the same message to your personal Facebook profile and ask employees to share</li>
+          <li>Update your Google Business Profile: Add a post about storm response</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-block">
+      <div class="timeline-window">4–12 Hours After Storm</div>
+      <div class="timeline-title">Activate Google &amp; Text Marketing</div>
+      <div class="timeline-content">
+        <ul class="standard-list" style="font-size: 9.5pt; margin-bottom: 0;">
+          <li>If you have Google Local Services Ads set up, increase your budget and confirm your availability for the week</li>
+          <li>Create a Google Search Ad targeting "storm damage roof [city]," "hail damage roof repair [city]," "emergency roofer [city]"</li>
+          <li>Text your existing customer list: "Hi [Name], [Company Name] here. We're reaching out to [City] customers following last night's storm. Free damage inspections available this week — reply YES if you'd like us to check your roof."</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-block">
+      <div class="timeline-window">12–24 Hours After Storm</div>
+      <div class="timeline-title">Ground Game — Canvassing &amp; Door Hangers</div>
+      <div class="timeline-content">
+        <ul class="standard-list" style="font-size: 9.5pt; margin-bottom: 0;">
+          <li>Deploy crews to the hardest-hit neighborhoods for door-to-door inspections (with homeowner permission)</li>
+          <li>Knock on doors within 2–3 blocks of every job you complete this week — neighbors are watching</li>
+          <li>Leave door hangers on every home on every street you visit ("We just inspected your neighbor's roof at [address] — complimentary inspection available")</li>
+          <li>Take street-level photos of visibly damaged roofs to use in ads (do NOT go on any roof without homeowner permission)</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="timeline-block">
+      <div class="timeline-window">24–48 Hours After Storm</div>
+      <div class="timeline-title">Follow Up &amp; Scale What's Working</div>
+      <div class="timeline-content">
+        <ul class="standard-list" style="font-size: 9.5pt; margin-bottom: 0;">
+          <li>Call every lead from the first 24 hours within 5 minutes of them submitting a form (leads go cold fast)</li>
+          <li>Check your Facebook ad results — increase budget on any ad with a low cost-per-lead</li>
+          <li>Post your first before/after photo from a storm job — these spread organically in storm-affected communities</li>
+          <li>Boost the before/after post for $10–20/day targeting the affected zip codes</li>
+          <li>Follow up with any homeowners who said "maybe" or "call me next week" — their urgency is highest right now</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2 class="content-h2">Storm Lead Conversion — Scripts &amp; Templates</h2>
+
+    <div class="caption-template">
+      <div class="caption-template-header">Initial Phone Call Script — Storm Lead</div>
+      <div class="caption-template-body">
+        "Hi [Name], this is [Your Name] from [Company]. I'm following up on the inspection request you submitted — is this still a good time?<br><br>Great. We've been in [their neighborhood] this week helping homeowners check for storm damage. With the hail that came through, a lot of roofs that look fine from the ground have damage that won't show up until the next rain.<br><br>I'd like to send one of our certified inspectors out to do a free inspection — takes about 30 minutes, we'll take photos of everything we find, and give you a full report. No cost, no obligation.<br><br>Are you available [tomorrow / this week] — morning or afternoon?"
+      </div>
+    </div>
+
+    <div class="caption-template">
+      <div class="caption-template-header">Door Hanger Script — Talking to Homeowner Directly</div>
+      <div class="caption-template-body">
+        "Hi! I'm [Name] from [Company Name]. We just finished inspecting the [Jones] house down the street — they had significant hail damage from the storm. We're offering complimentary inspections to neighbors this week since the storm track came right through here.<br><br>It's completely free, takes 30 minutes, and if there's no damage we'll tell you that too. May I set up a time to come back and take a look?"
+      </div>
+    </div>
+
+    <div class="green-box">
+      <div class="green-box-title">Insurance Claim Help = Massive Competitive Advantage</div>
+      <p style="font-size: 10pt;">Most homeowners are intimidated by insurance claims. If you can say "we handle the entire insurance process for you," you will close significantly more storm jobs. Train your sales process to offer to meet with the insurance adjuster, help document damage, and assist with supplements. This differentiator alone can double your close rate.</p>
+    </div>
+
+    <h2 class="content-h2">Storm Season Facebook Ad Copy Variations</h2>
+
+    <div class="two-col">
+      <div class="col-box">
+        <div class="col-box-title">Urgency Post (0–48 hrs post-storm)</div>
+        <p style="font-size: 9pt; color: var(--gray-700); margin-bottom: 6px; font-style: italic;">"[City] — last night's storm brought [hail size] hail and 60+ mph winds. We're already seeing significant damage in [Neighborhood] and [Neighborhood 2].<br><br>Free inspections available this week. We work with ALL insurance companies. Call [Phone] or reply to this post — we're booking fast."</p>
+        <p class="italic-note" style="margin: 0;">Target: [City] homeowners, 25-mile radius. Boost $50–75/day for 72 hours.</p>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">After the Rush (Days 3–14 post-storm)</div>
+        <p style="font-size: 9pt; color: var(--gray-700); margin-bottom: 6px; font-style: italic;">"A lot of [City] homeowners are just now discovering damage from [storm date]'s storm — sometimes it takes a few weeks for leaks to show up indoors.<br><br>If you haven't had your roof inspected yet, don't wait until you see a water stain on your ceiling. Our inspections are still free and we have appointments this week."</p>
+        <p class="italic-note" style="margin: 0;">Lower budget: $20–30/day. Run for 30 days post-storm.</p>
+      </div>
+    </div>
+
+
+<!-- ============================================================
+     SECTION 5 — EMAIL FOLLOW-UP SEQUENCE
+============================================================ -->
+
+    <div class="section-badge section-break">Section 5 of 5</div>
+    <div class="section-heading">5-Email Roofing Lead Follow-Up Sequence</div>
+    <div class="section-heading-sub">Copy-paste emails written specifically for roofing leads — from the first response to closing the job. Load into your CRM and automate.</div>
+
+    <div class="orange-box">
+      <div class="orange-box-title">How to Use This Email Sequence</div>
+      <p style="font-size: 10pt; color: var(--gray-800);">Load these 5 emails into your CRM (ServiceTitan, Jobber, Housecall Pro, or any email platform) as an automated sequence. Trigger it when a new lead submits a form, calls in, or requests an inspection. Studies show it takes 5–7 touchpoints to convert a roofing lead — most contractors only follow up once or twice and leave money on the table.</p>
+    </div>
+
+    <!-- Email 1 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-num">1</div>
+        <div class="email-card-title">Immediate Response — Thank You + Next Steps</div>
+        <div class="email-timing">Send within 5 minutes</div>
+      </div>
+      <div class="email-meta">
+        <div class="email-meta-row"><span class="email-meta-label">Subject:</span><span class="email-meta-val">Your inspection request — [Company Name] [City]</span></div>
+        <div class="email-meta-row"><span class="email-meta-label">Preview:</span><span class="email-meta-val">We got it. Here's what happens next...</span></div>
+      </div>
+      <div class="email-body">
+        <p>Hi [First Name],</p>
+        <p>Thanks for reaching out to [Company Name]. We received your request and someone will be calling you within the next 30–60 minutes to schedule your free inspection.</p>
+        <p>While you wait, here's what to expect:</p>
+        <ul>
+          <li><strong>The inspection is completely free</strong> — no obligation, no pressure to hire us</li>
+          <li><strong>Takes about 30 minutes</strong> — we inspect every inch and take photos of everything we find</li>
+          <li><strong>You'll receive a full written report</strong> with photos immediately after</li>
+          <li><strong>If there's damage, we'll walk you through your options</strong> — including how insurance works if it applies</li>
+        </ul>
+        <p>In the meantime, if you have any photos of your roof or have noticed any signs of damage (water stains, missing shingles, granules in gutters), feel free to reply to this email and attach them — it helps us prepare.</p>
+        <div class="email-blockquote">"[Company Name] came out within 24 hours, found damage I never would have noticed, and had everything handled with my insurance in two weeks. Couldn't have been easier." — [Customer Name], [City]</div>
+        <p>We'll be in touch shortly!</p>
+        <p>— [Your Name]<br>[Company Name] | [Phone] | [Website]</p>
+        <p class="email-ps">P.S. If you need to reach us immediately, call [Phone Number] and ask for [Name]. We answer 7 days a week.</p>
+      </div>
+    </div>
+
+    <!-- Email 2 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-num">2</div>
+        <div class="email-card-title">Education Email — What Homeowners Need to Know</div>
+        <div class="email-timing">Send Day 2</div>
+      </div>
+      <div class="email-meta">
+        <div class="email-meta-row"><span class="email-meta-label">Subject:</span><span class="email-meta-val">5 signs your roof needs replacing (most homeowners miss #3)</span></div>
+        <div class="email-meta-row"><span class="email-meta-label">Preview:</span><span class="email-meta-val">Before our inspection, know what to look for...</span></div>
+      </div>
+      <div class="email-body">
+        <p>Hi [First Name],</p>
+        <p>We're looking forward to your inspection. Before we come out, we wanted to share the 5 most common signs of roof damage that homeowners miss — because understanding what we're looking for helps you ask better questions when we're there.</p>
+        <p><strong>1. Granules in Your Gutters or Downspouts</strong><br>Asphalt shingles have a granular coating that protects against UV and weather. When shingles age or suffer impact damage, granules shed into gutters. If you clean your gutters and find grit or debris that looks like coarse sand, that's a red flag.</p>
+        <p><strong>2. Curling or Cupping Shingles</strong><br>Shingles that are curling up at the edges (cupping) or buckling in the middle (clawing) are at the end of their lifespan. This happens from moisture trapped beneath the shingle layer.</p>
+        <p><strong>3. Dark Streaks or Staining</strong><br>Black streaks along the roof surface are usually algae or moss growth — a sign of moisture retention that accelerates shingle breakdown. Some homeowners confuse this with dirt.</p>
+        <p><strong>4. Sagging in Any Area of the Roof</strong><br>Any sagging, dipping, or bouncy feel when walking the roof indicates structural damage — potentially rotted decking beneath the shingles. This requires immediate attention.</p>
+        <p><strong>5. Interior Water Stains</strong><br>If you've noticed any brown or yellow staining on your ceilings, there's already moisture penetrating the roof system. Don't wait — water damage spreads fast.</p>
+        <div class="email-blockquote">If you're seeing any of these signs, don't panic — most of them are fixable. We'll give you an honest assessment of what's going on and what it will cost to fix it.</div>
+        <p>See you soon,</p>
+        <p>— [Your Name], [Company Name]<br>[Phone] | [Website]</p>
+      </div>
+    </div>
+
+    <!-- Email 3 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-num">3</div>
+        <div class="email-card-title">Social Proof — Real Customer Story</div>
+        <div class="email-timing">Send Day 5</div>
+      </div>
+      <div class="email-meta">
+        <div class="email-meta-row"><span class="email-meta-label">Subject:</span><span class="email-meta-val">How we helped a [City] family save $4,200 on their roof</span></div>
+        <div class="email-meta-row"><span class="email-meta-label">Preview:</span><span class="email-meta-val">This is a story worth reading before your inspection...</span></div>
+      </div>
+      <div class="email-body">
+        <p>Hi [First Name],</p>
+        <p>I wanted to share a quick story before your inspection — because it's a situation we see all the time, and it might sound familiar.</p>
+        <p>Last [season], the [Family Name] family in [Neighborhood] called us after noticing a small water stain on their master bedroom ceiling. They figured it was a minor leak — maybe a few hundred dollars to fix.</p>
+        <p>When we inspected the roof, we found:</p>
+        <ul>
+          <li>Three areas of compromised flashing around the chimney and vents</li>
+          <li>A section of decking that had begun to rot from long-term moisture exposure</li>
+          <li>Hail impact damage from a storm 14 months prior that had gone undetected</li>
+          <li>Approx. [X]% of shingles at or past the end of their useful life</li>
+        </ul>
+        <p>Because of the hail damage, their homeowner's insurance covered the full cost of the new roof — they only paid their $1,000 deductible. Our inspection helped them file the claim correctly and get the right settlement.</p>
+        <p>Had they waited another 12 months, the decking damage would have spread, making the job significantly more expensive and likely non-covered by insurance.</p>
+        <div class="email-blockquote">"We expected a small repair. We got a brand new roof covered by insurance. [Company Name] made the whole process easy — I can't recommend them enough." — [Customer Name], [City]</div>
+        <p>We look forward to giving you the same honest, thorough inspection.</p>
+        <p>— [Your Name], [Company Name]<br>[Phone] | [Website]</p>
+        <p class="email-ps">P.S. If you haven't scheduled your inspection yet, reply to this email or call [Phone] — we have openings this week.</p>
+      </div>
+    </div>
+
+    <!-- Email 4 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-num">4</div>
+        <div class="email-card-title">Urgency / Estimate Follow-Up</div>
+        <div class="email-timing">Send Day 10</div>
+      </div>
+      <div class="email-meta">
+        <div class="email-meta-row"><span class="email-meta-label">Subject:</span><span class="email-meta-val">Following up on your estimate — a few things to know</span></div>
+        <div class="email-meta-row"><span class="email-meta-label">Preview:</span><span class="email-meta-val">Your estimate is still available — but here's why timing matters...</span></div>
+      </div>
+      <div class="email-body">
+        <p>Hi [First Name],</p>
+        <p>I wanted to follow up on the estimate we provided after your inspection. I know roofing is a big decision, so I want to make sure you have everything you need to feel confident.</p>
+        <p>A few things worth knowing as you're deciding:</p>
+        <p><strong>Material prices change quarterly.</strong> Roofing materials (shingles, underlayment, flashing) are subject to supplier price increases. We can hold our estimate for [30] days, but beyond that we may need to update the numbers.</p>
+        <p><strong>Our schedule fills up.</strong> We're booking [X–X] weeks out right now. Homeowners who lock in early get priority scheduling — especially for full replacements, which take advance crew coordination.</p>
+        <p><strong>If your insurance is involved — act sooner.</strong> Insurance claims have filing deadlines, typically 12 months from the date of loss. If we identified storm damage, the clock is ticking.</p>
+        <div class="email-blockquote">Our estimate is valid through [date]. After that, we'll need to reprice based on current material costs.</div>
+        <p>Is there anything I can answer or clarify to help you move forward? Sometimes there are questions about the process, materials, financing, or insurance that make the decision easier once answered.</p>
+        <p>Just reply to this email or call [Phone] — happy to talk through it.</p>
+        <p>— [Your Name], [Company Name]</p>
+      </div>
+    </div>
+
+    <!-- Email 5 -->
+    <div class="email-card">
+      <div class="email-card-header">
+        <div class="email-num">5</div>
+        <div class="email-card-title">Final Follow-Up — Keep the Door Open</div>
+        <div class="email-timing">Send Day 21</div>
+      </div>
+      <div class="email-meta">
+        <div class="email-meta-row"><span class="email-meta-label">Subject:</span><span class="email-meta-val">No pressure — just wanted to check in one last time</span></div>
+        <div class="email-meta-row"><span class="email-meta-label">Preview:</span><span class="email-meta-val">Whenever the timing is right, we're here.</span></div>
+      </div>
+      <div class="email-body">
+        <p>Hi [First Name],</p>
+        <p>I don't want to fill up your inbox, so this will be my last check-in for now.</p>
+        <p>If the timing isn't right for your roof project at the moment, I completely understand. Home improvements happen on your schedule, not ours.</p>
+        <p>When you are ready, here's what I want you to know about working with [Company Name]:</p>
+        <ul>
+          <li>Your inspection report is saved on file — no need to start over</li>
+          <li>We'll update the estimate with current pricing when you're ready</li>
+          <li>Our financing options remain available whenever you want to explore them</li>
+          <li>You can call, text, or email — whatever is easiest for you</li>
+        </ul>
+        <p>In the meantime, if you ever have a question about your roof, a leak, or anything else — don't hesitate to reach out. We're happy to help even if you're not currently a customer.</p>
+        <p>Take care of that roof — it protects everything underneath it.</p>
+        <p>— [Your Name]<br>[Company Name] | [Phone]<br>[Website] | [Google Review Link]</p>
+        <p class="email-ps">P.S. If you were happy with our inspection process even if you didn't move forward — a Google review would mean the world to us. Here's the link: [Google Review URL]</p>
+      </div>
+    </div>
+
+    <div class="info-box">
+      <div class="info-box-title">Email Sequence Best Practices</div>
+      <div class="two-col" style="margin-top: 8px;">
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>Always personalize with the lead's first name</li>
+          <li>Reply to any response within 1 hour during business hours</li>
+          <li>If a lead replies at any point — remove from automated sequence and respond personally</li>
+          <li>A/B test subject lines — even small changes in open rate impact results significantly</li>
+        </ul>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>Track open rates — if below 25%, revisit your subject lines</li>
+          <li>Add SMS follow-ups alongside emails for 2–3x better response rates</li>
+          <li>Pair this sequence with the Facebook retargeting ad (Section 1, Ad #4)</li>
+          <li>After 21 days, move unconverted leads to a monthly newsletter list</li>
+        </ul>
+      </div>
+    </div>
+
+
+<!-- ============================================================
+     CLOSING FOOTER
+============================================================ -->
+    <div style="margin-top: 40px; padding-top: 18px; border-top: 2px solid var(--navy); text-align: center;">
+      <span style="font-size: 10pt; font-weight: 700; color: var(--navy);">HomeProMarketer.com</span><span style="font-size: 10pt; font-weight: 400; color: var(--gray-600);"> | Your All-in-One Home Service Marketing Platform</span>
+    </div>
+
+</div><!-- end doc-wrapper -->
+</body>
+</html>

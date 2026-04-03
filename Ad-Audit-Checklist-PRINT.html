@@ -1,0 +1,2087 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Home Services Ad Audit Checklist — HomeProMarketer.com</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+
+/* ============================================================
+   VARIABLES & RESET
+============================================================ */
+:root {
+  --navy:        #1a2e4a;
+  --navy-mid:    #243d61;
+  --navy-light:  #2d5087;
+  --orange:      #f97316;
+  --orange-dark: #ea6b0a;
+  --orange-light:#fff7ed;
+  --gray-bg:     #f8f9fa;
+  --gray-100:    #f1f3f5;
+  --gray-200:    #e9ecef;
+  --gray-300:    #dee2e6;
+  --gray-400:    #adb5bd;
+  --gray-600:    #6c757d;
+  --gray-700:    #495057;
+  --gray-800:    #343a40;
+  --white:       #ffffff;
+  --text:        #1e2a3a;
+  --page-width:  8.5in;
+  --page-height: 11in;
+  --margin-h:    0.75in;
+  --margin-v:    0.7in;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 11pt; }
+
+body {
+  font-family: 'Inter', -apple-system, sans-serif;
+  color: var(--text);
+  background: #d0d5dc;
+  line-height: 1.65;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+/* ============================================================
+   DOC WRAPPER
+============================================================ */
+.doc-wrapper {
+  width: var(--page-width);
+  background: var(--white);
+  margin: 0.4in auto;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.15), 0 1px 4px rgba(0,0,0,0.1);
+  padding: var(--margin-v) var(--margin-h);
+  padding-bottom: 0.5in;
+}
+
+/* ============================================================
+   COVER PAGE
+============================================================ */
+.cover {
+  background: var(--navy);
+  min-height: var(--page-height);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  margin: calc(-1 * var(--margin-v)) calc(-1 * var(--margin-h));
+  margin-bottom: 0;
+}
+
+.cover-top-bar {
+  height: 8px;
+  background: linear-gradient(90deg, var(--orange) 0%, #fbbf24 100%);
+  flex-shrink: 0;
+}
+
+.cover-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 0.6in 0.8in 0.5in;
+  position: relative;
+  z-index: 2;
+}
+
+.cover::before {
+  content: '';
+  position: absolute;
+  top: -120px; right: -120px;
+  width: 500px; height: 500px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.03);
+  z-index: 1;
+}
+.cover::after {
+  content: '';
+  position: absolute;
+  bottom: -80px; left: -80px;
+  width: 350px; height: 350px;
+  border-radius: 50%;
+  background: rgba(249,115,22,0.07);
+  z-index: 1;
+}
+
+.cover-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 0.6in;
+}
+
+.cover-logo-mark {
+  width: 40px; height: 40px;
+  background: var(--orange);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.cover-logo-mark svg { width: 22px; height: 22px; fill: white; }
+
+.cover-logo-name {
+  font-size: 14pt;
+  font-weight: 800;
+  color: white;
+  letter-spacing: -0.01em;
+}
+.cover-logo-name span { color: var(--orange); }
+
+.cover-eyebrow {
+  font-size: 9pt;
+  font-weight: 700;
+  color: var(--orange);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 18px;
+}
+
+.cover-title {
+  font-size: 42pt;
+  font-weight: 900;
+  color: white;
+  line-height: 1.0;
+  letter-spacing: -0.03em;
+  margin-bottom: 20px;
+}
+
+.cover-title em { color: var(--orange); font-style: normal; }
+
+.cover-subtitle {
+  font-size: 12.5pt;
+  color: rgba(255,255,255,0.7);
+  font-weight: 400;
+  line-height: 1.55;
+  max-width: 5.5in;
+  margin-bottom: 0.4in;
+}
+
+.cover-divider {
+  width: 60px; height: 4px;
+  background: var(--orange);
+  border-radius: 2px;
+  margin-bottom: 0.35in;
+}
+
+.cover-includes-label {
+  font-size: 8pt;
+  font-weight: 800;
+  color: rgba(255,255,255,0.5);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 16px;
+}
+
+.cover-includes-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: auto;
+}
+
+.cover-include-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: rgba(255,255,255,0.85);
+  font-size: 10pt;
+  font-weight: 500;
+}
+
+.cover-include-num {
+  width: 24px; height: 24px; min-width: 24px;
+  background: var(--orange);
+  color: white;
+  border-radius: 50%;
+  font-size: 8pt;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.cover-bottom {
+  margin-top: 0.45in;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.cover-bottom-text {
+  font-size: 8.5pt;
+  color: rgba(255,255,255,0.4);
+  line-height: 1.5;
+}
+
+.cover-value-badge {
+  background: var(--orange);
+  color: white;
+  font-size: 12pt;
+  font-weight: 900;
+  padding: 10px 22px;
+  border-radius: 6px;
+  letter-spacing: -0.01em;
+}
+
+/* ============================================================
+   SECTION HEADER
+============================================================ */
+.section-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--orange-light);
+  border: 1px solid #fed7aa;
+  color: var(--orange-dark);
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 20px;
+  margin-bottom: 12px;
+}
+
+.section-heading {
+  font-size: 24pt;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  padding-left: 16px;
+  border-left: 5px solid var(--orange);
+  margin-bottom: 6px;
+}
+
+.section-heading-sub {
+  font-size: 10pt;
+  color: var(--gray-600);
+  padding-left: 21px;
+  margin-bottom: 22px;
+}
+
+.section-divider {
+  height: 1px;
+  background: var(--gray-200);
+  margin: 18px 0;
+}
+
+/* ============================================================
+   CONTENT HEADINGS
+============================================================ */
+h2.content-h2 {
+  font-size: 13pt;
+  font-weight: 800;
+  color: var(--navy);
+  margin-top: 24px;
+  margin-bottom: 10px;
+  padding-left: 12px;
+  border-left: 4px solid var(--orange);
+  line-height: 1.25;
+}
+
+h3.content-h3 {
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--navy-mid);
+  margin-top: 16px;
+  margin-bottom: 7px;
+}
+
+p.body-text {
+  font-size: 10.5pt;
+  line-height: 1.7;
+  color: var(--gray-800);
+  margin-bottom: 10px;
+}
+
+.italic-note {
+  font-size: 9.5pt;
+  color: var(--gray-600);
+  font-style: italic;
+  background: var(--gray-bg);
+  padding: 8px 12px;
+  border-radius: 4px;
+  margin: 8px 0;
+}
+
+/* ============================================================
+   INTRO / TOC ELEMENTS
+============================================================ */
+.toc-intro {
+  background: var(--gray-bg);
+  border-left: 4px solid var(--orange);
+  padding: 14px 18px;
+  border-radius: 0 6px 6px 0;
+  margin-bottom: 24px;
+  font-size: 10pt;
+  color: var(--gray-700);
+  line-height: 1.6;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.toc-title {
+  font-size: 26pt;
+  font-weight: 900;
+  color: var(--navy);
+  letter-spacing: -0.02em;
+  margin-bottom: 6px;
+}
+
+.toc-subtitle {
+  font-size: 10pt;
+  color: var(--gray-600);
+  margin-bottom: 28px;
+}
+
+.toc-item {
+  display: flex;
+  align-items: center;
+  padding: 14px 18px;
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  margin-bottom: 9px;
+  background: white;
+  gap: 14px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.toc-num {
+  width: 34px; height: 34px; min-width: 34px;
+  background: var(--navy);
+  color: white;
+  border-radius: 50%;
+  font-size: 10pt;
+  font-weight: 800;
+  display: flex; align-items: center; justify-content: center;
+}
+
+.toc-info { flex: 1; }
+
+.toc-item-title {
+  font-size: 10.5pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 2px;
+}
+
+.toc-item-desc {
+  font-size: 8.5pt;
+  color: var(--gray-600);
+}
+
+.toc-item-count {
+  font-size: 8pt;
+  font-weight: 700;
+  color: var(--orange);
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* ============================================================
+   AUDIT CHECKPOINT ITEMS
+============================================================ */
+.audit-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.audit-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--gray-100);
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.audit-item:last-child { border-bottom: none; }
+
+.audit-item:nth-child(even) {
+  background: var(--gray-bg);
+  border-radius: 4px;
+}
+
+.audit-check {
+  width: 18px; height: 18px;
+  min-width: 18px;
+  border: 2px solid var(--gray-400);
+  border-radius: 3px;
+  display: block;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.audit-body { flex: 1; }
+
+.audit-num {
+  font-size: 7.5pt;
+  font-weight: 800;
+  color: var(--orange);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 2px;
+}
+
+.audit-title {
+  font-size: 10pt;
+  font-weight: 700;
+  color: var(--navy);
+  line-height: 1.35;
+  margin-bottom: 3px;
+}
+
+.audit-desc {
+  font-size: 9pt;
+  color: var(--gray-700);
+  line-height: 1.5;
+  margin-bottom: 4px;
+}
+
+.audit-why {
+  font-size: 8.5pt;
+  color: var(--gray-600);
+  font-style: italic;
+  line-height: 1.45;
+}
+
+.audit-why strong {
+  color: var(--orange-dark);
+  font-style: normal;
+}
+
+/* ============================================================
+   SECTION WRAPPER (groups checkpoints with header)
+============================================================ */
+.audit-section {
+  border: 1px solid var(--gray-200);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 20px;
+}
+
+.audit-section-header {
+  background: var(--navy);
+  padding: 12px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.audit-section-icon {
+  width: 32px; height: 32px;
+  background: var(--orange);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+
+.audit-section-icon svg { width: 16px; height: 16px; fill: white; }
+
+.audit-section-title {
+  font-size: 11pt;
+  font-weight: 800;
+  color: white;
+  flex: 1;
+}
+
+.audit-section-points {
+  font-size: 8pt;
+  font-weight: 700;
+  color: var(--orange);
+  background: rgba(249,115,22,0.15);
+  padding: 4px 10px;
+  border-radius: 12px;
+  white-space: nowrap;
+}
+
+.audit-section-body {
+  padding: 0;
+}
+
+/* ============================================================
+   CALLOUT BOXES
+============================================================ */
+.info-box {
+  background: #eff6ff;
+  border: 1px solid #bfdbfe;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 14px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.info-box-title {
+  font-size: 9pt;
+  font-weight: 800;
+  color: #1e40af;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.orange-box {
+  background: var(--orange-light);
+  border: 1px solid #fed7aa;
+  border-radius: 8px;
+  padding: 14px 18px;
+  margin: 14px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.orange-box-title {
+  font-size: 9pt;
+  font-weight: 800;
+  color: var(--orange-dark);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.green-box {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 12px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.green-box-title {
+  font-size: 9pt;
+  font-weight: 800;
+  color: #166534;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+/* ============================================================
+   TWO / THREE COLUMN
+============================================================ */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 12px 0;
+}
+
+.three-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 12px;
+  margin: 12px 0;
+}
+
+.col-box {
+  background: var(--gray-bg);
+  border: 1px solid var(--gray-200);
+  border-radius: 8px;
+  padding: 14px 16px;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.col-box-title {
+  font-size: 10pt;
+  font-weight: 700;
+  color: var(--navy);
+  margin-bottom: 8px;
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--orange);
+}
+
+/* ============================================================
+   SCORE SHEET
+============================================================ */
+.score-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 14px 0;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.score-table th {
+  background: var(--navy);
+  color: white;
+  padding: 10px 14px;
+  font-size: 9pt;
+  font-weight: 700;
+  text-align: left;
+}
+
+.score-table th:last-child { text-align: center; }
+
+.score-table td {
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--gray-200);
+  font-size: 10pt;
+  vertical-align: middle;
+}
+
+.score-table td:first-child { font-weight: 700; color: var(--navy); }
+.score-table td:nth-child(2) { color: var(--gray-600); font-size: 9pt; }
+.score-table td:last-child { text-align: center; }
+
+.score-table tr:nth-child(even) td { background: var(--gray-bg); }
+
+.score-table tfoot td {
+  background: var(--navy);
+  color: white;
+  font-weight: 800;
+  font-size: 10.5pt;
+  border-bottom: none;
+}
+
+.score-table tfoot td:last-child { text-align: center; }
+
+.score-write-in {
+  display: inline-block;
+  width: 60px;
+  height: 26px;
+  border-bottom: 2px solid var(--gray-400);
+  vertical-align: bottom;
+}
+
+.score-write-in-large {
+  display: inline-block;
+  width: 70px;
+  height: 30px;
+  border-bottom: 3px solid white;
+  vertical-align: bottom;
+  margin-left: 6px;
+}
+
+/* ============================================================
+   GRADE CARDS
+============================================================ */
+.grade-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 16px 0;
+}
+
+.grade-card {
+  border-radius: 10px;
+  overflow: hidden;
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+.grade-card-header {
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.grade-letter {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  background: white;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 20pt;
+  font-weight: 900;
+  flex-shrink: 0;
+}
+
+.grade-info { }
+
+.grade-range {
+  font-size: 8pt;
+  font-weight: 700;
+  opacity: 0.8;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 2px;
+}
+
+.grade-title {
+  font-size: 11pt;
+  font-weight: 800;
+  color: white;
+  line-height: 1.2;
+}
+
+.grade-card-body {
+  padding: 12px 16px;
+  font-size: 9pt;
+  line-height: 1.55;
+}
+
+.grade-card-body ul {
+  padding-left: 16px;
+  margin: 6px 0 0;
+}
+
+.grade-card-body li { margin-bottom: 3px; }
+
+.grade-a { background: #166534; }
+.grade-a .grade-letter { color: #166534; }
+.grade-a-body { background: #f0fdf4; color: #14532d; border: 1px solid #bbf7d0; border-top: none; }
+
+.grade-b { background: #1d4ed8; }
+.grade-b .grade-letter { color: #1d4ed8; }
+.grade-b-body { background: #eff6ff; color: #1e3a8a; border: 1px solid #bfdbfe; border-top: none; }
+
+.grade-c { background: #b45309; }
+.grade-c .grade-letter { color: #b45309; }
+.grade-c-body { background: var(--orange-light); color: #7c2d12; border: 1px solid #fed7aa; border-top: none; }
+
+.grade-d { background: #991b1b; }
+.grade-d .grade-letter { color: #991b1b; }
+.grade-d-body { background: #fef2f2; color: #7f1d1d; border: 1px solid #fecaca; border-top: none; }
+
+/* ============================================================
+   STANDARD LIST
+============================================================ */
+ul.standard-list {
+  padding-left: 20px;
+  margin: 8px 0 12px;
+}
+
+ul.standard-list li {
+  font-size: 10pt;
+  line-height: 1.6;
+  margin-bottom: 4px;
+  color: var(--gray-800);
+}
+
+strong { font-weight: 700; color: var(--navy); }
+em { font-style: italic; }
+code {
+  font-family: 'Courier New', monospace;
+  font-size: 9pt;
+  background: var(--gray-100);
+  color: var(--navy);
+  padding: 1px 5px;
+  border-radius: 3px;
+}
+
+/* ============================================================
+   PRINT STYLES
+============================================================ */
+@media print {
+
+  @page { size: 8.5in 11in; margin: 0; }
+
+  html { font-size: 9.5pt; }
+
+  body { background: white; margin: 0; padding: 0; }
+
+  .doc-wrapper {
+    width: 100%;
+    margin: 0;
+    box-shadow: none;
+    padding: 0.45in 0.55in 0.5in;
+  }
+
+  .cover {
+    margin: -0.45in -0.55in 0;
+    min-height: 11in;
+  }
+
+  .section-break {
+    page-break-before: always;
+    break-before: page;
+  }
+
+  /* Headings never orphaned */
+  h2.content-h2, h3.content-h3,
+  .section-heading, .section-badge,
+  .audit-section-title, .col-box-title,
+  .toc-title, .grade-title {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+
+  /* Break-inside: avoid */
+  .audit-item, .audit-section, .toc-item, .toc-intro,
+  .info-box, .orange-box, .green-box, .col-box,
+  .two-col, .three-col, .grade-card, .grade-grid,
+  .score-table, .italic-note {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  tr { break-inside: avoid; page-break-inside: avoid; }
+  li { break-inside: avoid; page-break-inside: avoid; }
+  p  { orphans: 3; widows: 3; }
+
+  /* Compress for print */
+  .section-heading    { font-size: 18pt; }
+  .section-heading-sub { font-size: 8.5pt; margin-bottom: 14px; }
+  .section-badge      { font-size: 7.5pt; margin-bottom: 8px; }
+  h2.content-h2       { font-size: 10.5pt; margin-top: 14px; margin-bottom: 6px; }
+  p.body-text         { font-size: 9pt; line-height: 1.5; margin-bottom: 7px; }
+
+  .audit-item         { padding: 7px 10px; }
+  .audit-title        { font-size: 9pt; }
+  .audit-desc         { font-size: 8pt; margin-bottom: 3px; }
+  .audit-why          { font-size: 7.5pt; }
+  .audit-check        { width: 15px; height: 15px; min-width: 15px; margin-top: 2px; }
+  .audit-section-header { padding: 9px 14px; }
+  .audit-section-title  { font-size: 10pt; }
+
+  .info-box, .orange-box, .green-box { padding: 9px 13px; margin: 9px 0; }
+  .info-box-title, .orange-box-title, .green-box-title { font-size: 7.5pt; margin-bottom: 5px; }
+
+  .col-box { padding: 9px 11px; }
+  .col-box-title { font-size: 8.5pt; margin-bottom: 5px; }
+  .two-col { gap: 11px; margin: 7px 0; }
+  .three-col { gap: 9px; margin: 7px 0; }
+
+  .toc-title    { font-size: 20pt; }
+  .toc-subtitle { font-size: 8.5pt; margin-bottom: 18px; }
+  .toc-intro    { padding: 9px 13px; margin-bottom: 16px; font-size: 8.5pt; }
+  .toc-item     { padding: 10px 14px; margin-bottom: 7px; }
+  .toc-item-title { font-size: 9.5pt; }
+  .toc-item-desc  { font-size: 7.5pt; }
+
+  .grade-grid   { gap: 10px; margin: 12px 0; }
+  .grade-card-header { padding: 10px 13px; }
+  .grade-letter { width: 36px; height: 36px; font-size: 16pt; }
+  .grade-title  { font-size: 10pt; }
+  .grade-range  { font-size: 7.5pt; }
+  .grade-card-body { padding: 9px 13px; font-size: 8pt; }
+
+  .score-table th, .score-table td { padding: 7px 11px; font-size: 8.5pt; }
+
+  .cover-title    { font-size: 34pt; }
+  .cover-subtitle { font-size: 10pt; }
+  .cover-logo     { margin-bottom: 0.4in; }
+
+  .section-divider { margin: 12px 0; }
+  .page-break { page-break-before: always; break-before: page; }
+}
+
+</style>
+</head>
+<body>
+
+<div class="doc-wrapper">
+
+<!-- ============================================================
+     COVER PAGE
+============================================================ -->
+<div class="cover">
+  <div class="cover-top-bar"></div>
+  <div class="cover-body">
+
+    <div class="cover-logo">
+      <div class="cover-logo-mark">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+          <path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+        </svg>
+      </div>
+      <div class="cover-logo-name">HomeProMarketer<span>.com</span></div>
+    </div>
+
+    <div class="cover-eyebrow">Done-For-You Marketing Resource</div>
+
+    <div class="cover-title">
+      Home Services<br>Ad <em>Audit</em><br>Checklist
+    </div>
+
+    <div class="cover-subtitle">
+      Find out exactly where your ad budget is being wasted — and what to fix first. 70 actionable checkpoints across Google Ads, Facebook, Google Business Profile, and your website.
+    </div>
+
+    <div class="cover-divider"></div>
+
+    <div class="cover-includes-label">What's covered in this checklist</div>
+
+    <div class="cover-includes-grid">
+      <div class="cover-include-item">
+        <div class="cover-include-num">1</div>
+        Google Ads Audit — 20 checkpoints
+      </div>
+      <div class="cover-include-item">
+        <div class="cover-include-num">2</div>
+        Facebook &amp; Instagram Audit — 20 checkpoints
+      </div>
+      <div class="cover-include-item">
+        <div class="cover-include-num">3</div>
+        Google Business Profile Audit — 15 checkpoints
+      </div>
+      <div class="cover-include-item">
+        <div class="cover-include-num">4</div>
+        Website Conversion Audit — 15 checkpoints
+      </div>
+      <div class="cover-include-item">
+        <div class="cover-include-num">★</div>
+        Marketing Score Sheet + Next Steps
+      </div>
+      <div class="cover-include-item">
+        <div class="cover-include-num">70</div>
+        Total checkpoints — print &amp; work through
+      </div>
+    </div>
+
+    <div class="cover-bottom">
+      <div class="cover-bottom-text">
+        Prepared by HomeProMarketer.com<br>
+        Your All-in-One Home Service Marketing Platform
+      </div>
+      <div class="cover-value-badge">$27 Value</div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ============================================================
+     INTRODUCTION
+============================================================ -->
+
+    <div class="toc-title section-break">How to Use This Checklist</div>
+    <div class="toc-subtitle">Print it, grab a pen, and work through each section honestly. One afternoon with this checklist can save thousands in wasted ad spend.</div>
+
+    <div class="toc-intro">
+      Most home service contractors are paying for clicks, impressions, and ad spend that never turns into a single phone call. This checklist identifies exactly where the leaks are — whether it's a Google Ads campaign running without conversion tracking, a Facebook audience that's too broad, a Google Business Profile with no recent photos, or a website that buries the phone number three scrolls down. Work through each section, check every box you can honestly confirm is done correctly, tally your score, and see where to focus first.
+    </div>
+
+    <div class="toc-item">
+      <div class="toc-num">1</div>
+      <div class="toc-info">
+        <div class="toc-item-title">Google Ads Audit</div>
+        <div class="toc-item-desc">Keywords, match types, negatives, quality scores, landing pages, bidding &amp; conversion tracking</div>
+      </div>
+      <div class="toc-item-count">20 checkpoints</div>
+    </div>
+
+    <div class="toc-item">
+      <div class="toc-num">2</div>
+      <div class="toc-info">
+        <div class="toc-item-title">Facebook &amp; Instagram Ads Audit</div>
+        <div class="toc-item-desc">Campaign objectives, audiences, creative, Pixel setup, budget &amp; retargeting</div>
+      </div>
+      <div class="toc-item-count">20 checkpoints</div>
+    </div>
+
+    <div class="toc-item">
+      <div class="toc-num">3</div>
+      <div class="toc-info">
+        <div class="toc-item-title">Google Business Profile Audit</div>
+        <div class="toc-item-desc">Profile completeness, photos, reviews, posts, Q&amp;A &amp; local search signals</div>
+      </div>
+      <div class="toc-item-count">15 checkpoints</div>
+    </div>
+
+    <div class="toc-item">
+      <div class="toc-num">4</div>
+      <div class="toc-info">
+        <div class="toc-item-title">Website Conversion Audit</div>
+        <div class="toc-item-desc">Speed, mobile, trust signals, CTAs, contact forms, tracking &amp; local SEO basics</div>
+      </div>
+      <div class="toc-item-count">15 checkpoints</div>
+    </div>
+
+    <div class="toc-item" style="border-color: var(--gray-100); background: var(--gray-bg);">
+      <div class="toc-num" style="background: var(--orange);">★</div>
+      <div class="toc-info">
+        <div class="toc-item-title">Marketing Score Sheet &amp; Next Steps</div>
+        <div class="toc-item-desc">Tally your results, get your grade, and see exactly what to do based on your score</div>
+      </div>
+      <div class="toc-item-count" style="color: var(--gray-400);">Score + Plan</div>
+    </div>
+
+    <div class="three-col" style="margin-top: 24px;">
+      <div class="col-box">
+        <div class="col-box-title">How to Score</div>
+        <p style="font-size: 9pt; color: var(--gray-700);">Check off every item you can confirm is done correctly right now — not what you plan to do. Honest answers give you a useful score. Generous self-scoring just hides the leaks.</p>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">When to Revisit</div>
+        <p style="font-size: 9pt; color: var(--gray-700);">Run through this checklist every 90 days or after any significant change to your ad accounts. Markets shift, algorithms update, and what worked last quarter may be leaking budget today.</p>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">What to Do With It</div>
+        <p style="font-size: 9pt; color: var(--gray-700);">Unchecked items are your action list. Prioritize items in Sections 1 and 2 first — they directly control ad spend. Section 3 and 4 items compound your results over time.</p>
+      </div>
+    </div>
+
+
+<!-- ============================================================
+     SECTION 1 — GOOGLE ADS AUDIT
+============================================================ -->
+
+    <div class="section-badge section-break">Audit Section 1 of 4</div>
+    <div class="section-heading">Google Ads Audit</div>
+    <div class="section-heading-sub">20 checkpoints to find wasted spend, fix underperforming campaigns, and make every dollar work harder.</div>
+
+    <div class="orange-box">
+      <div class="orange-box-title">Before You Start</div>
+      <p style="font-size: 10pt; color: var(--gray-800);">Open your Google Ads account in one window and work through each checkpoint. For items requiring data, look at the last 30–90 days of performance. Score 1 point for each item you can confirm is set up correctly right now.</p>
+    </div>
+
+    <h2 class="content-h2">Tracking &amp; Foundation</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 1</div>
+          <div class="audit-title">Conversion tracking is active and verified</div>
+          <div class="audit-desc">In Google Ads, go to Tools → Conversions. Confirm at least one conversion action (phone call, form submission, or booking) shows "Recording conversions" — not "No recent conversions" or "Unverified."</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Without active conversion tracking, Google's Smart Bidding has zero data to optimize toward. You're paying for clicks with no idea which ones become real leads.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 2</div>
+          <div class="audit-title">Phone call conversions are tracked (not just form fills)</div>
+          <div class="audit-desc">Most home service leads come through phone calls. Confirm that calls from ads (Google forwarding number) and/or calls from your website are being tracked as conversions.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> If you're only tracking form fills, you're missing 60–80% of your actual conversions. Your campaigns look underperforming when they're actually generating calls.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 3</div>
+          <div class="audit-title">Google Ads is linked to Google Analytics</div>
+          <div class="audit-desc">In Google Ads, go to Tools → Linked accounts and confirm Google Analytics is connected. This enables cross-channel attribution and richer audience data.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Linked accounts let you see what happens after the click — bounce rate, pages visited, time on site — so you can diagnose whether your landing pages are working.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 4</div>
+          <div class="audit-title">Each campaign has a clear, single objective</div>
+          <div class="audit-desc">Each campaign should have one goal: emergency calls, inspection requests, replacement estimates, or maintenance bookings. Campaigns mixing objectives dilute budget and reporting clarity.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Focused campaigns let you set appropriate bids, write matching ad copy, and send traffic to the right landing page — all of which directly improve conversion rates.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h2 class="content-h2">Keywords &amp; Match Types</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 5</div>
+          <div class="audit-title">You are NOT relying solely on broad match keywords</div>
+          <div class="audit-desc">Confirm your keyword list includes a mix of phrase match and exact match keywords. Broad match alone on limited budgets causes Google to show your ads for loosely related — often irrelevant — searches.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Broad match on "roofing" can trigger your ad for "roofing nails," "roofing books," or "roofing jobs near me." Wasted clicks add up to hundreds or thousands of dollars per month.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 6</div>
+          <div class="audit-title">Search Terms report reviewed in the last 30 days</div>
+          <div class="audit-desc">Go to Keywords → Search Terms. Review what actual searches triggered your ads. Look for irrelevant queries that spent budget without converting.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> The Search Terms report is where you find wasted spend hiding in plain sight. Most contractors who review this for the first time discover 20–40% of their budget is going to completely irrelevant searches.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 7</div>
+          <div class="audit-title">A negative keyword list exists with at least 20 terms</div>
+          <div class="audit-desc">Go to Keywords → Negative Keywords. Confirm you have a campaign-level or account-level negative keyword list that includes terms like: "jobs," "careers," "hiring," "DIY," "training," "how to," "free," "YouTube," "Reddit."</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Negative keywords are free money. Every irrelevant click you block is a dollar saved that can go toward reaching a real buyer instead.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 8</div>
+          <div class="audit-title">Quality Scores are 6 or higher on primary keywords</div>
+          <div class="audit-desc">Check Quality Score by clicking the columns icon and adding the QS column to your keyword view. Primary money keywords should score 6–10. Scores of 3–5 indicate misalignment between keyword, ad copy, and landing page.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> A Quality Score of 10 vs. 4 on the same keyword can mean paying 2–3x more per click. Higher QS = lower CPC = more clicks for the same budget.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 9</div>
+          <div class="audit-title">Location-specific keywords included (e.g., "[service] [city]")</div>
+          <div class="audit-desc">Confirm your keyword list includes geo-modified terms: "roof replacement Dallas," "AC repair near me," "HVAC contractor [city name]." These typically have higher intent and lower competition than generic terms.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Local search terms convert at a significantly higher rate than generic terms. Homeowners searching "[service] [city]" are ready to call, not just browsing.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h2 class="content-h2">Ad Copy &amp; Extensions</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 10</div>
+          <div class="audit-title">Responsive Search Ads (RSAs) used — not old Expanded Text Ads</div>
+          <div class="audit-desc">Each ad group should contain at least one RSA with 10–15 headlines and 3–4 descriptions. Expanded Text Ads are no longer supported for new creation and underperform RSAs significantly.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> RSAs allow Google to test headline and description combinations automatically, showing the highest-performing combination to each user. Better ad relevance = higher CTR = lower CPCs.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 11</div>
+          <div class="audit-title">Call extensions (phone number) enabled on all campaigns</div>
+          <div class="audit-desc">Go to Ads &amp; Extensions → Extensions → Call Extensions. Confirm a call extension with your correct phone number is attached to all active campaigns. Set preferred call time to match your business hours.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> A call extension lets mobile users call you directly from the search results without clicking through to your site. For home services, this is one of the highest-converting ad elements available.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 12</div>
+          <div class="audit-title">Sitelink extensions added (at least 4 sitelinks)</div>
+          <div class="audit-desc">Sitelinks expand your ad's footprint and link to specific pages: "Free Estimate," "Emergency Service," "Our Reviews," "Financing Options." Confirm at least 4 active sitelinks per campaign.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Ads with sitelinks get significantly more clicks and take up more visual space on the search results page — effectively blocking competitor ads from appearing above the fold.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 13</div>
+          <div class="audit-title">Ad headlines include primary keywords and location</div>
+          <div class="audit-desc">Review your RSA headlines. At minimum, include: the primary service keyword, your city/area, and a compelling differentiator ("Licensed &amp; Insured," "Same-Day Service," "Free Estimates").</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Google bolds keywords in headlines that match the user's search query. Keyword-matching headlines dramatically improve click-through rates and Quality Scores.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h2 class="content-h2">Bidding, Budget &amp; Targeting</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 14</div>
+          <div class="audit-title">No campaigns show "Limited by budget" status</div>
+          <div class="audit-desc">In your Campaigns view, check the Status column. If any campaign says "Eligible (Limited)" or "Limited by budget," you are missing impressions for searches you're already willing to pay for.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> If your best campaigns are budget-limited, you're capping your lead volume artificially. Either increase budget or pause lower-priority campaigns to redirect spend to what's converting.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 15</div>
+          <div class="audit-title">Bidding strategy matches campaign maturity and data volume</div>
+          <div class="audit-desc">New campaigns (&lt;30 conversions/month): use Maximize Clicks or Manual CPC to gather data. Established campaigns (30+ conversions/month): use Target CPA or Maximize Conversions to let Smart Bidding optimize.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Using Smart Bidding before you have enough conversion data causes Google to optimize toward statistical noise, often inflating CPCs and reducing lead quality.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 16</div>
+          <div class="audit-title">Location targeting set to "Presence" not "Presence or interest"</div>
+          <div class="audit-desc">In Campaign Settings → Locations, set targeting to "Presence: People in or regularly in your targeted locations." The default "Presence or interest" wastes budget on people who have searched for your area but don't live there.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> The "interest" setting can show your ads to people anywhere in the country who once searched for your city. For local home services, this is almost always pure wasted spend.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 17</div>
+          <div class="audit-title">Ad schedule set to your actual operating hours</div>
+          <div class="audit-desc">Go to Campaign Settings → Ad Schedule. If you don't answer phones 24/7, restrict ads to hours when someone can actually reach you. Or if you do offer 24/7 response, confirm ads are running around the clock.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Paying for clicks at 2 AM when no one answers the phone wastes budget and trains Google's algorithm with lower conversion data during those hours.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 18</div>
+          <div class="audit-title">Search Impression Share above 40% on primary campaigns</div>
+          <div class="audit-desc">Add the "Search Impr. Share" column to your Campaigns view. If your primary revenue campaigns are below 40% impression share, you're losing more than half the available searches to competitors or budget constraints.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Low impression share means your competitors are capturing leads that should be yours. Improving it means more opportunities without necessarily raising your max CPC.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h2 class="content-h2">Landing Pages</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 19</div>
+          <div class="audit-title">Each ad campaign sends traffic to a matching landing page</div>
+          <div class="audit-desc">Your "Emergency AC Repair" ad should not send traffic to your homepage. Confirm each campaign's ads link to a page specifically about that service, with a matching headline, offer, and CTA.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Message match between ad and landing page is the single biggest lever for improving conversion rate. A 2% → 5% landing page conversion rate is worth more than halving your CPC.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 20</div>
+          <div class="audit-title">Landing pages load in under 3 seconds on mobile</div>
+          <div class="audit-desc">Test your landing page URLs at PageSpeed Insights (pagespeed.web.dev). Check the Mobile score. A score below 50 or a load time above 3 seconds is killing your conversion rate and increasing your CPCs.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Google uses landing page experience as part of Quality Score. Slow pages lower QS, which raises your CPCs. And 53% of mobile users abandon a page that takes more than 3 seconds to load.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="green-box" style="margin-top: 16px;">
+      <div class="green-box-title">Google Ads Section Score</div>
+      <p style="font-size: 10pt;">Count your checkmarks from checkpoints 1–20 and record your score: &nbsp;&nbsp; <span style="font-size: 13pt; font-weight: 900; color: var(--navy);">_____ / 20</span> &nbsp;&nbsp; Enter this on the Score Sheet at the end.</p>
+    </div>
+
+
+<!-- ============================================================
+     SECTION 2 — FACEBOOK & INSTAGRAM ADS AUDIT
+============================================================ -->
+
+    <div class="section-badge section-break">Audit Section 2 of 4</div>
+    <div class="section-heading">Facebook &amp; Instagram Ads Audit</div>
+    <div class="section-heading-sub">20 checkpoints covering campaign setup, audience targeting, creative performance, Pixel health, and retargeting.</div>
+
+    <div class="orange-box">
+      <div class="orange-box-title">Before You Start</div>
+      <p style="font-size: 10pt; color: var(--gray-800);">Open Meta Business Suite and Meta Ads Manager. Have your Events Manager open to check Pixel status. Score 1 point for each item confirmed as correctly set up right now.</p>
+    </div>
+
+    <h2 class="content-h2">Pixel &amp; Tracking Foundation</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 21</div>
+          <div class="audit-title">Meta Pixel is installed and firing on your website</div>
+          <div class="audit-desc">In Meta Events Manager, confirm your Pixel shows "Active" status with recent activity. Install the "Meta Pixel Helper" Chrome extension to test it directly on your website — it will show you exactly what events are firing.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Without the Pixel, you cannot run retargeting campaigns, build lookalike audiences, or track website conversions from Facebook ads. It is the foundation of all advanced Facebook advertising.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 22</div>
+          <div class="audit-title">Conversion events are configured (Lead, Contact, or Schedule)</div>
+          <div class="audit-desc">In Events Manager, confirm that "Lead," "Contact," or a custom conversion event fires when someone submits a form or calls from your site. Standard Pixel page view tracking alone is not sufficient for optimization.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Without conversion events, you can't use conversion-optimized campaign objectives, and Facebook can't learn which audiences are more likely to become leads for your business.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 23</div>
+          <div class="audit-title">UTM parameters added to all ad destination URLs</div>
+          <div class="audit-desc">Check your ad destination URLs — they should include UTM tags like <code>?utm_source=facebook&utm_medium=paid&utm_campaign=free-inspection</code>. Use Google's UTM builder to create them if missing.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> UTM parameters let you see in Google Analytics which specific Facebook campaigns, ad sets, and ads are driving traffic and conversions — not just that "social media" sent visitors.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h2 class="content-h2">Campaign Structure &amp; Objectives</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 24</div>
+          <div class="audit-title">Lead generation campaigns use "Leads" objective — not "Traffic"</div>
+          <div class="audit-desc">In Ads Manager, check your active campaigns' objectives. Campaigns intended to generate leads should use the "Leads" objective (which optimizes for form fills or calls) — not "Traffic," "Reach," or "Awareness."</div>
+          <div class="audit-why"><strong>Why it matters:</strong> The campaign objective tells Facebook's algorithm what to optimize for. Traffic campaigns optimize for clicks — often from people who will never hire you. Leads campaigns optimize for actual lead conversions.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 25</div>
+          <div class="audit-title">Campaigns have been running at least 14 days before judging</div>
+          <div class="audit-desc">Check the date range on your reporting. If you've paused or significantly changed campaigns before the 14-day learning period ends, you've been resetting the algorithm's optimization repeatedly.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Facebook's algorithm needs time to find the right people within your audience. Changing budgets, targeting, or creatives frequently restarts the learning phase and prevents campaigns from reaching their full performance potential.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 26</div>
+          <div class="audit-title">Daily budget is at least $20/day per active ad set</div>
+          <div class="audit-desc">Check each ad set's daily budget. Ad sets running on $5–$10/day don't gather enough data for the algorithm to optimize effectively, especially in competitive home service markets.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Meta's algorithm needs approximately 50 conversion events per week to exit the learning phase. At $5/day with $30 CPLs, that's mathematically impossible. Underfunded ad sets stay stuck in "Learning Limited" indefinitely.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h2 class="content-h2">Audience Targeting</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 27</div>
+          <div class="audit-title">Audience size is between 100,000 and 2,000,000</div>
+          <div class="audit-desc">Check each ad set's audience size indicator. The "too narrow" zone (under 50K) limits delivery. The "too broad" zone (over 5M in a local market) wastes budget on people outside your service area.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> The sweet spot gives the algorithm enough people to find your best prospects while keeping the audience relevant to local homeowners who can actually hire you.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 28</div>
+          <div class="audit-title">Homeowner behaviors or interests included in targeting</div>
+          <div class="audit-desc">Confirm your ad sets include at least some homeowner-relevant targeting: interests like "home improvement," "homeownership," or behaviors like "likely homeowner" (where available in your country's ad platform).</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Showing roofing or HVAC ads to renters is wasted spend. Layering homeowner signals, even loosely, meaningfully improves lead quality and cost per lead.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 29</div>
+          <div class="audit-title">A Lookalike Audience has been created from past customers</div>
+          <div class="audit-desc">In Audiences, confirm you have a Lookalike Audience built from a customer list, past lead list, or your website converters. A 1–2% lookalike of your [City] service area is a highly effective audience for home services.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Lookalike audiences let Facebook find people who statistically resemble your best customers. They typically outperform interest-based audiences significantly on cost per lead.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 30</div>
+          <div class="audit-title">Ad frequency is below 3.5 for campaigns running over 2 weeks</div>
+          <div class="audit-desc">Add the "Frequency" column to your Ads Manager view. If frequency exceeds 3–4 on the same audience over 2 weeks, performance will drop as the same people keep seeing the same ad.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Ad fatigue is real. When the same person sees your ad 5–7 times without acting, they start to associate your brand with annoyance rather than value. Rotate creative or expand the audience.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h2 class="content-h2">Creative &amp; Retargeting</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 31</div>
+          <div class="audit-title">At least 3 different creative variants tested per ad set</div>
+          <div class="audit-desc">Each ad set should contain 3+ ad variations testing different images, headlines, or primary text. Check the "Creative" level breakdown within each ad set to confirm variety exists.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> You cannot know which creative resonates until you test. Running a single ad means leaving performance improvements on the table. Even swapping the hero image can cut CPL in half.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 32</div>
+          <div class="audit-title">Before/after photo creative has been tested</div>
+          <div class="audit-desc">Confirm at least one active or recently tested ad uses a real before/after job photo as the creative. This is consistently the top-performing creative format for home service businesses.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Before/after images communicate transformation instantly — no one needs to read a word to understand what you do. They stop the scroll and create the "I need that" reaction in homeowners.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 33</div>
+          <div class="audit-title">Video creative has been tested (at least 15–30 seconds)</div>
+          <div class="audit-desc">Confirm at least one video ad has been tested — a job walk-through, customer testimonial, or time-lapse of a completed project. Video does not need to be professionally produced to perform.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Video ads typically have lower CPMs (cost per 1,000 views) and build brand familiarity faster than static images. Even a 20-second iPhone video of a completed job can outperform polished stock-photo ads.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 34</div>
+          <div class="audit-title">A website retargeting campaign is active</div>
+          <div class="audit-desc">In Ads Manager, confirm there is a separate campaign targeting "Website Visitors — last 30 days" (or 60 days). This requires the Meta Pixel to be installed and collecting data.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> People who visited your website are 5–10x more likely to convert than cold audiences. Retargeting them keeps you top-of-mind at the moment they're actively comparing options — often the highest-ROI ad spend available.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 35</div>
+          <div class="audit-title">Lead forms are short — 3 fields maximum</div>
+          <div class="audit-desc">If using Facebook Lead Ads (instant forms), confirm the form asks for name, phone number, and optionally email — nothing more. Every additional field reduces completion rates.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Lead form completion rates drop dramatically with each additional field. A 3-field form converts at 2–3x the rate of a 7-field form. Get their phone number and call them — gather the rest verbally.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 36</div>
+          <div class="audit-title">Cost per lead (CPL) is tracked and compared to a benchmark</div>
+          <div class="audit-desc">Confirm you know your actual CPL from Facebook ads over the last 30–90 days. Home services benchmarks: HVAC $25–$55, Roofing $30–$70, Plumbing $20–$45, Landscaping $15–$35. Are you above, at, or below these ranges?</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Without tracking CPL, you have no objective measure of whether your campaigns are performing well or poorly. A rising CPL is an early warning signal — usually pointing to audience fatigue or creative decay.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 37</div>
+          <div class="audit-title">Seasonal or event-triggered campaigns are planned in advance</div>
+          <div class="audit-desc">Confirm you have a process (even a calendar reminder) to adjust Facebook campaigns before seasonal peaks — spring/summer AC season, fall furnace tune-up season, pre-storm season for roofing.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Campaigns take 7–14 days to exit the learning phase. Launching a summer AC campaign on the first hot day of the year means you miss the peak. Proactive planning captures peak-season leads at lower CPLs before competitors flood the auction.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 38</div>
+          <div class="audit-title">Page engagement audience used for warm retargeting</div>
+          <div class="audit-desc">Create a Custom Audience of "People who engaged with your Facebook Page" in the last 180 days. This includes people who liked a post, watched a video, or clicked on an ad — all warmer than cold audiences.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Page engagers have already shown interest in your business. Retargeting them with a direct offer typically yields CPLs 30–50% lower than cold targeting and leverages the trust built by your organic content.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 39</div>
+          <div class="audit-title">Underperforming ads (CTR below 0.8%) paused or replaced</div>
+          <div class="audit-desc">Sort your ads by CTR. Any ad running for 7+ days with a CTR below 0.8% is underperforming for home services. Pause these and reallocate budget to ads with CTR above 1.2%.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Low-CTR ads drag down ad set performance and increase average CPMs. Facebook rewards ads that users engage with — pausing poor performers allows budget to flow to what's actually working.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 40</div>
+          <div class="audit-title">New leads from Facebook ads are followed up within 5 minutes</div>
+          <div class="audit-desc">Confirm your process for Facebook leads (instant form or website form). Is there an automated text or email response? Does someone call within 5 minutes during business hours? Check your CRM or ad notification settings.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Research shows lead contact rates drop by 80% after the first 5 minutes. A great ad with a slow follow-up process throws money away at the finish line. Speed-to-lead is as important as cost-per-lead.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="green-box" style="margin-top: 16px;">
+      <div class="green-box-title">Facebook &amp; Instagram Section Score</div>
+      <p style="font-size: 10pt;">Count your checkmarks from checkpoints 21–40 and record your score: &nbsp;&nbsp; <span style="font-size: 13pt; font-weight: 900; color: var(--navy);">_____ / 20</span> &nbsp;&nbsp; Enter this on the Score Sheet at the end.</p>
+    </div>
+
+
+<!-- ============================================================
+     SECTION 3 — GOOGLE BUSINESS PROFILE AUDIT
+============================================================ -->
+
+    <div class="section-badge section-break">Audit Section 3 of 4</div>
+    <div class="section-heading">Google Business Profile Audit</div>
+    <div class="section-heading-sub">15 checkpoints to maximize your visibility in local search and the Google Map Pack — where 60–80% of local service clicks happen.</div>
+
+    <h2 class="content-h2">Profile Completeness</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 41</div>
+          <div class="audit-title">Profile is claimed, verified, and shows "Verified" status</div>
+          <div class="audit-desc">Go to business.google.com and confirm your profile shows a blue checkmark and "Verified" status. An unverified profile cannot rank properly and is vulnerable to hijacking by competitors.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Unverified profiles are filtered lower in local search results. Worse, anyone can suggest edits to an unverified listing — including competitors who may change your phone number or address.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 42</div>
+          <div class="audit-title">Primary business category is the most specific trade category</div>
+          <div class="audit-desc">Check your primary category in GBP settings. It should be the most specific option for your primary service: "Roofing Contractor," "HVAC Contractor," "Plumber," "Landscaper" — not a generic category like "Contractor" or "Home Services."</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Google's primary category is the single most heavily weighted ranking signal for the Local Pack. Using a generic category means you won't appear for high-intent searches like "roofer near me" or "AC repair."</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 43</div>
+          <div class="audit-title">All secondary categories are added</div>
+          <div class="audit-desc">Add every relevant secondary category: if you're a roofer, add "Gutter Contractor," "Siding Contractor," "Handyman." If HVAC, add "Air Conditioning Contractor," "Heating Contractor," "Insulation Contractor."</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Secondary categories let you appear in search results for related services without diluting your primary category. Each additional relevant category is a free opportunity to rank for more searches.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 44</div>
+          <div class="audit-title">Business description is 500–750 characters and keyword-rich</div>
+          <div class="audit-desc">Read your current GBP description. It should include: your primary service, your city and service area cities, years in business, license number, and a differentiator. Aim for 500–750 characters (under the 750-character limit).</div>
+          <div class="audit-why"><strong>Why it matters:</strong> The description is indexed by Google and helps match your profile to search queries. A description that mentions "[City] roofing contractor" will rank for that phrase; a generic description will not.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 45</div>
+          <div class="audit-title">All services are listed with individual descriptions</div>
+          <div class="audit-desc">In GBP, go to Services and confirm every service you offer is listed — each with a short description (1–2 sentences) that naturally includes the service name and your city. Don't leave descriptions blank.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Google displays your services in your profile and uses them as ranking signals. Customers can also filter searches by service type — if your service isn't listed, you won't appear.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 46</div>
+          <div class="audit-title">Service area includes all cities and zip codes you actually serve</div>
+          <div class="audit-desc">Go to GBP Settings → Business Location. For service-area businesses, confirm you've added every city, town, and major zip code you serve. You can add up to 20 service areas.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Your profile only appears in searches from locations included in your service area. If you serve 10 cities but only listed 2, you're invisible to 80% of your potential local market on Google Maps.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h2 class="content-h2">Photos &amp; Posts</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 47</div>
+          <div class="audit-title">Profile has at least 25 photos (ideally 50+)</div>
+          <div class="audit-desc">Check your photo count in GBP Photos. Count both your uploaded photos and any customer photos. Profiles with more photos consistently rank higher and receive more profile clicks than sparse profiles.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Google's own data shows profiles with 100+ photos receive 520% more calls than profiles with no photos. Photos are a ranking signal AND a conversion signal — more photos = more calls.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 48</div>
+          <div class="audit-title">New photos uploaded within the last 30 days</div>
+          <div class="audit-desc">Check the date of your most recent photo upload. If it's been more than 30 days, upload at least 5 new photos today — job photos, team shots, or completed work.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Google uses recency signals to assess business activity. Profiles with regular new content (photos, posts) appear more relevant to recent searches than dormant profiles. Fresh photos signal an active business.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 49</div>
+          <div class="audit-title">A Google Post has been published within the last 7 days</div>
+          <div class="audit-desc">Go to GBP → Posts and check when the last post was published. Posts expire after 7 days. Active profiles with regular posts outperform dormant ones in local rankings.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Google Posts appear directly in your listing in search results — essentially free ad space below your business info. Regular posts keep your profile fresh and give searchers a reason to click over a competitor.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h2 class="content-h2">Reviews &amp; Engagement</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 50</div>
+          <div class="audit-title">Profile has at least 25 Google reviews with 4.5+ average rating</div>
+          <div class="audit-desc">Check your review count and average rating on your GBP dashboard. Below 25 reviews and you're largely invisible in competitive local markets. Below 4.5 stars and conversion rates drop significantly.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Review count is a major GBP ranking factor. More importantly, customers use review count as a trust proxy — 150 reviews at 4.7 stars will get clicked over 12 reviews at 5.0 stars almost every time.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 51</div>
+          <div class="audit-title">Every review has been responded to (including negatives)</div>
+          <div class="audit-desc">Filter your reviews and check for any without a response. Every review — 5 stars and 1 star — deserves a personalized response, not a generic template.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Responding to reviews is a GBP ranking signal AND a public display of customer service. Future customers read your responses to negative reviews closely — how you handle complaints tells them more about your business than the 5-star reviews do.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 52</div>
+          <div class="audit-title">A system exists to request reviews from every completed job</div>
+          <div class="audit-desc">Confirm you have a repeatable process — text template, CRM automation, or verbal script — to ask every customer for a Google review within 24 hours of job completion.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Review velocity (how fast you're accumulating new reviews) is a ranking signal. A competitor gaining 10 reviews/month will outrank a contractor with better overall ratings but only 1 new review/month.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 53</div>
+          <div class="audit-title">Q&amp;A section has at least 4 questions pre-populated with answers</div>
+          <div class="audit-desc">Go to your GBP listing and scroll to Q&amp;A. Add common questions customers ask before hiring you — about licensing, insurance, pricing, process, and guarantees — and answer each one thoroughly.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> If you don't populate Q&amp;A, anyone can submit questions — and strangers may answer them inaccurately. Pre-populating your Q&amp;A controls the narrative and reduces friction for customers on the fence.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 54</div>
+          <div class="audit-title">Business hours are accurate and updated for upcoming holidays</div>
+          <div class="audit-desc">Verify your current hours in GBP. Set holiday hours in advance (Google will prompt you). If you offer emergency/24-7 service, note it in your business description even if your regular hours are 8–5.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Google displays "Closed" warnings when hours are inaccurate. A customer calling during listed hours who gets no answer will leave a negative review or choose a competitor — and your GBP hours may be the reason they called at the wrong time.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 55</div>
+          <div class="audit-title">Website link in GBP points to a relevant service page (not just the homepage)</div>
+          <div class="audit-desc">Check the website URL listed in your GBP profile. Ideally it should link to a location-specific landing page or your most relevant service page — not just yourcompany.com.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> A customer clicking from your GBP expecting to hire an HVAC contractor should land on an HVAC-specific page — not a generic homepage. Better landing page relevance means higher conversion rates from GBP traffic.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="green-box" style="margin-top: 16px;">
+      <div class="green-box-title">Google Business Profile Section Score</div>
+      <p style="font-size: 10pt;">Count your checkmarks from checkpoints 41–55 and record your score: &nbsp;&nbsp; <span style="font-size: 13pt; font-weight: 900; color: var(--navy);">_____ / 15</span> &nbsp;&nbsp; Enter this on the Score Sheet at the end.</p>
+    </div>
+
+
+<!-- ============================================================
+     SECTION 4 — WEBSITE CONVERSION AUDIT
+============================================================ -->
+
+    <div class="section-badge section-break">Audit Section 4 of 4</div>
+    <div class="section-heading">Website Conversion Audit</div>
+    <div class="section-heading-sub">15 checkpoints to find why visitors are leaving your site without becoming leads — and what to fix first.</div>
+
+    <div class="orange-box">
+      <div class="orange-box-title">Before You Start</div>
+      <p style="font-size: 10pt; color: var(--gray-800);">Open your website on a phone (not a desktop) and work through these checkpoints from the perspective of a homeowner seeing it for the first time. Also have Google Analytics and your site's backend open. Score 1 point per confirmed item.</p>
+    </div>
+
+    <h2 class="content-h2">Speed &amp; Technical Foundation</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 56</div>
+          <div class="audit-title">Website loads in under 3 seconds on mobile</div>
+          <div class="audit-desc">Test at PageSpeed Insights (pagespeed.web.dev) with your homepage URL. Check the Mobile tab. The "First Contentful Paint" metric should be under 2.5 seconds. If it's above 4 seconds, this is an urgent fix.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> 53% of mobile users abandon a website that takes more than 3 seconds to load. Every second of delay reduces conversions by approximately 7%. Slow sites also rank lower in Google search results.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 57</div>
+          <div class="audit-title">Website is fully mobile-responsive</div>
+          <div class="audit-desc">View your homepage on a smartphone. All text should be readable without zooming, buttons should be tappable, forms should be easy to complete, and nothing should be cut off horizontally.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Over 65% of home service website traffic now comes from mobile devices. A site that's hard to use on a phone loses the majority of its potential leads before they ever see your phone number.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 58</div>
+          <div class="audit-title">SSL certificate installed — site uses HTTPS not HTTP</div>
+          <div class="audit-desc">Check the browser address bar for your website. It should show a padlock icon and begin with "https://" — not "http://." Sites without SSL are flagged "Not Secure" by browsers, which kills trust instantly.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Google uses HTTPS as a ranking factor. More importantly, visitors who see a "Not Secure" warning on their phone leave immediately — especially when filling out contact forms with their phone number and address.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h2 class="content-h2">Contact &amp; Calls to Action</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 59</div>
+          <div class="audit-title">Phone number is visible in the header on every page</div>
+          <div class="audit-desc">Check every page of your site on mobile. Your phone number should appear in the navigation header at the top, in large enough text to read at a glance — without scrolling or searching.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Your phone number is your primary call to action. If a homeowner has to hunt for it, they won't. They'll go back to Google and call the competitor whose number is right there at the top.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 60</div>
+          <div class="audit-title">Phone number is a click-to-call link on mobile</div>
+          <div class="audit-desc">On your phone, tap the phone number on your website. It should immediately prompt to initiate a phone call. If tapping the number does nothing, it's not coded as a click-to-call link — a significant conversion killer for mobile users.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Every extra tap between a lead and a phone call reduces conversions. A non-tappable phone number on mobile means the lead has to manually dial — most won't bother, especially if a competitor's site makes it one tap.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 61</div>
+          <div class="audit-title">A contact form appears above the fold on the homepage</div>
+          <div class="audit-desc">On your homepage (desktop and mobile), check if a contact form — or a prominent button to a contact form — is visible without scrolling. "Above the fold" means visible the instant the page loads.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Many homeowners prefer to fill out a form over calling, especially late at night when they notice a problem. If your form is buried, you lose after-hours leads who represent 30–40% of home service inquiry volume.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 62</div>
+          <div class="audit-title">Every page has exactly one primary CTA — not three competing options</div>
+          <div class="audit-desc">Review each page. The primary call to action ("Get a Free Estimate," "Call Now," "Book an Inspection") should be clearly the most prominent option. Too many competing CTAs create decision paralysis.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> When visitors see "Call Us," "Get a Quote," "Request Service," "Chat Now," and "Learn More" all equally prominent, they do nothing. One clear CTA consistently outperforms multiple competing options.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h2 class="content-h2">Trust &amp; Social Proof</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 63</div>
+          <div class="audit-title">Homepage clearly states what you do, where you do it, and for whom</div>
+          <div class="audit-desc">Read your homepage headline and the first paragraph. Within 5 seconds of landing, a new visitor should know: what service you provide, which city/area you serve, and who your customers are. Test this with someone who has never seen your site.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Visitors decide in 3–5 seconds whether they're in the right place. A vague headline like "Quality Service You Can Trust" tells them nothing. "Roof Replacement &amp; Repair in Dallas, TX" tells them everything they need.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 64</div>
+          <div class="audit-title">Customer reviews or testimonials appear on the homepage</div>
+          <div class="audit-desc">Confirm that at least 3–5 real customer testimonials (with first name, city, and preferably a photo) are visible on the homepage. Google review widgets that display live reviews are ideal.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Social proof is the #1 trust factor for home services. Homeowners are inviting a stranger into their home — they need validation from other people who've already done it. Testimonials on the homepage can increase conversion rate by 30–50%.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 65</div>
+          <div class="audit-title">Trust signals are visible — license number, insurance, certifications</div>
+          <div class="audit-desc">Check your homepage and footer for: state license number, "licensed &amp; insured" badge, manufacturer certifications (GAF, Carrier, Trane, etc.), BBB accreditation, and years in business.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> For high-ticket home services, professional credentials reduce risk in the buyer's mind. A license number displayed prominently signals legitimacy that a new competitor without one cannot easily replicate.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 66</div>
+          <div class="audit-title">Before/after photos are featured on the homepage or service pages</div>
+          <div class="audit-desc">Confirm at least one before/after photo section exists on your homepage or primary service page. This should be real job photography — not stock images or illustrations.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Before/after photos are the most credible proof of your work quality. They are also the most browsed section on home service websites. Their absence is a missed conversion opportunity that almost every contractor's site can improve.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <h2 class="content-h2">Analytics &amp; Tracking</h2>
+
+    <ul class="audit-list">
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 67</div>
+          <div class="audit-title">Google Analytics (GA4) is installed and tracking correctly</div>
+          <div class="audit-desc">Log into Google Analytics and confirm your website is showing active users in the Realtime report. If GA is not installed, visit your website and check that your analytics shows a session — if it does not, the tracking code is missing or broken.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Without analytics, you're running a business with no financial reporting. You cannot know which pages convert, which traffic sources perform, or whether your website is improving over time.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 68</div>
+          <div class="audit-title">Call tracking is set up — you know which sources drive phone calls</div>
+          <div class="audit-desc">Confirm you are using a call tracking solution — whether Google Ads call extensions (free), CallRail, CallTrackingMetrics, or a similar tool — to know which campaigns and channels are generating actual phone calls.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> For most home service businesses, the phone call IS the lead. Without call tracking, you cannot connect your marketing spend to actual business results. You're flying blind on your highest-value conversions.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 69</div>
+          <div class="audit-title">Local pages exist targeting your key service cities by name</div>
+          <div class="audit-desc">Check if your website has pages specifically for each major city you serve — e.g., "/roof-replacement-dallas/" or "/hvac-repair-plano-tx/." Even 2–3 city pages can dramatically improve organic local search rankings.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Google organic results and the Local Pack favor websites with location-specific content. A city landing page outranks a generic service page for local searches — and local organic traffic is free, high-intent traffic.</div>
+        </div>
+      </li>
+
+      <li class="audit-item">
+        <span class="audit-check"></span>
+        <div class="audit-body">
+          <div class="audit-num">Checkpoint 70</div>
+          <div class="audit-title">Form submissions send an auto-response email or text immediately</div>
+          <div class="audit-desc">Fill out your own contact form and confirm you receive an auto-confirmation message. The homeowner should also receive one — confirming receipt and setting expectations for when you'll call them back.</div>
+          <div class="audit-why"><strong>Why it matters:</strong> Without an instant auto-response, homeowners who fill out a form have no confirmation their message was received. Many will call a competitor in the meantime. An instant "We got it — expect a call within the hour" message dramatically reduces lead bleed.</div>
+        </div>
+      </li>
+
+    </ul>
+
+    <div class="green-box" style="margin-top: 16px;">
+      <div class="green-box-title">Website Conversion Section Score</div>
+      <p style="font-size: 10pt;">Count your checkmarks from checkpoints 56–70 and record your score: &nbsp;&nbsp; <span style="font-size: 13pt; font-weight: 900; color: var(--navy);">_____ / 15</span> &nbsp;&nbsp; Enter this on the Score Sheet at the end.</p>
+    </div>
+
+
+<!-- ============================================================
+     SECTION 5 — MARKETING SCORE SHEET
+============================================================ -->
+
+    <div class="section-badge section-break" style="background: var(--navy); border-color: var(--navy); color: white;">Score Sheet</div>
+    <div class="section-heading">Your Marketing Score Sheet</div>
+    <div class="section-heading-sub">Tally your results, calculate your total score, find your grade, and get your personalized next steps.</div>
+
+    <h2 class="content-h2">Step 1 — Tally Your Section Scores</h2>
+
+    <table class="score-table">
+      <thead>
+        <tr>
+          <th>Audit Section</th>
+          <th>What it covers</th>
+          <th>Points</th>
+          <th>Your Score</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Section 1 — Google Ads</td>
+          <td>Tracking, keywords, ad copy, bidding, landing pages</td>
+          <td style="text-align:center; font-weight:800; color: var(--navy);">/20</td>
+          <td style="text-align:center;"><span class="score-write-in"></span></td>
+        </tr>
+        <tr>
+          <td>Section 2 — Facebook &amp; Instagram</td>
+          <td>Pixel, objectives, audiences, creative, retargeting</td>
+          <td style="text-align:center; font-weight:800; color: var(--navy);">/20</td>
+          <td style="text-align:center;"><span class="score-write-in"></span></td>
+        </tr>
+        <tr>
+          <td>Section 3 — Google Business Profile</td>
+          <td>Profile completeness, photos, reviews, posts, Q&amp;A</td>
+          <td style="text-align:center; font-weight:800; color: var(--navy);">/15</td>
+          <td style="text-align:center;"><span class="score-write-in"></span></td>
+        </tr>
+        <tr>
+          <td>Section 4 — Website Conversion</td>
+          <td>Speed, mobile, trust signals, CTAs, tracking</td>
+          <td style="text-align:center; font-weight:800; color: var(--navy);">/15</td>
+          <td style="text-align:center;"><span class="score-write-in"></span></td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td colspan="2" style="color: white;">Total Score</td>
+          <td style="text-align:center; color: var(--orange); font-size: 12pt;">/70</td>
+          <td style="text-align:center;">___<span class="score-write-in-large"></span></td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <h2 class="content-h2">Step 2 — Identify Your Weakest Section</h2>
+
+    <p class="body-text">Convert each section to a percentage to find your biggest opportunity:</p>
+
+    <div class="two-col">
+      <div class="col-box">
+        <div class="col-box-title">Section Percentage Formula</div>
+        <p style="font-size: 9.5pt; color: var(--gray-700); margin-bottom: 8px;">Divide your section score by the total possible, multiply by 100:</p>
+        <ul class="standard-list" style="font-size: 9.5pt;">
+          <li>Google Ads: score ÷ 20 × 100 = <strong>____%</strong></li>
+          <li>Facebook/Instagram: score ÷ 20 × 100 = <strong>____%</strong></li>
+          <li>GBP: score ÷ 15 × 100 = <strong>____%</strong></li>
+          <li>Website: score ÷ 15 × 100 = <strong>____%</strong></li>
+        </ul>
+      </div>
+      <div class="col-box">
+        <div class="col-box-title">Where to Focus First</div>
+        <p style="font-size: 9.5pt; color: var(--gray-700); margin-bottom: 8px;">Your lowest percentage section has the most room for improvement. Prioritize in this order if tied:</p>
+        <ol class="standard-list" style="font-size: 9.5pt;">
+          <li>Google Ads (direct revenue impact)</li>
+          <li>Facebook/Instagram (direct revenue impact)</li>
+          <li>Website Conversion (amplifies all other channels)</li>
+          <li>Google Business Profile (long-term organic growth)</li>
+        </ol>
+      </div>
+    </div>
+
+    <h2 class="content-h2">Step 3 — Find Your Grade &amp; Next Steps</h2>
+
+    <div class="grade-grid">
+
+      <div class="grade-card">
+        <div class="grade-card-header grade-a">
+          <div class="grade-letter">A</div>
+          <div class="grade-info">
+            <div class="grade-range">Score: 56–70 &nbsp;|&nbsp; 80–100%</div>
+            <div class="grade-title">Marketing Machine</div>
+          </div>
+        </div>
+        <div class="grade-card-body grade-a-body">
+          <p>Your marketing foundation is strong. You've built the systems most contractors skip. Now it's time to optimize and scale.</p>
+          <ul>
+            <li>Focus on reducing CPL by 15–20% through creative testing</li>
+            <li>Expand to Google Local Services Ads if not running them</li>
+            <li>Build automation: CRM follow-up, review requests, re-engagement campaigns</li>
+            <li>Explore the HomeProMarketer.com done-for-you campaigns to accelerate further</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grade-card">
+        <div class="grade-card-header grade-b">
+          <div class="grade-letter">B</div>
+          <div class="grade-info">
+            <div class="grade-range">Score: 42–55 &nbsp;|&nbsp; 60–78%</div>
+            <div class="grade-title">Solid Foundation</div>
+          </div>
+        </div>
+        <div class="grade-card-body grade-b-body">
+          <p>You've got the basics working. The gaps you have are costing you leads — but they're fixable within 30 days.</p>
+          <ul>
+            <li>Fix your two lowest-scoring sections first — that's where the biggest wins are hiding</li>
+            <li>Add conversion tracking if not in place (Checkpoint 1 &amp; 2 are critical)</li>
+            <li>Implement the 3-touch review request system immediately</li>
+            <li>Run before/after photo ads if you haven't tested them yet</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grade-card">
+        <div class="grade-card-header grade-c">
+          <div class="grade-letter">C</div>
+          <div class="grade-info">
+            <div class="grade-range">Score: 25–41 &nbsp;|&nbsp; 36–58%</div>
+            <div class="grade-title">Significant Gaps</div>
+          </div>
+        </div>
+        <div class="grade-card-body grade-c-body">
+          <p>You're spending money on marketing with major leaks in the system. The good news: fixing even 5–10 of these checkpoints could cut your cost per lead in half.</p>
+          <ul>
+            <li>Stop all campaigns that don't have conversion tracking — you're flying blind</li>
+            <li>Fix your website's phone number (click-to-call) and load speed immediately</li>
+            <li>Claim and optimize your GBP today if you haven't</li>
+            <li>Consider HomeProMarketer.com done-for-you setup — it handles most of this for you</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grade-card">
+        <div class="grade-card-header grade-d">
+          <div class="grade-letter">D</div>
+          <div class="grade-info">
+            <div class="grade-range">Score: 0–24 &nbsp;|&nbsp; 0–34%</div>
+            <div class="grade-title">Major Gaps to Address</div>
+          </div>
+        </div>
+        <div class="grade-card-body grade-d-body">
+          <p>You have the opportunity for dramatic improvement. Most of your marketing budget is likely being wasted right now — but the fixes are clear and achievable.</p>
+          <ul>
+            <li>Pause all Google Ads campaigns until conversion tracking is active</li>
+            <li>Claim your Google Business Profile and add 20+ photos this week</li>
+            <li>Fix your website's mobile experience and phone number visibility immediately</li>
+            <li>Start with HomeProMarketer.com — a done-for-you foundation will save you months of trial and error</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+
+    <h2 class="content-h2">Your Personal Action Plan</h2>
+
+    <p class="body-text">Use this space to write your top 5 priorities based on your audit results:</p>
+
+    <div style="margin: 12px 0;">
+      <div style="display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--gray-200);">
+        <div style="width: 28px; height: 28px; min-width: 28px; background: var(--orange); color: white; border-radius: 50%; font-size: 10pt; font-weight: 900; display: flex; align-items: center; justify-content: center;">1</div>
+        <div style="flex: 1; border-bottom: 1px solid var(--gray-300); min-height: 24px; margin-bottom: 4px;"></div>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--gray-200);">
+        <div style="width: 28px; height: 28px; min-width: 28px; background: var(--orange); color: white; border-radius: 50%; font-size: 10pt; font-weight: 900; display: flex; align-items: center; justify-content: center;">2</div>
+        <div style="flex: 1; border-bottom: 1px solid var(--gray-300); min-height: 24px; margin-bottom: 4px;"></div>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--gray-200);">
+        <div style="width: 28px; height: 28px; min-width: 28px; background: var(--orange); color: white; border-radius: 50%; font-size: 10pt; font-weight: 900; display: flex; align-items: center; justify-content: center;">3</div>
+        <div style="flex: 1; border-bottom: 1px solid var(--gray-300); min-height: 24px; margin-bottom: 4px;"></div>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: flex-start; padding: 10px 0; border-bottom: 1px solid var(--gray-200);">
+        <div style="width: 28px; height: 28px; min-width: 28px; background: var(--orange); color: white; border-radius: 50%; font-size: 10pt; font-weight: 900; display: flex; align-items: center; justify-content: center;">4</div>
+        <div style="flex: 1; border-bottom: 1px solid var(--gray-300); min-height: 24px; margin-bottom: 4px;"></div>
+      </div>
+      <div style="display: flex; gap: 12px; align-items: flex-start; padding: 10px 0;">
+        <div style="width: 28px; height: 28px; min-width: 28px; background: var(--orange); color: white; border-radius: 50%; font-size: 10pt; font-weight: 900; display: flex; align-items: center; justify-content: center;">5</div>
+        <div style="flex: 1; border-bottom: 1px solid var(--gray-300); min-height: 24px; margin-bottom: 4px;"></div>
+      </div>
+    </div>
+
+    <div class="info-box" style="margin-top: 24px;">
+      <div class="info-box-title">Ready to Fix What This Checklist Found?</div>
+      <p style="font-size: 10pt; color: var(--gray-800);">If this audit revealed significant gaps in your Google Ads, Facebook campaigns, or local search presence, HomeProMarketer.com offers done-for-you marketing systems built exclusively for home service contractors — including pre-built ad campaigns, automated lead follow-up, and review generation tools. Visit <strong>HomeProMarketer.com</strong> to see how we've helped contractors like you go from scattered ad spending to a predictable lead machine.</p>
+    </div>
+
+
+<!-- ============================================================
+     CLOSING FOOTER
+============================================================ -->
+    <div style="margin-top: 36px; padding-top: 16px; border-top: 2px solid var(--navy); text-align: center;">
+      <span style="font-size: 10pt; font-weight: 700; color: var(--navy);">HomeProMarketer.com</span><span style="font-size: 10pt; font-weight: 400; color: var(--gray-600);"> | Your All-in-One Home Service Marketing Platform</span>
+    </div>
+
+</div><!-- end doc-wrapper -->
+</body>
+</html>
