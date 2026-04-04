@@ -401,16 +401,33 @@
     <h2 style="color:#ffffff;margin-bottom:0.5rem;">Get Free Marketing Tips Every Week</h2>
     <p style="color:#cbd5e1;margin-bottom:2rem;">Join contractors already growing their business with HomeProMarketer.</p>
     <style>
-.eocampaign-form-wrapper * { color: #ffffff !important; }
-.eocampaign-form-wrapper { max-width: 600px !important; margin: 0 auto !important; text-align: center !important; }
-.eocampaign-form-wrapper h2 { color: #ffffff !important; text-align: center !important; }
-.eocampaign-form-wrapper p { color: #93b4d4 !important; text-align: center !important; }
-.eocampaign-form-wrapper input { color: #1a2e4a !important; text-align: left !important; background: #ffffff !important; }
-.eocampaign-form-wrapper button { background: #f97316 !important; color: #ffffff !important; }
-    </style>
-    <div class="eocampaign-form-wrapper">
-      <script async src="https://eocampaign1.com/form/e414008c-2f94-11f1-a9ed-95e27bb275fe.js" data-form="e414008c-2f94-11f1-a9ed-95e27bb275fe"></script>
-    </div>
+#emailoctopus-form-wrapper,
+#emailoctopus-form-wrapper *,
+[id*="emailoctopus"],
+[id*="emailoctopus"] *,
+[class*="emailoctopus"],
+[class*="emailoctopus"] * {
+  color: #ffffff !important;
+  text-align: center !important;
+}
+[id*="emailoctopus"] input,
+[class*="emailoctopus"] input {
+  color: #333333 !important;
+  text-align: left !important;
+  background-color: #ffffff !important;
+}
+[id*="emailoctopus"] button,
+[class*="emailoctopus"] button {
+  background-color: #f97316 !important;
+  color: #ffffff !important;
+}
+[id*="emailoctopus"] form,
+[class*="emailoctopus"] form {
+  max-width: 600px !important;
+  margin: 0 auto !important;
+}
+</style>
+    <script async src="https://eocampaign1.com/form/e414008c-2f94-11f1-a9ed-95e27bb275fe.js" data-form="e414008c-2f94-11f1-a9ed-95e27bb275fe"></script>
   </div>
 </section>
 
@@ -469,5 +486,19 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+setTimeout(function() {
+  var allEls = document.querySelectorAll('[id*="emailoctopus"] *:not(input):not(button), [class*="emailoctopus"] *:not(input):not(button)');
+  allEls.forEach(function(el) {
+    el.style.setProperty('color', '#ffffff', 'important');
+    el.style.setProperty('text-align', 'center', 'important');
+  });
+  var form = document.querySelector('[id*="emailoctopus"] form, [class*="emailoctopus"] form');
+  if(form) {
+    form.style.setProperty('max-width', '600px', 'important');
+    form.style.setProperty('margin', '0 auto', 'important');
+  }
+}, 2000);
+</script>
 </body>
 </html>
