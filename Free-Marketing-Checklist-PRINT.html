@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>10-Point Marketing Checklist — HomeProMarketer.com</title>
+  <style>
+    /* ===== VARIABLES ===== */
+    :root {
+      --navy:        #1a2e4a;
+      --orange:      #f97316;
+      --orange-dark: #ea6c08;
+      --white:       #ffffff;
+      --gray-50:     #f8fafc;
+      --gray-100:    #f1f5f9;
+      --gray-200:    #e2e8f0;
+      --gray-600:    #475569;
+      --gray-800:    #1e293b;
+    }
+
+    /* ===== RESET ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 13px; }
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      color: var(--gray-800);
+      background: var(--white);
+      line-height: 1.55;
+    }
+
+    /* ===== COVER ===== */
+    .cover {
+      background: var(--navy);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 1in 0.8in 0.6in;
+      page-break-after: always;
+    }
+    .cover-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.5in;
+    }
+    .cover-logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--orange);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+    }
+    .cover-logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: -0.01em;
+    }
+    .cover-logo-text span { color: var(--orange); }
+
+    .cover-badge {
+      display: inline-block;
+      background: rgba(249,115,22,0.18);
+      color: var(--orange);
+      font-weight: 700;
+      font-size: 0.7rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      border-radius: 50px;
+      padding: 0.3rem 1rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid rgba(249,115,22,0.35);
+    }
+    .cover h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.15;
+      max-width: 6in;
+      margin-bottom: 1.2rem;
+    }
+    .cover h1 span { color: var(--orange); }
+    .cover-subtitle {
+      font-size: 1.05rem;
+      color: #93b4d4;
+      max-width: 5in;
+      margin-bottom: 0.55in;
+      line-height: 1.6;
+    }
+    .cover-divider {
+      width: 60px;
+      height: 4px;
+      background: var(--orange);
+      border-radius: 2px;
+      margin: 0 auto 0.55in;
+    }
+    .cover-graphic {
+      width: 5in;
+      margin: 0 auto 0.55in;
+      display: flex;
+      justify-content: center;
+      gap: 1.2rem;
+    }
+    .cover-stat {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.13);
+      border-radius: 12px;
+      padding: 1.1rem 1.4rem;
+      text-align: center;
+      flex: 1;
+    }
+    .cover-stat-number {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: var(--orange);
+      display: block;
+      line-height: 1;
+      margin-bottom: 0.3rem;
+    }
+    .cover-stat-label {
+      font-size: 0.72rem;
+      color: #93b4d4;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      font-weight: 600;
+    }
+    .cover-footer {
+      padding-top: 0.35in;
+      border-top: 1px solid rgba(255,255,255,0.12);
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .cover-footer-left {
+      font-size: 0.75rem;
+      color: #93b4d4;
+      text-align: left;
+    }
+    .cover-footer-right {
+      font-size: 0.75rem;
+      color: var(--orange);
+      font-weight: 600;
+    }
+
+    /* ===== CONTENT AREA ===== */
+    .content {
+      padding: 0.5in 0.65in 0.4in;
+    }
+
+    /* ===== INTRO ===== */
+    .intro-box {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 0.32in 0.42in;
+      margin-bottom: 0.22in;
+      color: var(--white);
+    }
+    .intro-box h2 {
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.5rem;
+    }
+    .intro-box p {
+      color: #93b4d4;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      margin-bottom: 0.4rem;
+    }
+    .intro-box p:last-child { margin-bottom: 0; }
+    .intro-box strong { color: var(--orange); }
+
+    .how-to-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.15in;
+      margin-bottom: 0.22in;
+    }
+    .how-to-card {
+      background: var(--gray-50);
+      border: 1.5px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 0.18in 0.18in;
+      text-align: center;
+    }
+    .how-to-icon {
+      font-size: 1.4rem;
+      margin-bottom: 0.3rem;
+      display: block;
+    }
+    .how-to-card h4 {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.2rem;
+    }
+    .how-to-card p {
+      font-size: 0.7rem;
+      color: var(--gray-600);
+      line-height: 1.45;
+    }
+
+    /* ===== CHECKLIST ===== */
+    .checklist-section-title {
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 0.15in;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .checklist-section-title::after {
+      content: '';
+      flex: 1;
+      height: 2px;
+      background: var(--gray-200);
+      border-radius: 1px;
+    }
+
+    .checklist-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.15in;
+      padding: 0.14in 0.18in;
+      margin-bottom: 0.08in;
+      border-radius: 10px;
+      border: 1.5px solid var(--gray-200);
+      background: var(--white);
+      page-break-inside: avoid;
+    }
+
+    .checkbox-wrap { flex-shrink: 0; margin-top: 2px; }
+    .checkbox {
+      width: 20px;
+      height: 20px;
+      border: 2px solid var(--navy);
+      border-radius: 5px;
+      display: block;
+    }
+    .item-number {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      background: var(--navy);
+      color: var(--white);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.68rem;
+      font-weight: 800;
+    }
+    .item-body { flex: 1; }
+    .item-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.15rem;
+    }
+    .item-title {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--navy);
+    }
+    .difficulty {
+      font-size: 0.62rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 0.12rem 0.45rem;
+      border-radius: 50px;
+      flex-shrink: 0;
+      margin-left: 0.4rem;
+    }
+    .difficulty.easy     { background: #dcfce7; color: #15803d; }
+    .difficulty.medium   { background: #fef9c3; color: #a16207; }
+    .difficulty.advanced { background: #fee2e2; color: #b91c1c; }
+    .item-desc {
+      font-size: 0.76rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+
+    /* ===== SCORE BOX ===== */
+    .score-wrap {
+      margin-top: 0.2in;
+      margin-bottom: 0.1in;
+    }
+    .score-box {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.13in;
+    }
+    .score-tier {
+      border-radius: 10px;
+      padding: 0.16in 0.14in;
+      text-align: center;
+    }
+    .score-tier.red    { background: #fee2e2; border: 1.5px solid #fca5a5; }
+    .score-tier.yellow { background: #fef9c3; border: 1.5px solid #fde047; }
+    .score-tier.green  { background: #dcfce7; border: 1.5px solid #86efac; }
+    .score-tier .score-range {
+      font-size: 1.05rem;
+      font-weight: 800;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .score-tier.red    .score-range { color: #b91c1c; }
+    .score-tier.yellow .score-range { color: #a16207; }
+    .score-tier.green  .score-range { color: #15803d; }
+    .score-tier .score-label {
+      font-size: 0.73rem;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+    .score-tier.red    .score-label { color: #991b1b; }
+    .score-tier.yellow .score-label { color: #92400e; }
+    .score-tier.green  .score-label { color: #166534; }
+    .score-tier p { font-size: 0.67rem; line-height: 1.45; }
+    .score-tier.red    p { color: #991b1b; }
+    .score-tier.yellow p { color: #92400e; }
+    .score-tier.green  p { color: #166534; }
+
+    /* ===== NEXT STEPS ===== */
+    .next-steps {
+      page-break-before: always;
+      padding: 0.5in 0.65in 0.4in;
+    }
+    .next-steps-header {
+      background: var(--orange);
+      border-radius: 12px;
+      padding: 0.28in 0.38in;
+      margin-bottom: 0.2in;
+      text-align: center;
+    }
+    .next-steps-header h2 {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.35rem;
+    }
+    .next-steps-header p {
+      color: rgba(255,255,255,0.88);
+      font-size: 0.83rem;
+    }
+
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.16in;
+      margin-bottom: 0.2in;
+    }
+    .product-card {
+      border: 2px solid var(--navy);
+      border-radius: 12px;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+    .product-card-header {
+      background: var(--navy);
+      padding: 0.18in 0.2in;
+      text-align: center;
+    }
+    .product-card-header .product-icon {
+      font-size: 1.5rem;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+    .product-card-header h3 {
+      font-size: 0.8rem;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.3;
+    }
+    .product-card-body { padding: 0.16in 0.2in; }
+    .product-card-body p {
+      font-size: 0.7rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+      margin-bottom: 0.35rem;
+    }
+    .product-price {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--orange);
+    }
+    .product-price span {
+      font-size: 0.68rem;
+      color: var(--gray-600);
+      font-weight: 400;
+    }
+
+    .cta-box {
+      background: var(--navy);
+      border-radius: 12px;
+      padding: 0.28in 0.38in;
+      text-align: center;
+      margin-bottom: 0.18in;
+    }
+    .cta-box h3 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--white);
+      margin-bottom: 0.4rem;
+    }
+    .cta-box p {
+      color: #93b4d4;
+      font-size: 0.8rem;
+      margin-bottom: 0.55rem;
+    }
+    .cta-url {
+      display: inline-block;
+      background: var(--orange);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 0.15in 0.38in;
+      border-radius: 8px;
+      letter-spacing: 0.02em;
+    }
+
+    .tip-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.14in;
+    }
+    .tip-card {
+      background: var(--gray-50);
+      border: 1.5px solid var(--gray-200);
+      border-radius: 10px;
+      padding: 0.16in 0.2in;
+    }
+    .tip-card-title {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 0.25rem;
+    }
+    .tip-card p {
+      font-size: 0.71rem;
+      color: var(--gray-600);
+      line-height: 1.5;
+    }
+
+    .doc-footer {
+      margin-top: 0.18in;
+      padding-top: 0.12in;
+      border-top: 1px solid var(--gray-200);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.63rem;
+      color: var(--gray-600);
+    }
+    .doc-footer strong { color: var(--orange); }
+
+    /* ===== PRINT ===== */
+    @media print {
+      @page { size: 8.5in 11in; margin: 0; }
+      html, body { width: 8.5in; font-size: 13px; }
+      .checklist-item  { page-break-inside: avoid; }
+      .product-card    { page-break-inside: avoid; }
+      .score-box       { page-break-inside: avoid; }
+      a { color: inherit !important; text-decoration: none !important; }
+    }
+
+    /* ===== SCREEN PREVIEW ===== */
+    @media screen {
+      body { background: #e5e7eb; padding: 0.3in 0; }
+      .cover, .content, .next-steps {
+        max-width: 8.5in;
+        margin-left: auto;
+        margin-right: auto;
+        box-shadow: 0 4px 24px rgba(0,0,0,0.13);
+      }
+      .content { background: var(--white); }
+      .next-steps { background: var(--white); }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     COVER
+     ============================================================ -->
+<div class="cover">
+
+  <div class="cover-logo">
+    <div class="cover-logo-icon">🏠</div>
+    <div class="cover-logo-text">HomePro<span>Marketer</span>.com</div>
+  </div>
+
+  <div class="cover-badge">Free Lead Magnet — Download &amp; Print</div>
+
+  <h1>The <span>10-Point</span> Marketing Checklist for Home Service Contractors</h1>
+
+  <p class="cover-subtitle">
+    Run through these 10 checks and you'll instantly know where your marketing is leaking leads — and exactly what to fix first.
+  </p>
+
+  <div class="cover-divider"></div>
+
+  <div class="cover-graphic">
+    <div class="cover-stat">
+      <span class="cover-stat-number">10</span>
+      <span class="cover-stat-label">Action Items</span>
+    </div>
+    <div class="cover-stat">
+      <span class="cover-stat-number">~20</span>
+      <span class="cover-stat-label">Minutes to Complete</span>
+    </div>
+    <div class="cover-stat">
+      <span class="cover-stat-number">3</span>
+      <span class="cover-stat-label">Difficulty Levels</span>
+    </div>
+  </div>
+
+  <div class="cover-footer">
+    <div class="cover-footer-left">Provided free by HomeProMarketer.com<br>For HVAC, Plumbing, Electrical &amp; Roofing Contractors</div>
+    <div class="cover-footer-right">HomeProMarketer.com →</div>
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+     CONTENT — flows naturally across pages 2–3
+     ============================================================ -->
+<div class="content">
+
+  <div class="intro-box">
+    <h2>How to Use This Checklist</h2>
+    <p>
+      Go through each item below and check off the ones you've already got in place. Be honest — a half-done setup counts as unchecked.
+      When you're done, count your score and use the guide at the bottom to see where you stand.
+    </p>
+    <p>
+      <strong>Tip:</strong> Focus on the Easy items first. They take under an hour and deliver immediate results. Then work your way up to Medium and Advanced.
+    </p>
+  </div>
+
+  <div class="how-to-grid">
+    <div class="how-to-card">
+      <span class="how-to-icon">✅</span>
+      <h4>Check Each Item</h4>
+      <p>Be honest. Only check items that are fully set up and actively working.</p>
+    </div>
+    <div class="how-to-card">
+      <span class="how-to-icon">📊</span>
+      <h4>Score Yourself</h4>
+      <p>Count your checkmarks at the end and see your marketing health rating.</p>
+    </div>
+    <div class="how-to-card">
+      <span class="how-to-icon">🚀</span>
+      <h4>Take Action</h4>
+      <p>Use HomeProMarketer toolkits to fix every unchecked item fast.</p>
+    </div>
+  </div>
+
+  <div class="checklist-section-title">Foundation &amp; Visibility</div>
+
+  <div class="checklist-item">
+    <div class="checkbox-wrap"><span class="checkbox"></span></div>
+    <div class="item-number">1</div>
+    <div class="item-body">
+      <div class="item-header">
+        <div class="item-title">Google Business Profile Claimed &amp; Verified</div>
+        <span class="difficulty easy">Easy</span>
+      </div>
+      <p class="item-desc">Your free Google listing is live, verified, and fully filled out with your services, hours, and photos — so you show up in local map results when customers search.</p>
+    </div>
+  </div>
+
+  <div class="checklist-item">
+    <div class="checkbox-wrap"><span class="checkbox"></span></div>
+    <div class="item-number">2</div>
+    <div class="item-body">
+      <div class="item-header">
+        <div class="item-title">Website Loads in Under 3 Seconds on Mobile</div>
+        <span class="difficulty medium">Medium</span>
+      </div>
+      <p class="item-desc">Over 70% of homeowners search on their phone — a slow website kills your leads before they even read your offer. Test yours at PageSpeed Insights for free.</p>
+    </div>
+  </div>
+
+  <div class="checklist-item">
+    <div class="checkbox-wrap"><span class="checkbox"></span></div>
+    <div class="item-number">3</div>
+    <div class="item-body">
+      <div class="item-header">
+        <div class="item-title">Phone Number is Click-to-Call on Mobile</div>
+        <span class="difficulty easy">Easy</span>
+      </div>
+      <p class="item-desc">Your phone number on your website is a real tap-to-call link — not an image or plain text — so mobile visitors can reach you with one tap instead of copying it manually.</p>
+    </div>
+  </div>
+
+  <div class="checklist-item">
+    <div class="checkbox-wrap"><span class="checkbox"></span></div>
+    <div class="item-number">4</div>
+    <div class="item-body">
+      <div class="item-header">
+        <div class="item-title">Google Ads Conversion Tracking Is Active</div>
+        <span class="difficulty advanced">Advanced</span>
+      </div>
+      <p class="item-desc">You have Google Ads conversion tracking installed so you know exactly which keywords and ads are generating calls and form fills — not just clicks.</p>
+    </div>
+  </div>
+
+  <div class="checklist-item">
+    <div class="checkbox-wrap"><span class="checkbox"></span></div>
+    <div class="item-number">5</div>
+    <div class="item-body">
+      <div class="item-header">
+        <div class="item-title">Facebook Pixel Installed on Your Website</div>
+        <span class="difficulty medium">Medium</span>
+      </div>
+      <p class="item-desc">The Facebook Pixel is installed on your site so you can retarget visitors, build lookalike audiences, and track conversions from your Facebook and Instagram ads.</p>
+    </div>
+  </div>
+
+  <div class="checklist-section-title" style="margin-top: 0.2in;">Reviews, Content &amp; Budget</div>
+
+  <div class="checklist-item">
+    <div class="checkbox-wrap"><span class="checkbox"></span></div>
+    <div class="item-number">6</div>
+    <div class="item-body">
+      <div class="item-header">
+        <div class="item-title">At Least 25 Google Reviews (4.5★ or Higher)</div>
+        <span class="difficulty medium">Medium</span>
+      </div>
+      <p class="item-desc">You have 25 or more Google reviews averaging 4.5 stars — enough social proof that customers choose you over competitors with fewer or lower-rated reviews.</p>
+    </div>
+  </div>
+
+  <div class="checklist-item">
+    <div class="checkbox-wrap"><span class="checkbox"></span></div>
+    <div class="item-number">7</div>
+    <div class="item-body">
+      <div class="item-header">
+        <div class="item-title">Posting to Google Business Profile Weekly</div>
+        <span class="difficulty easy">Easy</span>
+      </div>
+      <p class="item-desc">You post a photo, promotion, or update to your Google Business Profile at least once a week — keeping your listing active and improving your local search ranking.</p>
+    </div>
+  </div>
+
+  <div class="checklist-item">
+    <div class="checkbox-wrap"><span class="checkbox"></span></div>
+    <div class="item-number">8</div>
+    <div class="item-body">
+      <div class="item-header">
+        <div class="item-title">Email Follow-Up Sequence for New Leads</div>
+        <span class="difficulty medium">Medium</span>
+      </div>
+      <p class="item-desc">Every new lead or website inquiry automatically receives a follow-up email sequence — at minimum a same-day response plus a 3-day follow-up — so no lead goes cold.</p>
+    </div>
+  </div>
+
+  <div class="checklist-item">
+    <div class="checkbox-wrap"><span class="checkbox"></span></div>
+    <div class="item-number">9</div>
+    <div class="item-body">
+      <div class="item-header">
+        <div class="item-title">Before &amp; After Photos in Ads and Social Media</div>
+        <span class="difficulty easy">Easy</span>
+      </div>
+      <p class="item-desc">You regularly use real before-and-after photos of your work in your Facebook ads, Google ads, and social posts — because nothing sells home services better than visual proof.</p>
+    </div>
+  </div>
+
+  <div class="checklist-item">
+    <div class="checkbox-wrap"><span class="checkbox"></span></div>
+    <div class="item-number">10</div>
+    <div class="item-body">
+      <div class="item-header">
+        <div class="item-title">Monthly Ad Budget Allocated by Channel</div>
+        <span class="difficulty advanced">Advanced</span>
+      </div>
+      <p class="item-desc">You have a defined monthly ad spend for each channel (Google, Facebook, LSA) with a target cost-per-lead — so you're investing intentionally, not guessing.</p>
+    </div>
+  </div>
+
+  <div class="score-wrap">
+    <div class="checklist-section-title">Score Your Results</div>
+    <div class="score-box">
+      <div class="score-tier red">
+        <span class="score-range">0–4</span>
+        <span class="score-label">Needs Work</span>
+        <p>Your marketing foundation has major gaps. Competitors are capturing the leads that should be yours.</p>
+      </div>
+      <div class="score-tier yellow">
+        <span class="score-range">5–7</span>
+        <span class="score-label">Getting There</span>
+        <p>Good start — but unchecked items are costing you leads every day. Prioritize the Easy wins first.</p>
+      </div>
+      <div class="score-tier green">
+        <span class="score-range">8–10</span>
+        <span class="score-label">Strong Foundation</span>
+        <p>You're ahead of most contractors. Now it's time to optimize and scale what's already working.</p>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- ============================================================
+     NEXT STEPS — forced onto its own page
+     ============================================================ -->
+<div class="next-steps">
+
+  <div class="next-steps-header">
+    <h2>Ready to Fix Every Unchecked Item?</h2>
+    <p>HomeProMarketer toolkits give you the exact ads, emails, and templates to check off every item on this list — fast.</p>
+  </div>
+
+  <div class="products-grid">
+    <div class="product-card">
+      <div class="product-card-header">
+        <span class="product-icon">📣</span>
+        <h3>Google &amp; Facebook Ads Toolkit</h3>
+      </div>
+      <div class="product-card-body">
+        <p>Done-for-you ad copy, targeting templates, and a campaign setup guide. Conversion tracking + before/after photo ad templates — covers items 4, 5, 9 &amp; 10.</p>
+        <div class="product-price">$47 <span>one-time</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card-header">
+        <span class="product-icon">⭐</span>
+        <h3>Google Business Profile Domination Kit</h3>
+      </div>
+      <div class="product-card-body">
+        <p>Review request templates, weekly post calendar, and a full optimization checklist. Check off items 1, 6, and 7 in a single afternoon.</p>
+        <div class="product-price">$37 <span>one-time</span></div>
+      </div>
+    </div>
+    <div class="product-card">
+      <div class="product-card-header">
+        <span class="product-icon">📧</span>
+        <h3>Lead Follow-Up Email Sequence Kit</h3>
+      </div>
+      <div class="product-card-body">
+        <p>10 plug-and-play email templates for new leads, unsold estimates, and seasonal win-backs. Covers item 8 completely.</p>
+        <div class="product-price">$27 <span>one-time</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cta-box">
+    <h3>Get All Three Toolkits &amp; Check Off Every Item</h3>
+    <p>One-time purchase. Instant digital download. No subscription, no agency fees. Just plug in, customize, and start getting more leads.</p>
+    <span class="cta-url">HomeProMarketer.com</span>
+  </div>
+
+  <div class="tip-grid">
+    <div class="tip-card">
+      <div class="tip-card-title">💡 Pro Tip: Start Here</div>
+      <p>If you scored 4 or below, start with the Google Business Profile Kit. It's the cheapest and fastest way to get more calls from customers already searching for you.</p>
+    </div>
+    <div class="tip-card">
+      <div class="tip-card-title">📬 Get Free Tips Weekly</div>
+      <p>Join 2,400+ contractors getting free marketing tips every week. Sign up at HomeProMarketer.com for actionable advice you can use on your very next job.</p>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <div>© HomeProMarketer.com — Free to share &amp; print</div>
+    <div><strong>HomeProMarketer.com</strong></div>
+  </div>
+
+</div>
+
+</body>
+</html>
